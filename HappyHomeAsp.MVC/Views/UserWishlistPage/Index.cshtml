@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Sản phẩm mong muốn";
+    ViewBag.Class = "user-wishlist blog";
+}
+
+<div class="wrap-banner">
+    <!-- breadcrumb -->
+    <nav class="breadcrumb-bg">
+        <div class="container no-index">
+            <div class="breadcrumb">
+                <ol>
+                    <li>
+                        <a href="@Url.Action("Index","Index","Index")">
+                            <span>Trang chủ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Sản phẩm mong muốn</span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- main -->
+<div id="wrapper-site">
+    <div class="container">
+        <div class="row">
+            <div id="content-wrapper" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 onecol">
+                <div id="main">
+                    <div id="content" class="page-content">
+                        <div id="mywishlist">
+                            <h1 class="title-page">Danh sách  sản phẩm</h1>
+                            <div id="block-history" class="block-center">
+                                <table class="std table">
+                                    <thead>
+                                        <tr>
+                                            <th class="first_item">Tên sản phẩm</th>
+                                            <th class="item mywishlist_second">Ngày tạo</th>
+                                            <th class="last_item mywishlist_first">Tác vụ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr id="wishlist_1">
+                                            <td>
+                                                Bàn sofa mặt đá hiện đại, sang trọng TT68185
+                                            </td>
+                                            <td>10/11/2022</td>
+                                            <td class="wishlist_delete">
+                                                <a href="product-detail.html" class="btn btn-default">Xem</a>
+                                                <a href="javascript:;" class="btn btn-default" onclick="return (WishlistDelete('wishlist_1', '1', 'Do you really want to delete this wishlist ?'));">Xoá</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="page-home">
+                                <a class="btn btn-default" href="product-grid-sidebar-left.html">
+                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                    <span>Tiếp tục mua hàng</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

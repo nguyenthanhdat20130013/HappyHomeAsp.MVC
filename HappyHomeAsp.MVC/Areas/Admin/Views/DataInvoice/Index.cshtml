@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Data Invoice";
+}
+
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Danh sách đơn hàng</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Danh sách đơn hàng</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header" style="margin-top: 10px;margin-bottom: -10px">
+                        <div class="form-group" style="width: 50%;float: left">
+                            <select class="form-control">
+                                <option selected="selected" disabled="disabled">Tìm kiếm theo</option>
+                                <option>Sản Phẩm mới</option>
+                                <option>Sản Phẩm hot</option>
+                                <option>Hết hàng</option>
+                                <option>Texas</option>
+                                <option>Washington</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary" style="float: right;"><a href="add-invoice.html" style="color: white">Thêm mới</a></button>
+                    </div>
+
+                    <!-- /.card-header -->
+                    <div class="card-body">
+
+                        <table id="example1" class="table table-bordered table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Mã khách hàng</th>
+                                    <th>Ngày lap</th>
+                                    <th>Tình trạng</th>
+                                    <th>Tác vụ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Trident</td>
+                                    <td>
+                                        Internet
+                                        Explorer 4.0
+                                    </td>
+                                    <td>Win 95+</td>
+                                    <td> 4</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Trident</td>
+                                    <td>
+                                        Internet
+                                        Explorer 5.0
+                                    </td>
+                                    <td>Win 95+</td>
+                                    <td>5</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Trident</td>
+                                    <td>
+                                        Internet
+                                        Explorer 5.5
+                                    </td>
+                                    <td>Win 95+</td>
+                                    <td>5.5</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Trident</td>
+                                    <td>
+                                        Internet
+                                        Explorer 6
+                                    </td>
+                                    <td>Win 98+</td>
+                                    <td>6</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Trident</td>
+                                    <td>Internet Explorer 7</td>
+                                    <td>Win XP SP2+</td>
+                                    <td>7</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gecko</td>
+                                    <td>Epiphany 2.20</td>
+                                    <td>Gnome</td>
+                                    <td>1.8</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Tasman</td>
+                                    <td>Internet Explorer 5.2</td>
+                                    <td>Mac OS 8-X</td>
+                                    <td>1</td>
+                                    <td>
+                                        <button class="btn btn-danger">Xoá </button>
+                                        <button class="btn btn-success">Sửa </button>
+                                        <button class="btn btn-dark"><a href="invoice-detail.html" style="color: #FFFFFF">Chi tiết</a> </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>Rendering engine</th>
+                                    <th>Browser</th>
+                                    <th>Platform(s)</th>
+                                    <th>Engine version</th>
+                                    <th>CSS grade</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | General Form Elements</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
+  <style>
+
+    .tags-input-wrapper{
+      background: transparent;
+      padding: 5px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc
+    }
+
+    .tags-input-wrapper input{
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 140px;
+      margin-left: 8px;
+    }
+
+    .tags-input-wrapper .tag{
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      border-radius: 3px;
+      padding: 0px 3px 0px 7px;
+      margin-right: 5px;
+    }
+
+    .tags-input-wrapper .tag a {
+      margin: 0 7px 3px;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="../home.html" class="nav-link">Trang chủ</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Liên hệ</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="../home.html" class="brand-link">
+      <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">Quản Lý Bán Hàng</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Admin</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item ">
+            <a href="../home.html" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Trang chủ
+              </p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Quản lý bài Viết
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="add-article.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Đăng bài viết   <span class="right badge badge-danger">New</span></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="article-data.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách bài viết</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a href="" class="nav-link ">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Quản lý sản phẩm
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="category-product.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chủng loại</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="data-product.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách sản phẩm </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="add-product.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm sản phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Quản lý user
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="user-data.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> Danh sách user</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item menu-open">
+            <a href="" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Quản lý đơn hàng
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="invoice-data.html" class="nav-link ">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách đơn hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="add-invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm đơn hàng</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="invoice-detail.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Chi tiết hoá đơn</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="invoice-data.html" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Quản lý thông tin web
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="info.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thông tin trên website</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Cập nhật thông tin sản phẩm </h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+              <li class="breadcrumb-item active">Cập nhật sản phẩm</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin chính</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="display: block; padding:0px ;">
+                <form>
+                  <div class="card-body">
+
+                    <div style="display: flex" class="row">
+                      <div class="form-group col-md-6 ">
+                        <label for="exampleInputEmail1">Id </label>
+                        <input type="text" class="form-control" id="" placeholder="Id of product">
+                      </div>
+                      <div class="form-group col-md-6 ">
+                        <label for="exampleInputEmail1">Giá</label>
+                        <input type="text" class="form-control" id="" placeholder="price of product">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Tên sản phẩm</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder=" name of product">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Danh mục</label>
+                      <input type="email" class="form-control" id="" placeholder="Category of the product">
+                    </div>
+                    <div class="form-group">
+                      <label for="">Nội dung tóm tắt</label>
+                      <textarea rows="3" class="form-control" placeholder="Đây là sản phẩm có 1 không 2"> </textarea>
+                    </div>
+                    <div style="display: flex" class="row">
+                      <div class="form-group col-md-6 ">
+                        <label for="exampleInputEmail1">Giá khuyết mãi </label>
+                        <input type="text" class="form-control" id="" placeholder="Price">
+                      </div>
+                      <div class="form-group col-md-6 ">
+                        <label for="exampleInputEmail1">Thông tin khác</label>
+                        <input type="text" class="form-control" id="" placeholder="">
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- /.card-body -->
+                </form>
+              </div>
+
+              <!-- /.card-body -->
+            </div>
+
+            <div class="card card-primary ">
+              <div class="card-header">
+                <h3 class="card-title">
+                  Nội dung mô tả sản phẩm
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <textarea id="summernote">
+                Place <em>some</em> <u>text</u> <strong>here</strong>
+              </textarea>
+              </div>
+              <div class="card-footer">
+                Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
+              </div>
+            </div>
+            <div class="card card-primary"></div>
+
+
+          </div>
+
+
+          <div class="col-md-4" >
+            <div class="card card-success" >
+              <div class="card-header">
+                <h3 class="card-title">Hình ảnh đại diện</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="display: block">
+                <div style="position: relative">
+                  <img src="../dist/img/1.jpg" alt="" style="width: 60%;height:175px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                  <button id="delete-product-btn" class="btn btn-default btn-flat" style="position: absolute;left: 46.5%;top:78.5%;">xoá</button>
+                </div>
+                <br>
+                <div class="form-group" style="">
+                  <label for="exampleInputFile">File input</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text">Upload</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <div class="card card-success">
+              <div class="card-header">
+                <h3 class="card-title">Thư viện ảnh</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="  display: block;">
+                <div style="display: grid;grid-template-columns: auto auto">
+                  <div style="position: relative;">
+                    <img src="../dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                    <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                  </div>
+                  <div style="position: relative;">
+                    <img src="../dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                    <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                  </div>
+                  <div style="position: relative;">
+                    <img src="../dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                    <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                  </div>
+                  <div style="position: relative;">
+                    <img src="../dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                    <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                  </div>
+                </div>
+                <!--   <img src="../../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">
+                   <img src="../../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">  -->              <br>
+                <div class="form-group" style="">
+                  <label for="exampleInputFile">File input</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="exampleInputFile">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text">Upload</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+
+          <div class="col-md-12">
+
+            <div class="card card-primary">
+
+              <div class="card-header">
+                <h3 class="card-title">Thuộc tính , biến thể</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body" style="display: block; padding:0px ;">
+                <form>
+                  <div class="card-body">
+
+                    <div style="display: flex" class="row properties">
+
+                      <div class="form-group col-md-5 ">
+                        <select class="form-control select2bs4" >
+                          <option selected="selected" disabled="disabled">Chọn thuộc tính</option>
+                          <option>Màu sắc</option>
+                          <option>Kích thước</option>
+                          <option>Chất liệu</option>
+                          <option>Khác</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-7 ">
+                        <input type="text" id="tag-input1"  class="form-control" style="float: right;">
+                      </div>
+
+                    </div>
+                    <button class="btn btn-primary" id="add-more-property" >Thêm thuộc tính</button>
+                  </div>
+                  <div class="card-header" style="margin-top: 10px;margin-bottom: -10px">
+                    <h3 class="card-title">   Danh sách biến thể</h3>
+                  </div>
+
+                  <!-- /.card-header -->
+                  <div class="card-body">
+
+                    <table id="example1" class="table table-bordered table-striped">
+
+                      <thead>
+                      <tr>
+                        <th>Hình ảnh</th>
+                        <th>Thuộc tính</th>
+                        <th>Giá</th>
+                        <th>Giá khuyết mãi</th>
+                        <th>Tác vụ</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>Trident</td>
+                        <td>Đỏ,S
+                        </td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Trident</td>
+                        <td>Đỏ,M
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Trident</td>
+                        <td>Xanh,M</td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Trident</td>
+                        <td>Xanh,S</td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Trident</td>
+                        <td>Internet Explorer 7</td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Gecko</td>
+                        <td>Epiphany 2.20</td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Tasman</td>
+                        <td>Internet Explorer 5.2</td>
+                        <td>200.000đ</td>
+                        <td>150.000đ</td>
+                        <td>
+                          <a class="btn btn-danger btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-trash">
+                            </i>
+                            Xoá
+                          </a>
+                          <a class="btn btn-success btn-sm" href="#" style="height: 100%;padding: 7px 10px;">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            </i>
+                            Chỉnh sửa
+                          </a>
+                        </td>
+                      </tr>
+                      </tbody>
+                      <tfoot>
+                      <tr>
+                        <th>Mã tài khoản</th>
+                        <th>Tên tài khoản</th>
+                        <th>Tình trạng</th>
+                        <th>Tác vụ</th>
+                      </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+                </form>
+              </div>
+              <!-- /.card-body -->
+            </div>
+
+          </div>
+
+          <div class="card-footer row" style="width: 100%;">
+            <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+          </div>
+
+
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+
+
+    <!-- /.content -->
+  </div>
+
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+      <b>Version</b> 3.2.0
+    </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- bs-custom-file-input -->
+<script src="../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
+<script>
+  $(function () {
+    bsCustomFileInput.init();
+  });
+
+  $(function () {
+    // Summernote
+    $('#summernote').summernote()
+
+    // CodeMirror
+    CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+      mode: "htmlmixed",
+      theme: "monokai"
+    });
+  })
+
+  $(function() {
+    $(".btn-default").click(function() {
+      $(this).parent().remove();
+    });
+  });
+
+
+
+  (function(){
+    "use strict"
+
+    // Plugin Constructor
+    var TagsInput = function(opts){
+      this.options = Object.assign(TagsInput.defaults , opts);
+      this.init();
+    }
+
+    // Initialize the plugin
+    TagsInput.prototype.init = function(opts){
+      this.options = opts ? Object.assign(this.options, opts) : this.options;
+
+      if(this.initialized)
+        this.destroy();
+
+      if(!(this.orignal_input = document.getElementById(this.options.selector)) ){
+        console.error("tags-input couldn't find an element with the specified ID");
+        return this;
+      }
+
+      this.arr = [];
+      this.wrapper = document.createElement('div');
+      this.input = document.createElement('input');
+      init(this);
+      initEvents(this);
+
+      this.initialized =  true;
+      return this;
+    }
+
+    // Add Tags
+    TagsInput.prototype.addTag = function(string){
+
+      if(this.anyErrors(string))
+        return ;
+
+      this.arr.push(string);
+      var tagInput = this;
+
+      var tag = document.createElement('span');
+      tag.className = this.options.tagClass;
+      tag.innerText = string;
+
+      var closeIcon = document.createElement('a');
+      closeIcon.innerHTML = '&times;';
+
+      // delete the tag when icon is clicked
+      closeIcon.addEventListener('click' , function(e){
+        e.preventDefault();
+        var tag = this.parentNode;
+
+        for(var i =0 ;i < tagInput.wrapper.childNodes.length ; i++){
+          if(tagInput.wrapper.childNodes[i] == tag)
+            tagInput.deleteTag(tag , i);
+        }
+      })
+
+
+      tag.appendChild(closeIcon);
+      this.wrapper.insertBefore(tag , this.input);
+      this.orignal_input.value = this.arr.join(',');
+
+      return this;
+    }
+
+    // Delete Tags
+    TagsInput.prototype.deleteTag = function(tag , i){
+      tag.remove();
+      this.arr.splice( i , 1);
+      this.orignal_input.value =  this.arr.join(',');
+      return this;
+    }
+
+    // Make sure input string have no error with the plugin
+    TagsInput.prototype.anyErrors = function(string){
+      if( this.options.max != null && this.arr.length >= this.options.max ){
+        console.log('max tags limit reached');
+        return true;
+      }
+
+      if(!this.options.duplicate && this.arr.indexOf(string) != -1 ){
+        console.log('duplicate found " '+string+' " ')
+        return true;
+      }
+      return false;
+    }
+
+    // Add tags programmatically
+    TagsInput.prototype.addData = function(array){
+      var plugin = this;
+
+      array.forEach(function(string){
+        plugin.addTag(string);
+      })
+      return this;
+    }
+
+    // Get the Input String
+    TagsInput.prototype.getInputString = function(){
+      return this.arr.join(',');
+    }
+
+
+    // destroy the plugin
+    TagsInput.prototype.destroy = function(){
+      this.orignal_input.removeAttribute('hidden');
+
+      delete this.orignal_input;
+      var self = this;
+
+      Object.keys(this).forEach(function(key){
+        if(self[key] instanceof HTMLElement)
+          self[key].remove();
+
+        if(key != 'options')
+          delete self[key];
+      });
+
+      this.initialized = false;
+    }
+
+    // Private function to initialize the tag input plugin
+    function init(tags){
+      tags.wrapper.append(tags.input);
+      tags.wrapper.classList.add(tags.options.wrapperClass);
+      tags.orignal_input.setAttribute('hidden' , 'true');
+      tags.orignal_input.parentNode.insertBefore(tags.wrapper , tags.orignal_input);
+    }
+
+    // initialize the Events
+    function initEvents(tags){
+      tags.wrapper.addEventListener('click' ,function(){
+        tags.input.focus();
+      });
+
+      tags.input.addEventListener('keydown' , function(e){
+        var str = tags.input.value.trim();
+
+        if( !!(~[9 , 13 , 188].indexOf( e.keyCode ))  )
+        {
+          e.preventDefault();
+          tags.input.value = "";
+          if(str != "")
+            tags.addTag(str);
+        }
+      });
+    }
+    // Set All the Default Values
+    TagsInput.defaults = {
+      selector : '',
+      wrapperClass : 'tags-input-wrapper',
+      tagClass : 'tag',
+      max : null,
+      duplicate: false
+    }
+    window.TagsInput = TagsInput;
+  })();
+
+  var tagInput1 = new TagsInput({
+    selector: 'tag-input1',
+    duplicate : false,
+    max : 10
+  });
+
+  tagInput1.addData(['xanh' , 'đỏ' , 'đen'])
+
+</script>
+</body>
+</html>
