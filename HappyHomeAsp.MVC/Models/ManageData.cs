@@ -26,7 +26,7 @@ namespace HappyHomeAsp.MVC.Models
 
             ArrayList listProduct = new ArrayList();
 
-            string sql = "select * from product";
+            string sql = "select * from product where product_type = "+"ghe";
 
             MySqlCommand command = new MySqlCommand();
             MySqlConnection connect = KetNoi.GetDBConnection();
@@ -120,6 +120,7 @@ namespace HappyHomeAsp.MVC.Models
                 }
             }
         }
+
         public ArrayList selectAllArticle()
         {
             ArrayList articles = new ArrayList();
@@ -127,14 +128,9 @@ namespace HappyHomeAsp.MVC.Models
             using (MySqlConnection con = new MySqlConnection(constr))
             {
                 string query = "SELECT * FROM article";
-                using (MySqlCommand cmd = new MySqlCommand(query))
-                {
-                    cmd.Connection = con;
-                    con.Open();
-                    using (MySqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        while (sdr.Read())
-                        {
+
+               
+
                             Article ar = new Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2), sdr.GetString(3));
                             articles.Add(ar);
                         }
@@ -166,6 +162,7 @@ namespace HappyHomeAsp.MVC.Models
                     con.Close();
                     return articles;
                 }
+
             }
         }
     }

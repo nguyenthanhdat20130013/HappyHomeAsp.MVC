@@ -2602,6 +2602,7 @@
     <Compile Include="Areas\Admin\Controllers\DataInvoiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\DataProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\DataUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\EditArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\EditProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\Error404Controller.cs" />
@@ -2648,6 +2649,7 @@
     <Compile Include="Models\KetNoi.cs" />
     <Compile Include="Models\ManageData.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2983,6 +2985,8 @@
     <Content Include="Areas\Admin\Views\DataUser\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CategoryProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\InfoWeb\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ViewProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Details\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -3028,6 +3032,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Context\" />
   </ItemGroup>
   <PropertyGroup>
