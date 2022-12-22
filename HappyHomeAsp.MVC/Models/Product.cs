@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace HappyHomeAsp.MVC.Models
 {
-    class Product
+    public class Product
     {
         private int product_id;
 
@@ -14,7 +14,7 @@ namespace HappyHomeAsp.MVC.Models
 
         private int price;
 
-        private int price_cell;
+        private int price_sell;
         private string info;
         private string code;
         private string brand;
@@ -30,16 +30,12 @@ namespace HappyHomeAsp.MVC.Models
 
         private string product_insurance;
 
-        public Product()
-        {
-        }
-
-        public Product(int product_id, string name, int price, int price_cell, string info, string code, string brand, string color, string size, string attribute, int status, string product_type, string product_insurance)
+        public Product(int product_id, string name, int price, int price_sell, string info, string code, string brand, string color, string size, string attribute, int status, string product_type, string product_insurance)
         {
             this.product_id = product_id;
             this.name = name;
             this.price = price;
-            this.price_cell = price_cell;
+            this.price_sell = price_sell;
             this.info = info;
             this.code = code;
             this.brand = brand;
@@ -51,11 +47,10 @@ namespace HappyHomeAsp.MVC.Models
             this.product_insurance = product_insurance;
         }
 
-        public int Price_cell { get => price_cell; set => price_cell = value; }
         public int Product_id { get => product_id; set => product_id = value; }
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
-        public int Price_cell1 { get => price_cell; set => price_cell = value; }
+        public int Price_sell { get => price_sell; set => price_sell = value; }
         public string Info { get => info; set => info = value; }
         public string Code { get => code; set => code = value; }
         public string Brand { get => brand; set => brand = value; }
@@ -65,19 +60,16 @@ namespace HappyHomeAsp.MVC.Models
         public int Status { get => status; set => status = value; }
         public string Product_type { get => product_type; set => product_type = value; }
         public string Product_insurance { get => product_insurance; set => product_insurance = value; }
-        public override string ToString()
-        {
-            Console.WriteLine("product_id: " + product_id);
 
-            Console.WriteLine("name: " + name);
+       
 
-            Console.WriteLine("price: " + price);
+       
 
-            Console.WriteLine("price_cell: " + price_cell);
-
-            Console.WriteLine("------------------------");
-            return "";
-        }
+       
+       
+        
+        
+       
        
     }
 }
