@@ -113,12 +113,58 @@ namespace HappyHomeAsp.MVC.Models
                                 sdr.GetString(6), sdr.GetString(7), sdr.GetString(8), sdr.GetString(9),
                                 sdr.GetInt32(10), sdr.GetString(11), sdr.GetString(12));
                             products.Add(pro);
-
-
                         }
                     }
                     con.Close();
                     return products;
+                }
+            }
+        }
+        public ArrayList selectAllArticle()
+        {
+            ArrayList articles = new ArrayList();
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT * FROM article";
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            Article ar = new Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2), sdr.GetString(3));
+                            articles.Add(ar);
+                        }
+                    }
+                    con.Close();
+                    return articles;
+                }
+            }
+        }
+        public ArrayList selectAllImageArticle(int articleId)
+        {
+            ArrayList articles = new ArrayList();
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT * FROM img_article where article_id = " + articleId;
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            Img_Article imgAr = new Img_Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2));
+                            articles.Add(imgAr);
+                        }
+                    }
+                    con.Close();
+                    return articles;
                 }
             }
         }
