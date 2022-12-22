@@ -1,4 +1,4 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
 @{
     ViewBag.Title = "Index";
     ViewBag.Id = "product-sidebar-left";
@@ -206,328 +206,80 @@
                                 <div class="tab-content product-items">
                                     <div id="grid" class="related tab-pane fade">
                                         <div class="row">
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn Ăn Đá Cẩm Thạch</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">6.600.000  vnđ</span>
+                                           
+
+                                            @foreach (Product product in Model)
+                                            {
+                                                <div class="item text-center col-md-4">
+                                                    <div class="product-miniature js-product-miniature item-one first-item">
+                                                        <div class="thumbnail-container border">
+                                                            <a href="product-detail.html">
+                                                                <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
+                                                                <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
+                                                            </a>
+                                                            <div class="highlighted-informations">
+                                                                <div class="variant-links">
+                                                                    <a href="#" class="color beige" title="Beige"></a>
+                                                                    <a href="#" class="color orange" title="Orange"></a>
+                                                                    <a href="#" class="color green" title="Green"></a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                        <div class="product-description">
+                                                            <div class="product-groups">
+                                                                <div class="product-title">
+                                                                    <a href="product-detail.html">@product.Name</a>
+                                                                </div>
+                                                                <div class="rating">
+                                                                    <div class="star-content">
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-group-price">
+                                                                    <div class="product-price-and-shipping">
+                                                                        <span class="price">@product.Price_sell  vnđ</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-buttons d-flex justify-content-center">
+                                                                <form action="#" method="post" class="formAddToCart">
+                                                                    <input type="hidden" name="id_product" value="1">
+                                                                    <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </form>
+                                                                <a class="addToWishlist" href="#" data-rel="1" onclick="">
+                                                                    <i class="fa fa-heart" aria-hidden="true"></i>
                                                                 </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
+                                                                <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="~/Template/img/product/sofa-goc-nem-boc-vai-chan-go-sfl68023-01.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="~/Template/img/product/sofa-goc-nem-boc-vai-chan-go-sfl68023-02.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">fl68023</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">4.500.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="~/Template/img/product/ban-tron-1m-BA68089-01.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="~/Template/img/product/ban-tron-1m-BA68089-02.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn tròn 1m BA68089</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">2.150.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_6282-_a3ec1a923ee84de991636de2c681e93e_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_6280-_0b3649b8a2db4238a7aed8b2820129df_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Sofa Minimalist</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">16.900.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_6147-_dadc3da61ccc465897216e42b06224ac_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/46fa51b76550ad0ef441172_c82bfc20d8ed444a98fb50f7cd92f67b_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Sofa Velvet Burgunfy</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">13.000.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d600xh480_3.700.000-_bf317cb83d24472a9b885147e4e4ddd8_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d1000xh340_7.950.000-_ddbba6e444ca40b4b638ac8a00b34095_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn Trà Khảm Trai Le Soleil - Chân Trụ Composite</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">6.700.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            }
+
+
 
 
 
                                         </div>
+
+
                                     </div>
                                     <div id="list" class="related tab-pane fade in active show">
                                         <div class="row">
 
-                                            @*@foreach (var product in ViewBag.products)
-                                            {*@
+                                           
+                                         
+                                            
+                                            @foreach (Product product in Model)
+                                            {
                                                 <div class="item col-md-12">
                                                     <div class="product-miniature item-one first-item">
                                                         <div class="row">
@@ -543,10 +295,18 @@
                                                                 <div class="product-description">
                                                                     <div class="product-groups">
                                                                         <div class="product-title">
-                                                                            <a href="product-detail.html">Bàn Ăn Đá Cẩm Thạch</a>
+                                                                            <a href="product-detail.html">@product.Name</a>
                                                                             <span class="info-stock">
                                                                                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                                Còn hàng
+                                                                                @if(product.Status == 1){
+
+
+                                                                                <p>Còn hàng</p>
+                                                                                                    }
+                                                                                else { <p>Hết hàng</p>}
+
+
+
                                                                             </span>
                                                                         </div>
                                                                         <div class="rating">
@@ -560,13 +320,11 @@
                                                                         </div>
                                                                         <div class="product-group-price">
                                                                             <div class="product-price-and-shipping">
-                                                                                <span class="price">6.600.000  vnđ</span>
+                                                                                <span class="price">@product.Price_sell  vnđ</span>
                                                                             </div>
                                                                         </div>
                                                                         <div class="discription">
-                                                                            Bàn ăn đá Cẩm Thạch chất lượng cao là nơi gia đình sum họp mỗi bữa ăn.
-                                                                            Thường xuyên là lựa chọn của các khách hàng của Fravia trong thời gian qua,
-                                                                            bộ bàn còn được phối với các loại ghế ăn khác nhau sử dụng các chất liệu hiện đại như da, khung sắt... tạo nên một không gian hiện đại.
+                                                                            @product.Product_insurance
                                                                         </div>
                                                                     </div>
                                                                     <div class="product-buttons d-flex">
@@ -587,7 +345,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            @*  *@}
+                                            }
                                         </div>
                                     </div>
                                 </div>

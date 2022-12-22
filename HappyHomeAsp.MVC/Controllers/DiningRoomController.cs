@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Collections;
 using System.Web.Mvc;
+using System.Configuration;
+using MySql.Data.MySqlClient;
 
 namespace HappyHomeAsp.MVC.Controllers
 {
@@ -15,12 +17,9 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: DiningRoom
         public ActionResult Index()
         {
-            ManageData manageData = new ManageData();
-            
-            ArrayList products = manageData.selectAllProduct();
-
-            ViewBag.listProduct = products;
-            ViewBag.total = products.Count;
+            ManageData manage = new ManageData();
+            ArrayList products = new ArrayList();
+            products = manage.selectAllProduct2();
 
             return View(products);
         }

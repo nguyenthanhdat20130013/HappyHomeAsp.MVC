@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Math;
 using System;
 using System.Collections;
 using System.Data.Common;
