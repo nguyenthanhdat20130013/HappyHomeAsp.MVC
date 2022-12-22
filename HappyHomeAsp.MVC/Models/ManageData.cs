@@ -26,7 +26,7 @@ namespace HappyHomeAsp.MVC.Models
 
             ArrayList listProduct = new ArrayList();
 
-            string sql = "select * from product";
+            string sql = "select * from product where product_type = "+"ghe";
 
             MySqlCommand command = new MySqlCommand();
             MySqlConnection connect = KetNoi.GetDBConnection();
@@ -120,6 +120,34 @@ namespace HappyHomeAsp.MVC.Models
                     con.Close();
                     return products;
                 }
+            }
+        }
+        public String getTypeofP(int id)
+        {
+            string result = "";
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT type_name FROM product p JOIN product_type tp ON p.product_type = tp.type_id WHERE p.product_id = " + "@id";
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            result = sdr.GetString(0);
+
+
+                        }
+                    }
+                    con.Close();
+
+                }
+
+
+                return result;
             }
         }
     }
