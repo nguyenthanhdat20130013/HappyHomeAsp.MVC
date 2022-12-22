@@ -121,16 +121,21 @@ namespace HappyHomeAsp.MVC.Models
             }
         }
 
-        public ArrayList selectAllArticle()
+     public ArrayList selectAllArticle()
         {
             ArrayList articles = new ArrayList();
             string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             using (MySqlConnection con = new MySqlConnection(constr))
             {
                 string query = "SELECT * FROM article";
-
-               
-
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
                             Article ar = new Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2), sdr.GetString(3));
                             articles.Add(ar);
                         }
@@ -162,7 +167,6 @@ namespace HappyHomeAsp.MVC.Models
                     con.Close();
                     return articles;
                 }
-
             }
         }
     }
