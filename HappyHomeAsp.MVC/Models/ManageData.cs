@@ -113,8 +113,6 @@ namespace HappyHomeAsp.MVC.Models
                                 sdr.GetString(6), sdr.GetString(7), sdr.GetString(8), sdr.GetString(9),
                                 sdr.GetInt32(10), sdr.GetString(11), sdr.GetString(12));
                             products.Add(pro);
-
-
                         }
                     }
                     con.Close();
@@ -122,13 +120,33 @@ namespace HappyHomeAsp.MVC.Models
                 }
             }
         }
-        public String getTypeofP(int id)
+
+        public ArrayList selectAllArticle()
         {
-            string result = "";
+            ArrayList articles = new ArrayList();
             string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             using (MySqlConnection con = new MySqlConnection(constr))
             {
-                string query = "SELECT type_name FROM product p JOIN product_type tp ON p.product_type = tp.type_id WHERE p.product_id = " + "@id";
+                string query = "SELECT * FROM article";
+
+               
+
+                            Article ar = new Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2), sdr.GetString(3));
+                            articles.Add(ar);
+                        }
+                    }
+                    con.Close();
+                    return articles;
+                }
+            }
+        }
+        public ArrayList selectAllImageArticle(int articleId)
+        {
+            ArrayList articles = new ArrayList();
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT * FROM img_article where article_id = " + articleId;
                 using (MySqlCommand cmd = new MySqlCommand(query))
                 {
                     cmd.Connection = con;
@@ -137,17 +155,14 @@ namespace HappyHomeAsp.MVC.Models
                     {
                         while (sdr.Read())
                         {
-                            result = sdr.GetString(0);
-
-
+                            Img_Article imgAr = new Img_Article(sdr.GetInt32(0), sdr.GetInt32(1), sdr.GetString(2));
+                            articles.Add(imgAr);
                         }
                     }
                     con.Close();
-
+                    return articles;
                 }
 
-
-                return result;
             }
         }
     }
