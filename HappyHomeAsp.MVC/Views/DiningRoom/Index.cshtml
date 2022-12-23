@@ -213,9 +213,9 @@
                                                 <div class="item text-center col-md-4">
                                                     <div class="product-miniature js-product-miniature item-one first-item">
                                                         <div class="thumbnail-container border">
-                                                            <a href="product-detail.html">
-                                                                <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
-                                                                <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
+                                                            <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">
+                                                                <img class="img-fluid image-cover" src="@product.getImageProduct(0)">
+                                                                <img class="img-fluid image-secondary" src="@product.getImageProduct(1)" alt="img">
                                                             </a>
                                                             <div class="highlighted-informations">
                                                                 <div class="variant-links">
@@ -228,7 +228,7 @@
                                                         <div class="product-description">
                                                             <div class="product-groups">
                                                                 <div class="product-title">
-                                                                    <a href="product-detail.html">@product.Name</a>
+                                                                    <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">@product.Name</a>
                                                                 </div>
                                                                 <div class="rating">
                                                                     <div class="star-content">
@@ -285,9 +285,9 @@
                                                         <div class="row">
                                                             <div class="col-md-4">
                                                                 <div class="thumbnail-container border">
-                                                                    <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
+                                                                    <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">
+                                                                        <img class="img-fluid image-cover" src="@product.getImageProduct(0)" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="@product.getImageProduct(1)" alt="img">
                                                                     </a>
                                                                 </div>
                                                             </div>
@@ -295,7 +295,7 @@
                                                                 <div class="product-description">
                                                                     <div class="product-groups">
                                                                         <div class="product-title">
-                                                                            <a href="product-detail.html">@product.Name</a>
+                                                                            <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">@product.Name</a>
                                                                             <span class="info-stock">
                                                                                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
                                                                                 @if(product.Status == 1){
@@ -304,9 +304,6 @@
                                                                                 <p>Còn hàng</p>
                                                                                                     }
                                                                                 else { <p>Hết hàng</p>}
-
-
-
                                                                             </span>
                                                                         </div>
                                                                         <div class="rating">

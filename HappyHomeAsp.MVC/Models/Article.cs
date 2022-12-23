@@ -33,7 +33,7 @@ namespace HappyHomeAsp.MVC.Models
         public string Title { get => title; set => title = value; }
         public string Content { get => content; set => content = value; }
 
-        public String select1ImageArticle()
+        public String selectFirstImageArticle()
         {
             ManageData manageData = new ManageData();
             ArrayList articles = manageData.selectAllImageArticle(article_id);
@@ -41,6 +41,21 @@ namespace HappyHomeAsp.MVC.Models
             {
                 Img_Article img_Article = (Img_Article)articles[0];
                 return img_Article.Url;
+            }
+            return "";
+        }
+
+        public String getImageArticle(int index)
+        {
+            ManageData manageData = new ManageData();
+            ArrayList articleImages = manageData.selectAllImageArticle(article_id);
+            if (articleImages.Count > 0)
+            {
+                if (articleImages.Count > index)
+                {
+                    Img_Article img = (Img_Article)articleImages[index];
+                    return img.Url;
+                }
             }
             return "";
         }
