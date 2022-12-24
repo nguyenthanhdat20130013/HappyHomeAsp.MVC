@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Web;
 using System.Web.Mvc;
 using HappyHomeAsp.MVC.Controllers;
@@ -24,8 +25,7 @@ namespace HappyHomeAsp.MVC.Areas.Admin.Controllers
             
             return View(product);
         }
-      
-        
+       
 
     }
 }

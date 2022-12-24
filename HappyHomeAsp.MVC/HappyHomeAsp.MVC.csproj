@@ -2645,6 +2645,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\KetNoi.cs" />
     <Compile Include="Models\ManageData.cs" />
+    <Compile Include="Models\ManageProduct.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2970,7 +2971,6 @@
     <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error404\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error500\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EditProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DataProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddInvoice\Index.cshtml" />
@@ -2984,6 +2984,7 @@
     <Content Include="Areas\Admin\Views\InfoWeb\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ViewProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Details\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -3030,6 +3031,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Themsp\" />
     <Folder Include="Context\" />
   </ItemGroup>
   <PropertyGroup>

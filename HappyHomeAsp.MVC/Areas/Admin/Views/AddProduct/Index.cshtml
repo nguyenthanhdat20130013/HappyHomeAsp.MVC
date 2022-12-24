@@ -1,9 +1,13 @@
-﻿
+﻿@model HappyHomeAsp.MVC.Models.Product
+    @{ 
+        var p = ViewBag.Product;
+    }
 @{
     ViewBag.Title = "Add Product";
 }
-
-
+@using (Html.BeginForm("Index","AddProduct",FormMethod.Post))
+{
+   
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -41,12 +45,12 @@
 
                                 <div style="display: flex" class="row">
                                     <div class="form-group col-md-6 ">
-                                        <label for="exampleInputEmail1">Id </label>
-                                        <input type="text" class="form-control" id="" placeholder="Id sản phẩm">
+                                        <label> Id <span class="text-danger">(*)</span> </label>
+                                        <input type="text" class="form-control" name="product_name" placeholder="Tên sản phầm" >
                                     </div>
                                     <div class="form-group col-md-6 ">
                                         <label for="exampleInputEmail1">Giá</label>
-                                        <input type="text" class="form-control" id="" placeholder="Giá của sản phẩm">
+                                        <input type="text" class="form-control" name="product_type" placeholder="loại sản phầm" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -155,7 +159,7 @@
                             </div>
                         </div>
                         <!--   <img src="~/Areas/Admin/Template/../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">
-                           <img src="~/Areas/Admin/Template/../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">  -->
+                   <img src="~/Areas/Admin/Template/../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">  -->
                         <br>
                         <div class="form-group" style="">
                             <label for="exampleInputFile">Tải ảnh lên</label>
@@ -174,7 +178,7 @@
                 </div>
             </div>
 
-
+            
             <div class="card-footer row" style="width: 100%;">
                 <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
             </div>
@@ -185,5 +189,5 @@
     </div><!-- /.container-fluid -->
 </section>
 
-
+}
 <!-- /.content -->

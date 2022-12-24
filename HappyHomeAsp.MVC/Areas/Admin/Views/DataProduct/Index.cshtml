@@ -35,7 +35,7 @@
                                 <option>Sản Phẩm hot</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary" style="float: right;"><a href="@Url.Action("Index","AddProduct","Index")" style="color: white">Thêm mới</a></button>
+                        <button class="btn btn-primary" style="float: right;" id="btnAdd"><a href="@Url.Action("Index","AddProduct","Index")" style="color: white">Thêm mới</a></button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -63,26 +63,26 @@
                                             @product.Name
                                         </td>
                                         <td>
-                                           @product.Product_type
+                                            @product.Product_type
                                         </td>
                                         <td>@product.Color</td>
                                         <td>@product.Brand</td>
                                         <td>@product.Price</td>
                                         <td>@product.Price_sell</td>
                                         <td>
-                                           
-                                            <button class="btn btn-info"><a href="@Url.Action("Index","Details",new {id = product.Product_id})"> Details</button>
+
+                                            <button class="btn btn-info"><a href="@Url.Action("Index","Details",new {id = product.Product_id})" style="color: white"> Xem sản phẩm</button>
                                             <button class="btn btn-success">Sửa </button>
                                             <button class="btn btn-danger">Xoá </button>
-                                            
+
                                         </td>
                                     </tr>
-                                   
+
 
 
                                 }
 
-                    
+
                             </tbody>
 
                         </table>
