@@ -1,4 +1,4 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
 @{
     ViewBag.Title = "Chi tiết sản phẩm";
     Layout = null;
@@ -45,7 +45,7 @@
 
     <style>
 
-        .model-cart-add{
+        .model-cart-add {
             display: none;
             width: 100%;
             height: 100%;
@@ -59,7 +59,7 @@
         }
 
 
-        .model-add-into-cart{
+        .model-add-into-cart {
             position: fixed;
             box-shadow: 0px 0px 19px 3px rgba(0, 0, 0, 0.5);
             border: 2px #817e7e;
@@ -76,7 +76,6 @@
             animation-name: animatetop;
             animation-duration: 0.4s;
         }
-
     </style>
 </head>
 
@@ -835,17 +834,24 @@
                                     </div>
                                     <div class="col-sm-8 col-lg-9 col-md-9">
                                         <div class="main-product-detail">
-                                            <h2>Bàn sofa mặt đá hiện đại, sang trọng TT68185</h2>
+                                            <h2>@Model.Name</h2>
                                             <div class="product-single row">
                                                 <div class="product-detail col-xs-12 col-md-5 col-sm-5">
                                                     <div class="page-content" id="content">
                                                         <div class="images-container">
                                                             <div class="js-qv-mask mask tab-content border">
+
                                                                 <div id="item1" class="tab-pane fade active in show">
-                                                                    <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-01.png" alt="img">
+                                                                    <img src="@Model.getImageProduct(0)" alt="img">
                                                                 </div>
                                                                 <div id="item2" class="tab-pane fade">
-                                                                    <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
+                                                                    <img src="@Model.getImageProduct(1)" alt="img">
+                                                                </div>
+                                                                <div id="item3" class="tab-pane fade">
+                                                                    <img src="@Model.getImageProduct(2)" alt="img">
+                                                                </div>
+                                                                <div id="item4" class="tab-pane fade">
+                                                                    <img src="@Model.getImageProduct(3)" alt="img">
                                                                 </div>
 
                                                                 <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
@@ -855,25 +861,25 @@
                                                             <ul class="product-tab nav nav-tabs d-flex">
                                                                 <li class="active col">
                                                                     <a href="#item1" data-toggle="tab" aria-expanded="true" class="active show">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-01.png" alt="img">
+                                                                        <img src="@Model.getImageProduct(0)" alt="img">
                                                                     </a>
                                                                 </li>
                                                                 <li class="col">
                                                                     <a href="#item2" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
+                                                                        <img src="@Model.getImageProduct(1)" alt="img">
                                                                     </a>
                                                                 </li>
                                                                 <li class="col">
                                                                     <a href="#item3" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
+                                                                        <img src="@Model.getImageProduct(2)" alt="img">
                                                                     </a>
                                                                 </li>
                                                                 <li class="col">
                                                                     <a href="#item4" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
+                                                                        <img src="@Model.getImageProduct(3)" alt="img">
                                                                     </a>
                                                                 </li>
-
+                               
                                                             </ul>
                                                             <div class="modal fade" id="product-modal" role="dialog">
                                                                 <div class="modal-dialog">
@@ -935,11 +941,23 @@
                                                 <div class="product-info col-xs-12 col-md-7 col-sm-7">
                                                     <div class="detail-description">
                                                         <div class="price-del">
-                                                            <span class="price">3.292.000 vnđ</span>
+                                                            <span class="price">@Model.Price_sell vnđ</span>
                                                             <span class="float-right">
                                                                 <span class="availb">khả dụng: </span>
+
                                                                 <span class="check">
-                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>CÒN HÀNG
+
+                                                                    @if (Model.Status == 1)
+                                                                    {
+                                                                        <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                                        <p>CÒN HÀNG</p>
+                                                                    }
+                                                                    else
+                                                                    { 
+                                                                        <i class="fa fa-times" style="color:red" aria-hidden="true"></i>
+                                                                        <p style="color:red">HẾT HÀNG</p>
+                                                                    }
+
                                                                 </span>
                                                             </span>
                                                         </div>
@@ -1309,7 +1327,7 @@
                                                         </div>
                                                         <!--
 
-                                                        -->
+                -->
 
 
                                                     </div>

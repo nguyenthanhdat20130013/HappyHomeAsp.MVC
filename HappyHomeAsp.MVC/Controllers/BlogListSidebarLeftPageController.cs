@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HappyHomeAsp.MVC.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,17 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: BlogListSidebarLeftPage
         public ActionResult Index()
         {
-            return View();
+            //
+            ManageData manage = new ManageData();
+            ArrayList articles = new ArrayList();
+            articles = manage.selectAllArticle();
+            ArrayList articleImgs = new ArrayList();
+
+            //listNameType cua Layout
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
+
+            return View(articles);
         }
     }
 }

@@ -11,14 +11,14 @@ namespace HappyHomeAsp.MVC.Models
     {
         private int img_id;
 
-        private string product_id;
+        private int product_id;
 
         private string img_url;
 
         public Image()
         {
         }
-        public Image(int img_id, string product_id, string img_url)
+        public Image(int img_id, int product_id, string img_url)
         {
             this.img_id = img_id;
             this.product_id = product_id;
@@ -26,7 +26,7 @@ namespace HappyHomeAsp.MVC.Models
         }
 
         public int Img_id { get => img_id; set => img_id = value; }
-        public string Product_id { get => product_id; set => product_id = value; }
+        public int Product_id { get => product_id; set => product_id = value; }
         public string Img_url { get => img_url; set => img_url = value; }
 
         public override string ToString()

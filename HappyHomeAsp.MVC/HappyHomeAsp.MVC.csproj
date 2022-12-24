@@ -2641,6 +2641,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Img_Article.cs" />
+    <Compile Include="Models\Article_Category.cs" />
+    <Compile Include="Models\Article.cs" />
     <Compile Include="Models\CauHinh.cs" />
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\KetNoi.cs" />
@@ -3030,6 +3033,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Context\" />
   </ItemGroup>
   <PropertyGroup>
