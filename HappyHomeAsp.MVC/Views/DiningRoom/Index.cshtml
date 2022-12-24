@@ -21,7 +21,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span>Phòng ăn</span>
+                                        <span>@ViewBag.productTypeName</span>
                                     </a>
                                 </li>
                             </ol>
@@ -33,87 +33,6 @@
                     <div class="content">
                         <div class="row">
                             <div class="sidebar-3 sidebar-collection col-lg-3 col-md-4 col-sm-4">
-
-                                <!-- category menu -->
-                                <div class="sidebar-block">
-                                    <div class="title-block">Sản phẩm</div>
-                                    <div class="block-content">
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#table" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">BÀN </a>
-                                            <div class="subCategory collapse" id="table" aria-expanded="false" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">BÀN SOFA</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">Bàn SONSOLE</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#shelf" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">TỦ - KỆ</a>
-                                            <div class="subCategory collapse" id="shelf" aria-expanded="false" role="status">
-
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">TỦ TRANG TRÍ</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">TỦ SÁCH</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">KỆ TIVI</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">KỆ GIÀY</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#chair" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">GHẾ </a>
-                                            <div class="subCategory collapse" id="chair" aria-expanded="true" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">GHẾ THƯ GIÃN</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">GHẾ SOFA</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">PHỤ KIỆN</a>
-                                            <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">THẢM</a>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">RÈM VẢI/CUỐN</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-
                                 <!-- product tag -->
                                 <div class="sidebar-block product-tags">
                                     <div class="title-block">
@@ -169,7 +88,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 col-lg-9 col-md-8 product-container">
-                                <h1>Phòng ăn</h1>
+                                <h1>@ViewBag.productTypeName</h1>
                                 <div class="js-product-list-top firt nav-top">
                                     <div class="d-flex justify-content-around row">
                                         <div class="col col-xs-12 ">
@@ -206,7 +125,7 @@
                                 <div class="tab-content product-items">
                                     <div id="grid" class="related tab-pane fade">
                                         <div class="row">
-                                           
+
 
                                             @foreach (Product product in Model)
                                             {
@@ -275,9 +194,9 @@
                                     <div id="list" class="related tab-pane fade in active show">
                                         <div class="row">
 
-                                           
-                                         
-                                            
+
+
+
                                             @foreach (Product product in Model)
                                             {
                                                 <div class="item col-md-12">
@@ -298,12 +217,14 @@
                                                                             <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">@product.Name</a>
                                                                             <span class="info-stock">
                                                                                 <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                                @if(product.Status == 1){
+                                                                                @if (product.Status == 1)
+                                                                                {
 
 
-                                                                                <p>Còn hàng</p>
-                                                                                                    }
-                                                                                else { <p>Hết hàng</p>}
+                                                                                    <p>Còn hàng</p>
+                                                                                }
+                                                                                else
+                                                                                { <p>Hết hàng</p>}
                                                                             </span>
                                                                         </div>
                                                                         <div class="rating">

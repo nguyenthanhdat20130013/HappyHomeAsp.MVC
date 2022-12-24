@@ -15,12 +15,22 @@ namespace HappyHomeAsp.MVC.Controllers
     public class DiningRoomController : Controller
     {
         // GET: DiningRoom
-        public ActionResult Index()
+        public ActionResult Index(int productTypeId)
         {
             ManageData manage = new ManageData();
             ArrayList products = new ArrayList();
-            products = manage.selectAllProduct2();
+            if (productTypeId >= 0)
+            {
+                products = manage.selectAllProductFromType(productTypeId);
+            }
+            else
+            {
+                products = manage.selectAllProduct2();
+            }
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
 
+            ViewBag.productTypeName = manage.getNameProductType(productTypeId);
             return View(products);
         }
 

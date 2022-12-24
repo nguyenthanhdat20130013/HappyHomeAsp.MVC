@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using HappyHomeAsp.MVC.Models
+@using System.Collections.Generic;
+
+<!DOCTYPE html>
 <html lang="zxx">
 <!-- index06:45-->
 <head>
@@ -36,8 +39,6 @@
 <body id="@ViewBag.Id" class="@ViewBag.Class">
     <header>
         <!-- header left mobie -->
-      
-
         <!-- header desktop -->
         <div class="header-top d-xs-none ">
             <div class="container">
@@ -56,104 +57,15 @@
                         <div class="menu navbar collapse navbar-collapse">
                             <ul class="menu-top navbar-nav">
                                 <li>
-                                    <a href="#" class="parent">Sản Phẩm</a>
+                                    <a href="@Url.Action("Index","DiningRoom",new {productTypeId = -1})" class="parent">Sản Phẩm</a>
                                     <div class="dropdown-menu">
                                         <ul>
-                                            <li class="item living-room-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 2">Phòng Khách</a>
-                                                <div class="dropdown-menu living-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item dinner-room-drop ">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 3">Phòng Ăn</a>
-                                                <div class="dropdown-menu dinner-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item bedroom-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 3">Phòng Ngủ</a>
-                                                <div class="dropdown-menu bedroom-menu">
-                                                    <ul class="drop-menu bedroom-drop">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item work-room-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 4">Phòng Làm Việc</a>
-                                                <div class="dropdown-menu work-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item decorations-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 5">Đồ Trang Trí</a>
-                                                <div class="dropdown-menu decorations">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
+                                                @foreach (ProductType productType in ViewBag.listType)
+                                                {
+                                                    <li class="item living-room-drop">
+                                                        <a href="@Url.Action("Index", "DiningRoom", new { productTypeId = productType.type_id })" title="Home Page 2">@productType.type</a>
+                                                    </li>
+                                                }
                                         </ul>
                                     </div>
                                 </li>

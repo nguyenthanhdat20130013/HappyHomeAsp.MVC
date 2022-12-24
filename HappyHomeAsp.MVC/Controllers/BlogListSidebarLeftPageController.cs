@@ -13,10 +13,15 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: BlogListSidebarLeftPage
         public ActionResult Index()
         {
+            //
             ManageData manage = new ManageData();
             ArrayList articles = new ArrayList();
             articles = manage.selectAllArticle();
             ArrayList articleImgs = new ArrayList();
+
+            //listNameType cua Layout
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
 
             return View(articles);
         }

@@ -3033,6 +3033,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Context\" />
   </ItemGroup>
   <PropertyGroup>
