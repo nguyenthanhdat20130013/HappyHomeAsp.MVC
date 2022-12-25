@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace HappyHomeAsp.MVC.Areas.Admin.Controllers
+namespace HappyHomeAsp.MVC.Controllers
 {
     public class LoginController : Controller
     {
