@@ -169,6 +169,34 @@ namespace HappyHomeAsp.MVC.Models
             }
         }
 
+        public List<Product> selectNProductFromType(int typeId, int n)
+        {
+            List<Product> products = new List<Product>();
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT * FROM product WHERE product_type = " + typeId + " LIMIT "+ n;
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            Product pro = new Product(sdr.GetInt32(0), sdr.GetString(1),
+                                sdr.GetInt32(2), sdr.GetInt32(3), sdr.GetString(4), sdr.GetString(5),
+                                sdr.GetString(6), sdr.GetString(7), sdr.GetString(8), sdr.GetString(9),
+                                sdr.GetInt32(10), sdr.GetString(11), sdr.GetString(12));
+                            products.Add(pro);
+                        }
+                    }
+                    con.Close();
+                    return products;
+                }
+            }
+        }
+
         public Product getProductFromId(int id)
         {
             ArrayList products = new ArrayList();
@@ -193,6 +221,34 @@ namespace HappyHomeAsp.MVC.Models
                     }
                     con.Close();
                     return null;
+                }
+            }
+        }
+        public List<Product> GetProductBestSell(int n)
+        {
+            List<Product> products = new List<Product>();
+            string constr = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+            using (MySqlConnection con = new MySqlConnection(constr))
+            {
+                string query = "SELECT product.*, SUM(order_detail.amount) AS soLgDaBan FROM product" +
+                    " INNER JOIN order_detail ON order_detail.id_product = product.product_id GROUP BY order_detail.id_product ORDER BY soLgDaBan DESC LIMIT " + n;
+                using (MySqlCommand cmd = new MySqlCommand(query))
+                {
+                    cmd.Connection = con;
+                    con.Open();
+                    using (MySqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        while (sdr.Read())
+                        {
+                            Product pro = new Product(sdr.GetInt32(0), sdr.GetString(1),
+                                sdr.GetInt32(2), sdr.GetInt32(3), sdr.GetString(4), sdr.GetString(5),
+                                sdr.GetString(6), sdr.GetString(7), sdr.GetString(8), sdr.GetString(9),
+                                sdr.GetInt32(10), sdr.GetString(11), sdr.GetString(12));
+                            products.Add(pro);
+                        }
+                    }
+                    con.Close();
+                    return products;
                 }
             }
         }

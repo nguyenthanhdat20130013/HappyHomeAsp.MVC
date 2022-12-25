@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyHomeAsp.MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,10 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: ProductCartPage
         public ActionResult Index()
         {
+            ManageData manage = new ManageData();
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
+
             return View();
         }
     }

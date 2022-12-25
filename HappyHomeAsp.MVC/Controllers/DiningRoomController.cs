@@ -30,7 +30,15 @@ namespace HappyHomeAsp.MVC.Controllers
             List<ProductType> listNameType = manage.getNameProductTypes();
             ViewBag.listType = listNameType;
 
-            ViewBag.productTypeName = manage.getNameProductType(productTypeId);
+            if (productTypeId >= 0)
+            {
+                ViewBag.productTypeName = manage.getNameProductType(productTypeId);
+            }
+            else
+            {
+                ViewBag.productTypeName = "Tất cả sản phẩm";
+            }
+
             return View(products);
         }
 
