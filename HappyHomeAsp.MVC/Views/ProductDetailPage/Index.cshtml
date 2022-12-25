@@ -926,13 +926,14 @@
                                                                     <span class="red"></span>
                                                                 </div>
                                                             </div>*@
+
                                                         <div class="has-border cart-area">
                                                             <div class="product-quantity">
-                                                                <div class="qty">
+                                                                <div class="qty">href="@Url.Action("Index", "ContactPage", "Index")
                                                                     <div class="input-group">
                                                                         <div class="quantity">
                                                                             <span class="control-label">QTY : </span>
-                                                                            <input type="text" name="qty" id="quantity_wanted" value="@*@Model.Quantity*@" class="input-group form-control">
+                                                                            <input type="text" name="qty" id="quantity_wanted" value="1" class="input-group form-control">
 
                                                                             <span class="input-group-btn-vertical">
                                                                                 <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
@@ -944,14 +945,17 @@
                                                                             </span>
                                                                         </div>
                                                                         <span class="add">
-                                                                            <button class="btn btn-primary add-to-cart add-item" data-button-action="add-to-cart" type="submit">
+
+                                                                            <button class="btn btn-primary add-to-cart add-item" data-button-action="add-to-cart" 
+                                                                                    href="@Url.Action("AddToCart", "ProductDetailPageController", new {productId = @Model.Product_id})  type="submit">
                                                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                                 <span>Thêm vào giỏ hàng</span>
-                                                                            </button>
+                                                                            </button>   
                                                                             <a class="addToWishlist" href="#">
                                                                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                                                             </a>
                                                                         </span>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -959,6 +963,7 @@
                                                             <p class="product-minimal-quantity">
                                                             </p>
                                                         </div>
+
                                                         <div class="d-flex2 has-border">
                                                             <div class="btn-group">
                                                                 <a href="#">
