@@ -2182,6 +2182,7 @@
     <Content Include="Content\Images\img_not_exists.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Controller\cartController.js" />
     <Content Include="Template\css\reponsive.css" />
     <Content Include="Template\css\style.css" />
     <Content Include="Template\img\blog\10.jpg" />
@@ -2647,6 +2648,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Img_Article.cs" />
     <Compile Include="Models\Article_Category.cs" />
     <Compile Include="Models\Article.cs" />

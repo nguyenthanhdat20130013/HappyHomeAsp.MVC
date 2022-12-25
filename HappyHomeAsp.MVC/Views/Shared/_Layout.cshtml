@@ -194,31 +194,7 @@
                                     <div class="cart-content">
                                         <table>
                                             <tbody>
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="~/Template/img/product/5.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail.html">Ghế thư giãn Ball Chair màu đỏ vỏ trắng</a>
-                                                        </div>
-                                                        <div>
-                                                            x2
-                                                            <span class="product-price">15.375.000 vnđ</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="total">
-                                                    <td colspan="2">Tổng :</td>
-                                                    <td>15.375.000 vnđ</td>
-                                                </tr>
+                                                
 
                                                 <tr>
                                                     <td colspan="3" class="d-flex justify-content-center">
@@ -438,7 +414,8 @@
 
     <!-- Template JS -->
     <script src="~/Template/js/theme.js"></script>
-
+  
+    @RenderSection("scripts", required: false)
 
 </body>
 
