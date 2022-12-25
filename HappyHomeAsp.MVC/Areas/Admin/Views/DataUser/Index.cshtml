@@ -1,8 +1,7 @@
-﻿
+@model List<HappyHomeAso.MVC.Models.User>
 @{
     ViewBag.Title = "Data User";
 }
-
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -28,7 +27,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header" style="margin-top: 10px;margin-bottom: -10px">
-                        <div class="form-group" style="width: 50%;float: left">
+                        @*<div class="form-group" style="width: 50%;float: left">
                             <select class="form-control select2bs4">
                                 <option selected="selected" disabled="disabled">Tìm kiếm theo</option>
                                 <option>Sản Phẩm mới</option>
@@ -37,8 +36,8 @@
                                 <option>Texas</option>
                                 <option>Washington</option>
                             </select>
-                        </div>
-                        <button class="btn btn-primary" style="float: right;"><a href="" style="color: white">Thêm mới</a></button>
+                        </div>*@
+                        <a class="btn btn-primary" href="@Url.Action("AddUser", "DataUser")" style="float: right;">Thêm mới</a>
                     </div>
 
                     <!-- /.card-header -->
@@ -55,69 +54,27 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Khoá</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Mở</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Khoá</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Khoá</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Mở</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Gecko</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Khoá</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tasman</td>
-                                    <td>NguyenVanA@gmail.com</td>
-                                    <td>Khoá</td>
-                                    <td>
-                                        <button class="btn btn-danger">Chặn </button>
-                                        <button class="btn btn-success">Mở hoạt động </button>
-                                    </td>
-                                </tr>
+                                @foreach (var user in Model)
+                                {
+                                    <tr>
+                                        <td>@user.UserName</td>
+                                        <td>@user.Role</td>
+                                         @if (@user.Status == 0)
+                                        {
+                                            <td>Khoá</td>
+                                        }
+                                        else
+                                        {
+                                            <td>Mở</td>
+
+                                        }
+                                        <td>
+                                            <a class="btn btn-danger" href="@Url.Action("DeleteUser", "DataUser",new {@user.Id})">Xoá</a>
+                                            <a class="btn btn-success" href="@Url.Action("EditUser", "DataUser",new {@user.Id})" >Sửa</a>
+                                        </td>
+                                    </tr>
+                                }
+
                             </tbody>
                             <tfoot>
                                 <tr>
