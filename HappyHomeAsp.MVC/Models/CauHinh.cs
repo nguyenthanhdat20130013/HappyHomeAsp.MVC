@@ -20,7 +20,12 @@ namespace HappyHomeAsp.MVC.Models
         {
 
             /* Chuỗi kết nối trong thư viện MySql.Data.dll
+
+
             String connString = "Server=" + host + ";Database=" + database
+
+
+           
               + ";port=" + port + ";User Id=" + username + ";password=" + password;*/
 
             string connString = "Server=" + host + ";Database=" + database + ";User=" + username

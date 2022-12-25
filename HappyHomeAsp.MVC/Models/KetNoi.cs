@@ -24,7 +24,8 @@ namespace HappyHomeAsp.MVC.Models
 
             int port = 3306;
 
-            string database = "shophappyhome"; 
+            string database = "shophappyhome"; ;
+
 
             string username = "root";
 

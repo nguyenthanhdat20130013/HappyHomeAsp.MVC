@@ -1,4 +1,4 @@
-﻿using HappyHomeAsp.MVC.Models;
+using HappyHomeAsp.MVC.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
@@ -33,6 +33,7 @@ namespace HappyHomeAsp.MVC.Models
 
         private ArrayList listImg;
 
+
         public Product(int product_id, string name, int price, int price_sell, string info, string code, string brand, string color, string size, string attribute, int status, string product_type, string product_insurance)
         {
             this.product_id = product_id;
@@ -62,6 +63,7 @@ namespace HappyHomeAsp.MVC.Models
       
         }
 
+
         public int Product_id { get => product_id; set => product_id = value; }
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
@@ -75,9 +77,36 @@ namespace HappyHomeAsp.MVC.Models
         public int Status { get => status; set => status = value; }
         public string Product_type { get => product_type; set => product_type = value; }
         public string Product_insurance { get => product_insurance; set => product_insurance = value; }
+
+
+        public String getImageProduct(int index)
+        {
+            ManageData manageData = new ManageData();
+            ArrayList productImages = manageData.selectAllImageProduct(product_id);
+            if (productImages.Count > 0)
+            {
+                if (productImages.Count > index)
+                {
+                    Image img = (Image)productImages[index];
+                    return img.Img_url;
+                }
+            }
+            return "";
+        }
+
+
+
+
+
+
+
         public ArrayList ListImg { get => listImg; set => listImg = value; }
 
 
 
+
     }
+
 }
+
+

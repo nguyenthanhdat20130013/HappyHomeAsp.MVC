@@ -1,0 +1,180 @@
+﻿@model HappyHomeAsp.MVC.Models.Product
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Chi tiết sản phẩm</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Chi tiết sản phẩm</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin chính</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block; padding:0px ;">
+                        <form>
+                            <div class="card-body">
+
+                                <div style="display: flex" class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Id </label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Product_id" disabled="disabled">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Mã sản phẩm</label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Code" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="@Model.Name" disabled="disabled">
+                                </div>
+                                <div style="display: flex" class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Giá gốc </label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Price₫" disabled="disabled">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Giá khuyến mãi</label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Price_sell₫" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Giới thiệu sản phẩm</label>
+                                    <input type="email" class="form-control" id="" placeholder="Loại của sản phẩm: @Model.Info">
+                                    <label for="exampleInputEmail1">Nhãn hàng</label>
+                                    <input type="email" class="form-control" id="" placeholder="Loại của sản phẩm: @Model.Brand">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Nội dung tóm tắt</label>
+                                    <textarea rows="3" class="form-control" placeholder= "Nội dung tóm tắt không được quá 100 kí tự"> </textarea>
+                                </div>
+
+
+                            </div>
+                            <!-- /.card-body -->
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <div class="card card-primary ">
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Hình ảnh đại diện</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                        <div style="position: relative">
+                            <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 60%;height:175px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                            <button id="delete-product-btn" class="btn btn-default btn-flat" style="position: absolute;left: 46.5%;top:78.5%;">xoá</button>
+                        </div>
+                        <br>
+                        <div class="form-group" style="">
+                            <label for="exampleInputFile">Tải ảnh lên</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="">
+                                    <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Tải lên</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Thư viện ảnh</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="  display: block;">
+                        <div style="display: grid;grid-template-columns: auto auto">
+                            <div style="position: relative;">
+                                <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                            </div>
+                            <div style="position: relative;">
+                                <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                            </div>
+                            <div style="position: relative;">
+                                <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                            </div>
+                            <div style="position: relative;">
+                                <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 181px;height:120px;border: 1px solid rgba(0,0,0,.125);position: relative">
+                                <button class="btn btn-default btn-flat" style="position: absolute;left: 73.5%;top:69%;">xoá</button>
+                            </div>
+                        </div>
+                        <!--   <img src="~/Areas/Admin/Template/../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">
+                           <img src="~/Areas/Admin/Template/../dist/img/1.jpg" alt="" style="width: 49%;height:120px;border: 1px solid rgba(0,0,0,.125);">  -->
+                        <br>
+                        <div class="form-group" style="">
+                            <label for="exampleInputFile">Tải ảnh lên</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile">
+                                    <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Tải lên</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+
+
+            <div class="card-footer row" style="width: 100%;">
+                <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+            </div>
+
+
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<!-- /.content -->
