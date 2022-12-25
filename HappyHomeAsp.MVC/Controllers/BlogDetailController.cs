@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HappyHomeAsp.MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace HappyHomeAsp.MVC.Controllers
     public class BlogDetailController : Controller
     {
         // GET: BlogDetail
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
-            return View();
+            ManageData manage = new ManageData();
+            Article ar = manage.getArticleFromId(id);
+            return View(ar);
         }
     }
 }

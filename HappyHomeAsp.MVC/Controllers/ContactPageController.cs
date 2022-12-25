@@ -11,6 +11,7 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: ContactPage
         public ActionResult Index()
         {
+
             return View();
         }
     }

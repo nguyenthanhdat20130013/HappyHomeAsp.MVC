@@ -1,4 +1,4 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
 @{
     ViewBag.Title = "Chi tiết bài viết";
     ViewBag.Id = "blog-detail";
@@ -157,7 +157,7 @@
                                     <div class="post-item-content">
                                         <div>
                                             <div class="late-item first-child">
-                                                <a href="blog-detail.html">
+                                                <a href="@Url.Action("Index","BlogDetail","Index")">
                                                     <p class="Rcontent-title">Mẹo phối giữa màu sơn tường và đồ nội thất cho không gian sống thêm hoàn hảo</p>
                                                 </a>
                                                 <span>
@@ -170,13 +170,13 @@
                                                     Phối màu nội thất sao cho đẹp, sang trọng, hiện đại là cả nghệ thuật của nhà thiết kế nội thất. Nội thất có đẹp cũng phải phối màu ăn ý với nhau mới có thể tạo ra một không gian đẹp...
                                                 </p>
                                                 <p class="remove">
-                                                    <a href="blog-detail.html">XEM THÊM</a>
+                                                    <a href="@Url.Action("Index","Index","Index")">XEM THÊM</a>
                                                 </p>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="late-item">
-                                                <a href="blog-detail.html">
+                                                <a href="@Url.Action("Index","Index","Index")">
                                                     <p class="content-title">300+ Mẫu tủ bếp gỗ tự nhiên bền, đẹp, hiện đại giá tốt nhất 2022</p>
                                                 </a>
                                                 <span>
@@ -189,7 +189,7 @@
                                                     Tủ bếp là thiết bị nội thất không thể thiếu trong mọi căn bếp của gia đình Việt. Đặc biệt, tủ bếp gỗ tự nhiên với giá trị thẩm mỹ cao và độ bền chắc lâu năm đang rất được lòng người sử dụng. Hãy cùng nội thất HAPPYHOME tham khảo...
                                                 </p>
                                                 <p class="remove">
-                                                    <a href="blog-detail.html">XEM THÊM</a>
+                                                    <a href="@Url.Action("Index","Index","Index")">XEM THÊM</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -233,9 +233,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
-                                <h3>Những lưu ý khi chọn màu cho nội thất</h3>
+                                <h3>@Model.Title</h3>
                                 <div class="hover-after">
-                                    <img src="~/Template/img/blog/10.jpg" alt="img" class="img-fluid">
+                                    <img src="@Model.getImageArticle(0)" alt="img" class="img-fluid">
                                 </div>
                                 <div class="late-item">
                                     <p>
@@ -271,12 +271,12 @@
                                             <div class="row">
                                                 <div class="col-lg-6 col-md-6 p-left">
                                                     <div class="effect">
-                                                        <img class="img-fluid" src="~/Template/img/blog/3.jpg" alt="banner-1" title="banner-1">
+                                                        <img class="img-fluid" src="@Model.getImageArticle(1)" alt="banner-1" title="banner-1">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-6 col-md-6 p-right">
                                                     <div class="effect">
-                                                        <img class="img-fluid" src="~/Template/img/blog/2.jpg" alt="banner-2" title="banner-2">
+                                                        <img class="img-fluid" src="@Model.getImageArticle(2)" alt="banner-2" title="banner-2">
                                                     </div>
                                                 </div>
                                             </div>
@@ -349,13 +349,13 @@
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <div class="hover-after">
-                                                    <a href="blog-detail.html">
+                                                    <a href="@Url.Action("Index","Index","Index")">
                                                         <img src="~/Template/img/blog/11.jpg" alt="img" class="img-fluid">
                                                     </a>
                                                 </div>
                                                 <div class="late-item">
                                                     <p class="content-title">
-                                                        <a href="blog-detail.html">5 ý tưởng lắp đầy những khoảng trống cho căn phòng của bạn</a>
+                                                        <a href="@Url.Action("Index","Index","Index")">5 ý tưởng lắp đầy những khoảng trống cho căn phòng của bạn</a>
                                                     </p>
                                                     <p class="description">
                                                         Đã bao giờ bạn cảm thấy không gian phòng của bạn vẫn còn trống trải và muốn sắm thêm nội thất? Đã bao giờ bạn muốn lấp đầy những gian tường nhà nhưng lại không biết bắt đầu từ đâu?
@@ -365,13 +365,13 @@
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="hover-after">
-                                                    <a href="blog-detail.html">
+                                                    <a href="@Url.Action("Index","Index","Index")">
                                                         <img src="~/Template/img/blog/8.jpg" alt="img" class="img-fluid">
                                                     </a>
                                                 </div>
                                                 <div class="late-item">
                                                     <p class="content-title">
-                                                        <a href="blog-detail.html">Tiết kiệm không gian căn hộ chung cư một cách thông minh</a>
+                                                        <a href="@Url.Action("Index","Index","Index")">Tiết kiệm không gian căn hộ chung cư một cách thông minh</a>
                                                     </p>
                                                     <p class="description">
                                                         Với những căn hộ chung cư, diện tích không gian sẽ khá hạn chế để có thể tối ưu hóa không gian hơn.

@@ -64,15 +64,28 @@ namespace HappyHomeAsp.MVC.Models
         public string Product_type { get => product_type; set => product_type = value; }
         public string Product_insurance { get => product_insurance; set => product_insurance = value; }
 
-       
+        public String getImageProduct(int index)
+        {
+            ManageData manageData = new ManageData();
+            ArrayList productImages = manageData.selectAllImageProduct(product_id);
+            if (productImages.Count > 0)
+            {
+                if (productImages.Count > index)
+                {
+                    Image img = (Image)productImages[index];
+                    return img.Img_url;
+                }
+            }
+            return "";
+        }
 
-       
 
-       
-       
-        
-        
-       
-       
+
+
+
+
+
+
+
     }
 }
