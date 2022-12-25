@@ -26,6 +26,7 @@ namespace HappyHomeAsp.MVC.Models
 
             string database = "shophappyhome"; ;
 
+
             string username = "root";
 
             string password = "";

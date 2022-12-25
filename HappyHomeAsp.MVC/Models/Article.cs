@@ -1,4 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+
+using HappyHomeAsp.MVC.Models;
+using MySql.Data.MySqlClient;
+
 using System;
 using System.Collections;
 using System.Data.Common;
@@ -16,6 +19,11 @@ namespace HappyHomeAsp.MVC.Models
 
         private string content;
 
+
+
+        private string img;
+
+
         public Article()
         {
         }
@@ -28,10 +36,21 @@ namespace HappyHomeAsp.MVC.Models
             this.Content = content;
         }
 
+
+
+        public Article(int article_id, string title, string content, string img_url)
+        {
+            this.Title = title;
+            this.Content = content;
+            this.Img = img_url;
+        }
+
+
         public int Article_id { get => article_id; set => article_id = value; }
         public int Article_category_id { get => article_category_id; set => article_category_id = value; }
         public string Title { get => title; set => title = value; }
         public string Content { get => content; set => content = value; }
+
 
         public String selectFirstImageArticle()
         {
@@ -62,3 +81,14 @@ namespace HappyHomeAsp.MVC.Models
 
     }
 }
+
+        public string Img { get => img; set => img = value; }
+
+
+
+    }
+}
+
+
+
+

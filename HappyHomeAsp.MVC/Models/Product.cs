@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+using HappyHomeAsp.MVC.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Data.Common;
@@ -30,6 +31,9 @@ namespace HappyHomeAsp.MVC.Models
 
         private string product_insurance;
 
+        private ArrayList listImg;
+
+
         public Product(int product_id, string name, int price, int price_sell, string info, string code, string brand, string color, string size, string attribute, int status, string product_type, string product_insurance)
         {
             this.product_id = product_id;
@@ -47,6 +51,19 @@ namespace HappyHomeAsp.MVC.Models
             this.product_insurance = product_insurance;
         }
 
+
+        public Product(int product_id, string name, int price, int price_sell, string info)
+        {
+            Product_id = product_id;
+            Name = name;
+            Price = price;
+            Price_sell = price_sell;
+            Info = info;
+            listImg = new ArrayList();
+      
+        }
+
+
         public int Product_id { get => product_id; set => product_id = value; }
         public string Name { get => name; set => name = value; }
         public int Price { get => price; set => price = value; }
@@ -60,6 +77,7 @@ namespace HappyHomeAsp.MVC.Models
         public int Status { get => status; set => status = value; }
         public string Product_type { get => product_type; set => product_type = value; }
         public string Product_insurance { get => product_insurance; set => product_insurance = value; }
+
 
         public String getImageProduct(int index)
         {
@@ -82,7 +100,13 @@ namespace HappyHomeAsp.MVC.Models
 
 
 
+        public ArrayList ListImg { get => listImg; set => listImg = value; }
+
+
 
 
     }
+
 }
+
+
