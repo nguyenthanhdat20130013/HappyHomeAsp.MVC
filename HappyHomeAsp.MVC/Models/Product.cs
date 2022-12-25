@@ -30,6 +30,9 @@ namespace HappyHomeAsp.MVC.Models
 
         private string product_insurance;
 
+        public Product()
+        {
+        }
         public Product(int product_id, string name, int price, int price_sell, string info, string code, string brand, string color, string size, string attribute, int status, string product_type, string product_insurance)
         {
             this.product_id = product_id;
@@ -76,7 +79,13 @@ namespace HappyHomeAsp.MVC.Models
             return "";
         }
 
+        public String getNameOfType(string id)
+        {
+            ManageData manage = new ManageData();
 
+            String res = manage.getNameProductType(Int32.Parse(id));
+            return res;
+        }
 
 
 
