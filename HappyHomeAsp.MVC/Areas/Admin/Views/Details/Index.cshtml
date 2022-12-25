@@ -69,17 +69,17 @@
                                     <label for="exampleInputEmail1">Giới thiệu sản phẩm</label>
                                     <textarea rows="5" class="form-control" id="" placeholder="@Model.Info" disabled="disabled"></textarea>
                                     <label for="exampleInputEmail1">Thông tin sản phẩm</label>
-                                    <input type="email" class="form-control" id="" placeholder="Loại của sản phẩm: @Model.Product_type">
+                                    <input type="email" class="form-control" id="" placeholder="Loại của sản phẩm: @Model.getNameOfType(Model.Product_type)" disabled="disabled">
                                     <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="" placeholder="Hãng sản xuất: @Model.Brand">
+                                    <input type="email" class="form-control" id="" placeholder="Hãng sản xuất: @Model.Brand" disabled="disabled">
                                     <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="" placeholder="Màu sắc sản phẩm: @Model.Color">
+                                    <input type="email" class="form-control" id="" placeholder="Màu sắc sản phẩm: @Model.Color" disabled="disabled">
                                     <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="" placeholder="Kích thước sản phẩm: @Model.Size">
+                                    <input type="email" class="form-control" id="" placeholder="Kích thước sản phẩm: @Model.Size" disabled="disabled">
                                     <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="" placeholder="Thời gian bảo hành: @Model.Product_insurance">
+                                    <input type="email" class="form-control" id="" placeholder="Thời gian bảo hành: @Model.Product_insurance" disabled="disabled">
                                     <label for="exampleInputEmail1"></label>
-                                    <input type="email" class="form-control" id="" placeholder="Trạng thái sản phẩm: @Model.Status">
+                                    <input type="email" class="form-control" id="" placeholder="Trạng thái sản phẩm: @Model.Status" disabled="disabled">
 
                                 </div>
                                 
@@ -107,8 +107,12 @@
                     </div>
                     <div class="card-body" style="display: block">
                         <div style="position: relative">
-                            <img src="~/Areas/Admin/Template/dist/img/1.jpg" alt="" style="width: 60%;height:175px;border: 1px solid rgba(0,0,0,.125);position: relative">
-                            <button id="delete-product-btn" class="btn btn-default btn-flat" style="position: absolute;left: 46.5%;top:78.5%;">xoá</button>
+
+
+                            <img src="@Model.getImageProduct(0)" alt="" style="width: 60%;height:60%;border: 1px solid rgba(0,0,0,.125);position: relative">
+
+                           
+                           
                         </div>
                         <br>
                         <div class="form-group" style="">

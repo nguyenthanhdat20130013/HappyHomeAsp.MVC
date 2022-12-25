@@ -79,7 +79,13 @@ namespace HappyHomeAsp.MVC.Models
             return "";
         }
 
+        public String getNameOfType(string id)
+        {
+            ManageData manage = new ManageData();
 
+            String res = manage.getNameProductType(Int32.Parse(id));
+            return res;
+        }
 
 
 
