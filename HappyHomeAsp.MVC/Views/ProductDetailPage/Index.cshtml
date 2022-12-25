@@ -1,698 +1,197 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
 @{
     ViewBag.Title = "Chi tiết sản phẩm";
-    Layout = null;
+    ViewBag.Id = "product-detail";
 }
 
-<!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--<![endif]-->
-<html lang="zxx">
-
-<!-- product-detail06:46-->
-<head>
-    <!-- Basic Page Needs -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Chi tiết sản phẩm</title>
-    <link rel="icon" type="image/x-icon" href="/img/home/Logo-happyhome-removebg-preview.png">
-    <meta name="keywords" content="Furniture, Decor, Interior">
-    <meta name="description" content="Furnitica - Minimalist Furniture HTML Template">
-    <meta name="author" content="tivatheme">
 
 
-    <!-- Mobile Meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+<!-- main content -->
+<div class="main-content">
+    <div id="wrapper-site">
+        <div id="content-wrapper">
+            <div id="main">
+                <div class="page-home">
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="~/Template/libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Template/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/Template/libs/nivo-slider/css/nivo-slider.css">
-    <link rel="stylesheet" href="~/Template/libs/nivo-slider/css/animate.css">
-    <link rel="stylesheet" href="~/Template/libs/nivo-slider/css/style.css">
-    <link rel="stylesheet" href="~/Template/libs/font-material/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="~/Template/libs/slider-range/css/jslider.css">
-    <link rel="stylesheet" href="~/Template/libs/owl-carousel/assets/owl.carousel.min.css">
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" type="text/css" href="~/Template/css/style.css">
-    <link rel="stylesheet" type="text/css" href="~/Template/css/reponsive.css">
-
-    <style>
-
-        .model-cart-add{
-            display: none;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.5);
-            position: fixed;
-            z-index: 2;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-        }
-
-
-        .model-add-into-cart{
-            position: fixed;
-            box-shadow: 0px 0px 19px 3px rgba(0, 0, 0, 0.5);
-            border: 2px #817e7e;
-            width: 650px;
-            height: 280px;
-            top: 24%;
-            left: 30%;
-            border-radius: 5px;
-            opacity: 1;
-            overflow: auto;
-            background-color: #fff;
-            -webkit-animation-name: animatetop;
-            -webkit-animation-duration: 0.4s;
-            animation-name: animatetop;
-            animation-duration: 0.4s;
-        }
-
-    </style>
-</head>
-
-
-<body id="product-detail">
-    <header>
-        <!-- header left mobie -->
-        <div class="header-mobile d-md-none">
-            <div class="mobile hidden-md-up text-xs-center d-flex align-items-center justify-content-around">
-
-                <!-- menu left -->
-                <div id="mobile_mainmenu" class="item-mobile-top">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-
-                <!-- logo -->
-                <div class="mobile-logo">
-                    <a href="index-2.html">
-                        <img class="logo-mobile img-fluid" src="~/Template/img/home/logo-mobie.png" alt="Prestashop_Furnitica">
-                    </a>
-                </div>
-
-                <!-- menu right -->
-                <div class="mobile-menutop" data-target="#mobile-pagemenu">
-                    <i class="zmdi zmdi-more"></i>
-                </div>
-            </div>
-
-            <!-- search -->
-            <div id="mobile_search" class="d-flex">
-                <div id="mobile_search_content">
-                    <form method="get" action="#">
-
-                        <input type="text" name="s" value="" placeholder="Tìm kiếm">
-                        <button type="submit">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <div class="desktop_cart">
-                    <div class="blockcart block-cart cart-preview tiva-toggle">
-                        <div class="header-cart tiva-toggle-btn">
-                            <span class="cart-products-count">1</span>
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </div>
-                        <div class="dropdown-content">
-                            <div class="cart-content">
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-image">
-                                                <a href="product-detail.html">
-                                                    <img src="~/Template/img/product/5.jpg" alt="Product">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <div class="product-name">
-                                                    <a href="product-detail.html">Bàn làm việc</a>
-                                                </div>
-                                                <div>
-                                                    2 x
-                                                    <span class="product-price">400.000 vnđ</span>
-                                                </div>
-                                            </td>
-                                            <td class="action">
-                                                <a class="remove" href="#">
-                                                    <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr class="total">
-                                            <td colspan="2">Thành tiền:</td>
-                                            <td>800.000 vnđ</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td colspan="3" class="d-flex justify-content-center">
-                                                <div class="cart-button">
-                                                    <a href="product-cart.html" title="View Cart">Xem giỏ hàng</a>
-                                                    <a href="product-checkout.html" title="Checkout">Thanh toán</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                    <!-- breadcrumb -->
+                    <nav class="breadcrumb-bg">
+                        <div class="container no-index">
+                            <div class="breadcrumb">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            <span>Trang chủ</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>Sản phẩm</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span>@Model.Name</span>
+                                        </a>
+                                    </li>
+                                </ol>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </nav>
+                    <div class="container">
+                        <div class="content">
+                            <div class="row">
+                                <div class="sidebar-3 sidebar-collection col-lg-3 col-md-3 col-sm-4">
 
-        <!-- header desktop -->
-        <div class="header-top d-xs-none ">
-            <div class="container">
-                <div class="row">
-                    <!-- logo -->
-                    <div class="col-sm-2 col-md-2 d-flex align-items-center">
-                        <div id="logo">
-                            <a href="@Url.Action("Index","Index","Index")">
-                                <img src="~/Template/img/home/Logo-happyhome-removebg-preview.png" alt="logo" class="img-fluid" style="height: 90px">
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- menu -->
-                    <div class="col-sm-5 col-md-5 align-items-center justify-content-center navbar-expand-md main-menu">
-                        <div class="menu navbar collapse navbar-collapse">
-                            <ul class="menu-top navbar-nav">
-                                <li>
-                                    <a href="#" class="parent">Sản Phẩm</a>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li class="item living-room-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 2">Phòng Khách</a>
-                                                <div class="dropdown-menu living-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item dinner-room-drop ">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 3">Phòng Ăn</a>
-                                                <div class="dropdown-menu dinner-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item bedroom-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 3">Phòng Ngủ</a>
-                                                <div class="dropdown-menu bedroom-menu">
-                                                    <ul class="drop-menu bedroom-drop">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item work-room-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 4">Phòng Làm Việc</a>
-                                                <div class="dropdown-menu work-room-menu">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                            <li class="item decorations-drop">
-                                                <a href="@Url.Action("Index","DiningRoom","Index")" title="Home Page 5">Đồ Trang Trí</a>
-                                                <div class="dropdown-menu decorations">
-                                                    <ul class="drop-menu">
-                                                        <li class="item">
-                                                            <a href="#" title="">Bàn</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Ghế</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Tủ Kệ</a>
-                                                        </li>
-                                                        <li class="item">
-                                                            <a href="#" title="">Phụ Kiện</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index","CollectionPage","Index")" class="parent">Bộ Sưu Tập</a>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","CollectionPage","Index")" title="Blog List (Sidebar Left)">KOLDING Collection</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","CollectionPage","Index")" title="Blog List (Sidebar Left) 2">FIJI Collection</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <a href="#" class="parent">Dịch Vụ</a>
-                                    <div class="dropdown-menu service-menu">
-                                        <ul>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","FaqsPage","Index")" title="Blog List (Sidebar Left)"> Các Câu Hỏi Thường Gặp</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","ShoppingGuide","Index")" title="Blog List (Sidebar Left) 2"> Hướng Dẫn Đặt Hàng</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","DeliveryPolicy","Index")" title="Category Blog (Right column)">Chính Sách Vận Chuyển</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","WarrantyPolicy","Index")" title="Blog List (No Sidebar)">Chính Sách Bảo Mật Thông Tin</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <!-- <li>
-                                    <a href="~/Template/contact.html" class="parent">Ưu Đãi</a>
-                                </li>-->
-                                <li>
-                                    <a href="#" class="parent">Bài viết</a>
-                                    <div class="dropdown-menu">
-                                        <ul>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","BlogListSidebarLeftPage","Index")" title="Blog List (Sidebar Left)">Tin tức</a>
-                                            </li>
-                                            <li class="item">
-                                                <a href="@Url.Action("Index","BlogListSidebarLeftPage","Index")" title="Blog List (Sidebar Left) 2">Khuyến mãi</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index","ContactPage","Index")" class="parent">Liên hệ</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- search and acount -->
-                    <div class="col-sm-5 col-md-5 d-flex align-items-center justify-content-end" id="search_widget">
-                        <form method="get" action="#">
-
-                            <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-                            <input type="text" name="s" value="" placeholder="Tìm kiếm" class="ui-autocomplete-input" autocomplete="off">
-                            <button type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </form>
-
-                        <div id="block_myaccount_infos" class="hidden-sm-down dropdown">
-                            <div class="myaccount-title ">
-                                <a href="#acount" data-toggle="collapse" class="acount">
-                                    <i class="fa fa-user" aria-hidden="true"></i>
-                                    <span>Tài khoản</span>
-                                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                </a>
-
-                            </div>
-
-                            <div id="acount" class="collapse">
-
-                                <div class="account-list-content">
-
-                                    <div>
-                                        <a class="login" href="user-acount.html" rel="nofollow" title="Log in to your customer account">
-                                            <i class="fa fa-cog"></i>
-                                            <span>Tài khoản</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a class="login" href="user-login.html" rel="nofollow" title="Log in to your customer account">
-                                            <i class="fa fa-sign-in"></i>
-                                            <span>Đăng nhập</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a class="register" href="user-register.html" rel="nofollow" title="Register Account">
-                                            <i class="fa fa-user"></i>
-                                            <span>Đăng kí tài khoản</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <a class="check-out" href="product-checkout.html" rel="nofollow" title="Checkout">
-                                            <i class="fa fa-check" aria-hidden="true"></i>
-                                            <span>Thanh toán</span>
-                                        </a>
-                                    </div>
-                                    <div class="link_wishlist">
-                                        <a href="user-wishlist.html" title="My Wishlists">
-                                            <i class="fa fa-heart"></i>
-                                            <span>Danh sách mong muốn</span>
-                                        </a>
-                                    </div>
-                                    <!-- <div id="desktop_currency_selector" class="currency-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li>
-                                                <a title="Euro" rel="nofollow" href="#">VNĐ</a>
-                                            </li>
-                                            <li class="current list-inline-item">
-                                                <a title="British Pound Sterling" rel="nofollow" href="#">VNĐ</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="desktop_language_selector" class="language-selector groups-selector hidden-sm-down">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-itemcurrent">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas.jpg" alt="English" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas2.jpg" alt="Italiano" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas3.jpg" alt="Français" width="16" height="11">
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a href="#">
-                                                    <img class="img-fluid" src="img/home/home1-flas4.jpg" alt="Español" width="16" height="11">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="desktop_cart">
-                            <div class="blockcart block-cart cart-preview tiva-toggle">
-                                <div class="header-cart tiva-toggle-btn">
-                                    <span class="cart-products-count">1</span>
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                </div>
-                                <div class="dropdown-content">
-                                    <div class="cart-content">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="product-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="~/Template/img/product/5.jpg" alt="Product">
-                                                        </a>
-                                                    </td>
-                                                    <td>
-                                                        <div class="product-name">
-                                                            <a href="product-detail.html">Ghế thư giãn Ball Chair màu đỏ vỏ trắng</a>
-                                                        </div>
-                                                        <div>
-                                                            x2
-                                                            <span class="product-price">15.375.000 vnđ</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="action">
-                                                        <a class="remove" href="#">
-                                                            <i class="fa fa-trash-o" aria-hidden="true"></i>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                                <tr class="total">
-                                                    <td colspan="2">Tổng :</td>
-                                                    <td>15.375.000 vnđ</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td colspan="3" class="d-flex justify-content-center">
-                                                        <div class="cart-button">
-                                                            <a href="product-cart.html" title="View Cart">Xem giỏ hàng</a>
-                                                            <a href="product-checkout.html" title="Checkout">Thanh toán</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- main content -->
-    <div class="main-content">
-        <div id="wrapper-site">
-            <div id="content-wrapper">
-                <div id="main">
-                    <div class="page-home">
-
-                        <!-- breadcrumb -->
-                        <nav class="breadcrumb-bg">
-                            <div class="container no-index">
-                                <div class="breadcrumb">
-                                    <ol>
-                                        <li>
-                                            <a href="#">
-                                                <span>Trang chủ</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span>Phòng khách</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span>Bàn sofa mặt đá hiện đại, sang trọng TT68185</span>
-                                            </a>
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </nav>
-                        <div class="container">
-                            <div class="content">
-                                <div class="row">
-                                    <div class="sidebar-3 sidebar-collection col-lg-3 col-md-3 col-sm-4">
-
-                                        <!-- category -->
-                                        <div class="sidebar-block">
-                                            <div class="title-block">Thể loại</div>
-                                            <div class="block-content">
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapse-icons collapsed" data-toggle="collapse" data-target="#livingroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Phòng khách</a>
-                                                    <div class="subCategory collapse" id="livingroom" aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Bàn </a>
-                                                            <div class="subCategory collapse" id="subCategory-fruits" aria-expanded="true" role="status">
-                                                                <!-- <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">Bảng phụ</a>
-                                                                </div> -->
-                                                                <!-- <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">CHÁY</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">CHÁY</a>
-                                                                </div> -->
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">đèn sàn</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ghế không có lưng dựa</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ghế bành</a>
-                                                                </div>
-                                                                <div class="cateTitle">
-                                                                    <a href="#" class="cateItem">ghế sofa</a>
-                                                                </div>
+                                    <!-- category -->
+                                    <div class="sidebar-block">
+                                        <div class="title-block">Thể loại</div>
+                                        <div class="block-content">
+                                            <div class="cateTitle hasSubCategory open level1">
+                                                <span class="arrow collapse-icons collapsed" data-toggle="collapse" data-target="#livingroom">
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </span>
+                                                <a class="cateItem" href="#">Phòng khách</a>
+                                                <div class="subCategory collapse" id="livingroom" aria-expanded="true" role="status">
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Bàn </a>
+                                                        <div class="subCategory collapse" id="subCategory-fruits" aria-expanded="true" role="status">
+                                                            <!-- <div class="cateTitle">
+                                                                <a href="#" class="cateItem">Bảng phụ</a>
+                                                            </div> -->
+                                                            <!-- <div class="cateTitle">
+                                                                <a href="#" class="cateItem">CHÁY</a>
+                                                            </div>
+                                                            <div class="cateTitle">
+                                                                <a href="#" class="cateItem">CHÁY</a>
+                                                            </div> -->
+                                                            <div class="cateTitle">
+                                                                <a href="#" class="cateItem">đèn sàn</a>
+                                                            </div>
+                                                            <div class="cateTitle">
+                                                                <a href="#" class="cateItem">ghế không có lưng dựa</a>
+                                                            </div>
+                                                            <div class="cateTitle">
+                                                                <a href="#" class="cateItem">ghế bành</a>
+                                                            </div>
+                                                            <div class="cateTitle">
+                                                                <a href="#" class="cateItem">ghế sofa</a>
                                                             </div>
                                                         </div>
-                                                        <!-- <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CHÁY</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">CHÁY</a>
-                                                        </div> -->
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">đèn sàn</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ghế không có lưng dựa</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ghế bành</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">gối</a>
-                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="cateTitle">
+                                                        <a href="#" class="cateItem">CHÁY</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">CHÁY</a>
+                                                    </div> -->
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">đèn sàn</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">ghế không có lưng dựa</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">ghế bành</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">gối</a>
                                                     </div>
                                                 </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bathroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Phòng tắm</a>
-                                                    <div class="subCategory collapse" id="bathroom">
-                                                        <!-- <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO</a>
-                                                        </div> -->
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Bồn cầu</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Chậu rửa</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Gương tắm</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Bồn tắm</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#diningroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Phòng bếp</a>
-                                                    <div class="subCategory collapse" id="diningroom" aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Bàn ăn phòng bếp</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Tủ bếp</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Kệ bếp</a>
-                                                        </div>
-                                                        <!-- <div class="cateTitle">
-                                                            <a href="#" class="cateItem">BLACK BREAD</a>
-                                                        </div> -->
-                                                    </div>
-                                                </div>
-                                                <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">Phòng ngủ</a>
-                                                    <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Giường ngủ</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Tủ quần áo</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">Bàn trang điểm</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <!-- <div class="cateTitle hasSubCategory open level1">
-                                                    <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#kitchen">
-                                                        <i class="zmdi zmdi-minus"></i>
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </span>
-                                                    <a class="cateItem" href="#">PHÒNG BẾP</a>
-                                                    <div class="subCategory collapse" id="kitchen" aria-expanded="true" role="status">
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">ORANGE JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">TOMATO JUICES</a>
-                                                        </div>
-                                                        <div class="cateTitle">
-                                                            <a href="#" class="cateItem">APPLE JUICES</a>
-                                                        </div>
-
-                                                    </div>
-                                                </div> -->
                                             </div>
+                                            <div class="cateTitle hasSubCategory open level1">
+                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bathroom">
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </span>
+                                                <a class="cateItem" href="#">Phòng tắm</a>
+                                                <div class="subCategory collapse" id="bathroom">
+                                                    <!-- <div class="cateTitle">
+                                                        <a href="#" class="cateItem">TOMATO</a>
+                                                    </div> -->
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Bồn cầu</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Chậu rửa</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Gương tắm</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Bồn tắm</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cateTitle hasSubCategory open level1">
+                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#diningroom">
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </span>
+                                                <a class="cateItem" href="#">Phòng bếp</a>
+                                                <div class="subCategory collapse" id="diningroom" aria-expanded="true" role="status">
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Bàn ăn phòng bếp</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Tủ bếp</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Kệ bếp</a>
+                                                    </div>
+                                                    <!-- <div class="cateTitle">
+                                                        <a href="#" class="cateItem">BLACK BREAD</a>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                            <div class="cateTitle hasSubCategory open level1">
+                                                <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom">
+                                                    <i class="zmdi zmdi-minus"></i>
+                                                    <i class="zmdi zmdi-plus"></i>
+                                                </span>
+                                                <a class="cateItem" href="#">Phòng ngủ</a>
+                                                <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Giường ngủ</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Tủ quần áo</a>
+                                                    </div>
+                                                    <div class="cateTitle">
+                                                        <a href="#" class="cateItem">Bàn trang điểm</a>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
                                         </div>
+                                    </div>
 
-                                        <!-- best seller -->
-                                        <div class="sidebar-block">
-                                            <div class="title-block">
-                                                Sản phẩm bán tốt nhất
-                                            </div>
-                                            <div class="product-content tab-content">
-                                                <div class="row">
+                                    <!-- best seller -->
+                                    <div class="sidebar-block">
+                                        <div class="title-block">
+                                            Sản phẩm bán tốt nhất
+                                        </div>
+                                        <div class="product-content tab-content">
+                                            <div class="row">
 
-
+                                                @foreach (Product p in ViewBag.get3ProductsBestSell)
+                                                {
                                                     <!---->
                                                     <div class="item col-md-12">
                                                         <div class="product-miniature item-one first-item d-flex">
                                                             <div class="thumbnail-container border">
                                                                 <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="~/Template/img/product/1.jpg" alt="img">
+                                                                    <img class="img-fluid image-cover" src="@p.getImageProduct(0)" alt="img">
+                                                                    <img class="img-fluid image-secondary" src="@p.getImageProduct(1)" alt="img">
 
                                                                 </a>
                                                             </div>
                                                             <div class="product-description">
                                                                 <div class="product-groups">
                                                                     <div class="product-title">
-                                                                        <a href="product-detail.html">Đồng hồ</a>
+                                                                        <a href="product-detail.html">@p.Name</a>
                                                                     </div>
                                                                     <div class="rating">
                                                                         <div class="star-content">
@@ -705,223 +204,143 @@
                                                                     </div>
                                                                     <div class="product-group-price">
                                                                         <div class="product-price-and-shipping">
-                                                                            <span class="price">430.000 vnđ</span>
+                                                                            <span class="price">@p.Price_sell vnđ</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="item col-md-12">
-                                                        <div class="product-miniature item-one first-item d-flex">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="~/Template/img/product/2.jpg" alt="img">
-
-                                                                </a>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Ghế cafe </a>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">1.190.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item col-md-12">
-                                                        <div class="product-miniature item-one first-item d-flex">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="~/Template/img/product/3.jpg" alt="img">
-
-                                                                </a>
-                                                            </div>
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Ghế thư giãn Ball Chair màu đỏ vỏ trắng</a>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">15.375.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                }
                                             </div>
-
                                         </div>
 
-                                        <!-- product tag -->
-                                        <div class="sidebar-block product-tags">
-                                            <div class="title-block">
-                                                Thẻ sản phẩm
-                                            </div>
-                                            <div class="block-content">
-                                                <ul class="listSidebarBlog list-unstyled">
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Hot Trend">Xu hướng nổi bật</a>
-                                                    </li>
+                                    </div>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Jewelry">Rẻ nhất</a>
-                                                    </li>
+                                    <!-- product tag -->
+                                    <div class="sidebar-block product-tags">
+                                        <div class="title-block">
+                                            Thẻ sản phẩm
+                                        </div>
+                                        <div class="block-content">
+                                            <ul class="listSidebarBlog list-unstyled">
+                                                <li>
+                                                    <a href="#" title="Show products matching tag Hot Trend">Xu hướng nổi bật</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="man.html" title="Show products matching tag Man">Đắt nhất</a>
-                                                    </li>
+                                                <li>
+                                                    <a href="#" title="Show products matching tag Jewelry">Rẻ nhất</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Party">Mua nhiều nhất</a>
-                                                    </li>
+                                                <li>
+                                                    <a href="man.html" title="Show products matching tag Man">Đắt nhất</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag SamSung">Đang giảm giá</a>
-                                                    </li>
+                                                <li>
+                                                    <a href="#" title="Show products matching tag Party">Mua nhiều nhất</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Shirt Dresses">Bán chạy</a>
-                                                    </li>
-                                                    <!--
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                    </li>
+                                                <li>
+                                                    <a href="#" title="Show products matching tag SamSung">Đang giảm giá</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                    </li>
+                                                <li>
+                                                    <a href="#" title="Show products matching tag Shirt Dresses">Bán chạy</a>
+                                                </li>
 
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Sweaters">Sweaters</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                    </li> -->
-                                                </ul>
-                                            </div>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div class="col-sm-8 col-lg-9 col-md-9">
-                                        <div class="main-product-detail">
-                                            <h2>Bàn sofa mặt đá hiện đại, sang trọng TT68185</h2>
-                                            <div class="product-single row">
-                                                <div class="product-detail col-xs-12 col-md-5 col-sm-5">
-                                                    <div class="page-content" id="content">
-                                                        <div class="images-container">
-                                                            <div class="js-qv-mask mask tab-content border">
-                                                                <div id="item1" class="tab-pane fade active in show">
-                                                                    <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-01.png" alt="img">
-                                                                </div>
-                                                                <div id="item2" class="tab-pane fade">
-                                                                    <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
-                                                                </div>
+                                </div>
+                                <div class="col-sm-8 col-lg-9 col-md-9">
+                                    <div class="main-product-detail">
+                                        <h2>@Model.Name</h2>
+                                        <div class="product-single row">
+                                            <div class="product-detail col-xs-12 col-md-5 col-sm-5">
+                                                <div class="page-content" id="content">
+                                                    <div class="images-container">
+                                                        <div class="js-qv-mask mask tab-content border">
 
-                                                                <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                                                                    <i class="fa fa-expand"></i>
-                                                                </div>
+                                                            <div id="item1" class="tab-pane fade active in show">
+                                                                <img src="@Model.getImageProduct(0)" alt="img">
                                                             </div>
-                                                            <ul class="product-tab nav nav-tabs d-flex">
-                                                                <li class="active col">
-                                                                    <a href="#item1" data-toggle="tab" aria-expanded="true" class="active show">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-01.png" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item2" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item3" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
-                                                                    </a>
-                                                                </li>
-                                                                <li class="col">
-                                                                    <a href="#item4" data-toggle="tab">
-                                                                        <img src="~/Template/img/product/ban-sofa-mat-da-chan-sat-tt68185-02.jpg" alt="img">
-                                                                    </a>
-                                                                </li>
+                                                            <div id="item2" class="tab-pane fade">
+                                                                <img src="@Model.getImageProduct(1)" alt="img">
+                                                            </div>
+                                                            <div id="item3" class="tab-pane fade">
+                                                                <img src="@Model.getImageProduct(2)" alt="img">
+                                                            </div>
+                                                            <div id="item4" class="tab-pane fade">
+                                                                <img src="@Model.getImageProduct(3)" alt="img">
+                                                            </div>
 
-                                                            </ul>
-                                                            <div class="modal fade" id="product-modal" role="dialog">
-                                                                <div class="modal-dialog">
+                                                            <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+                                                                <i class="fa fa-expand"></i>
+                                                            </div>
+                                                        </div>
+                                                        <ul class="product-tab nav nav-tabs d-flex">
+                                                            <li class="active col">
+                                                                <a href="#item1" data-toggle="tab" aria-expanded="true" class="active show">
+                                                                    <img src="@Model.getImageProduct(0)" alt="img">
+                                                                </a>
+                                                            </li>
+                                                            <li class="col">
+                                                                <a href="#item2" data-toggle="tab">
+                                                                    <img src="@Model.getImageProduct(1)" alt="img">
+                                                                </a>
+                                                            </li>
+                                                            <li class="col">
+                                                                <a href="#item3" data-toggle="tab">
+                                                                    <img src="@Model.getImageProduct(2)" alt="img">
+                                                                </a>
+                                                            </li>
+                                                            <li class="col">
+                                                                <a href="#item4" data-toggle="tab">
+                                                                    <img src="@Model.getImageProduct(3)" alt="img">
+                                                                </a>
+                                                            </li>
 
-                                                                    <!-- Modal content-->
-                                                                    <div class="modal-content">
-                                                                        <div class="modal-header">
-                                                                            <div class="modal-body">
-                                                                                <div class="product-detail">
-                                                                                    <div>
-                                                                                        <div class="images-container">
-                                                                                            <div class="js-qv-mask mask tab-content">
-                                                                                                <div id="modal-item1" class="tab-pane fade active in show">
-                                                                                                    <img src="~/Template/img/product/1.jpg" alt="img">
-                                                                                                </div>
-                                                                                                <div id="modal-item2" class="tab-pane fade">
-                                                                                                    <img src="~/Template/img/product/2.jpg" alt="img">
-                                                                                                </div>
-                                                                                                <div id="modal-item3" class="tab-pane fade">
-                                                                                                    <img src="~/Template/img/product/3.jpg" alt="img">
-                                                                                                </div>
-                                                                                                <div id="modal-item4" class="tab-pane fade">
-                                                                                                    <img src="~/Template/img/product/5.jpg" alt="img">
-                                                                                                </div>
+                                                        </ul>
+                                                        <div class="modal fade" id="product-modal" role="dialog">
+                                                            <div class="modal-dialog">
+
+                                                                <!-- Modal content-->
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <div class="modal-body">
+                                                                            <div class="product-detail">
+                                                                                <div>
+                                                                                    <div class="images-container">
+                                                                                        <div class="js-qv-mask mask tab-content">
+                                                                                            <div id="modal-item1" class="tab-pane fade active in show">
+                                                                                                <img src="@Model.getImageProduct(0)" alt="img">
                                                                                             </div>
-                                                                                            <ul class="product-tab nav nav-tabs">
-                                                                                                <li class="active">
-                                                                                                    <a href="#modal-item1" data-toggle="tab" class=" active show">
-                                                                                                        <img src="~/Template/img/product/1.jpg" alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item2" data-toggle="tab">
-                                                                                                        <img src="~/Template/img/product/2.jpg" alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item3" data-toggle="tab">
-                                                                                                        <img src="~/Template/img/product/3.jpg" alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li>
-                                                                                                    <a href="#modal-item4" data-toggle="tab">
-                                                                                                        <img src="~/Template/img/product/5.jpg" alt="img">
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                            </ul>
+                                                                                            <div id="modal-item2" class="tab-pane fade">
+                                                                                                <img src="@Model.getImageProduct(1)" alt="img">
+                                                                                            </div>
+                                                                                            <div id="modal-item3" class="tab-pane fade">
+                                                                                                <img src="@Model.getImageProduct(2)" alt="img">
+                                                                                            </div>
+                                                                                           
                                                                                         </div>
+                                                                                        <ul class="product-tab nav nav-tabs">
+                                                                                            <li class="active">
+                                                                                                <a href="#modal-item1" data-toggle="tab" class=" active show">
+                                                                                                    <img src="@Model.getImageProduct(0)" alt="img">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="#modal-item2" data-toggle="tab">
+                                                                                                    <img src="@Model.getImageProduct(1)" alt="img">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="#modal-item3" data-toggle="tab">
+                                                                                                    <img src="@Model.getImageProduct(2)" alt="img">
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            
+                                                                                        </ul>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -932,22 +351,34 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="product-info col-xs-12 col-md-7 col-sm-7">
-                                                    <div class="detail-description">
-                                                        <div class="price-del">
-                                                            <span class="price">3.292.000 vnđ</span>
-                                                            <span class="float-right">
-                                                                <span class="availb">khả dụng: </span>
-                                                                <span class="check">
-                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>CÒN HÀNG
-                                                                </span>
+                                            </div>
+                                            <div class="product-info col-xs-12 col-md-7 col-sm-7">
+                                                <div class="detail-description">
+                                                    <div class="price-del">
+                                                        <span class="price">@Model.Price_sell vnđ</span>
+                                                        <span class="float-right">
+                                                            <span class="availb">khả dụng: </span>
+
+                                                            <span class="check">
+
+                                                                @if (Model.Status == 1)
+                                                                {
+                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                                    <p>CÒN HÀNG</p>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <i class="fa fa-times" style="color:red" aria-hidden="true"></i>
+                                                                    <p style="color:red">HẾT HÀNG</p>
+                                                                }
+
                                                             </span>
-                                                        </div>
-                                                        <p class="description">
-                                                            Sản phẩm bán nhanh , đang giảm giá
-                                                            Mua ngay.
-                                                        </p>
-                                                        <div class="option has-border d-lg-flex size-color">
+                                                        </span>
+                                                    </div>
+                                                    <p class="description">
+                                                        
+                                                    </p>
+                                                    @*<div class="option has-border d-lg-flex size-color">
                                                             <div class="size">
                                                                 <span class="size">kích cỡ :</span>
                                                                 <select>
@@ -966,249 +397,199 @@
                                                                 <span class="brown"></span>
                                                                 <span class="red"></span>
                                                             </div>
-                                                        </div>
-                                                        <div class="has-border cart-area">
-                                                            <div class="product-quantity">
-                                                                <div class="qty">
-                                                                    <div class="input-group">
-                                                                        <div class="quantity">
-                                                                            <span class="control-label">QTY : </span>
-                                                                            <input type="text" name="qty" id="quantity_wanted" value="1" class="input-group form-control">
+                                                        </div>*@
 
-                                                                            <span class="input-group-btn-vertical">
-                                                                                <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
-                                                                                    +
-                                                                                </button>
-                                                                                <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button">
-                                                                                    -
-                                                                                </button>
-                                                                            </span>
-                                                                        </div>
-                                                                        <span class="add">
-                                                                            <button class="btn btn-primary add-to-cart add-item" data-button-action="add-to-cart" type="submit">
-                                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                                <span>Thêm vào giỏ hàng</span>
+                                                    <div class="has-border cart-area">
+                                                        <div class="product-quantity">
+                                                            <div class="qty">
+                                                                <div class="input-group">
+                                                                    <div class="quantity">
+                                                                        <span class="control-label">QTY : </span>
+                                                                        <input type="text" name="qty" id="quantity_wanted" value="1" class="input-group form-control">
+
+                                                                        <span class="input-group-btn-vertical">
+                                                                            <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button">
+                                                                                +
                                                                             </button>
-                                                                            <a class="addToWishlist" href="#">
-                                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                            </a>
+                                                                            <button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button">
+                                                                                -
+                                                                            </button>
                                                                         </span>
                                                                     </div>
+                                                                    <span class="add">
+                                                                        <a class="addToWishlist" href="/ProductCartPage/AddItem?productId=@Model.Product_id&quantity=1">
+                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                                        </a>
+                                                                        <a class="addToWishlist" href="#">
+                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                        </a>
+                                                                    </span>
+
                                                                 </div>
                                                             </div>
-                                                            <div class="clearfix"></div>
-                                                            <p class="product-minimal-quantity">
-                                                            </p>
                                                         </div>
-                                                        <div class="d-flex2 has-border">
-                                                            <div class="btn-group">
-                                                                <a href="#">
-                                                                    <i class="zmdi zmdi-share"></i>
-                                                                    <span>Chia sẻ</span>
-                                                                </a>
-                                                                <a href="#" class="email">
-                                                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                                                    <span>CHIA SẺ CHO BẠN BÈ</span>
-                                                                </a>
-                                                                <a href="#" class="print">
-                                                                    <i class="zmdi zmdi-print"></i>
-                                                                    <span>IN</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="rating-comment has-border d-flex">
-                                                            <div class="review-description d-flex">
-                                                                <span>ĐÁNH GIÁ :</span>
-                                                                <div class="rating">
-                                                                    <div class="star-content">
-                                                                        <div class="star"></div>
-                                                                        <div class="star"></div>
-                                                                        <div class="star"></div>
-                                                                        <div class="star"></div>
-                                                                        <div class="star"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="read after-has-border">
-                                                                <a href="#review">
-                                                                    <i class="fa fa-commenting-o color" aria-hidden="true"></i>
-                                                                    <span>ĐỌC ĐÁNH GIÁ (3)</span>
-                                                                </a>
-                                                            </div>
-                                                            <div class="apen after-has-border">
-                                                                <a href="#review">
-                                                                    <i class="fa fa-pencil color" aria-hidden="true"></i>
-                                                                    <span>VIẾT ĐÁNH GIÁ</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p>
-                                                                Mã hàng :
-                                                                <span class="content2">
-                                                                    <a href="#">TT68185</a>
-                                                                </span>
-                                                            </p>
-                                                            <p>
-                                                                Thể loại :
-                                                                <span class="content2">
-                                                                    <a href="#">Bán chạy</a>,
-                                                                    <a href="#">Xu hướng</a>
-                                                                </span>
-                                                            </p>
-                                                            <p>
-                                                                thẻ :
-                                                                <span class="content2">
-                                                                    <a href="#">Bàn</a>,
-                                                                    <a href="#">Ghế</a>,
-                                                                    <a href="#">Tủ</a>,
-                                                                    <a href="#">Đồng hồ</a>,
-                                                                    <a href="#">Bồn tắm</a>,
-                                                                    <a href="#">Linh tinh</a>
-                                                                </span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="review">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active">
-                                                        <a data-toggle="tab" href="#description" class="active show">Mô tả sản phẩm </a>
-                                                    </li>
-                                                    <li>
-                                                        <a data-toggle="tab" href="#tag"> Đội ngũ làm việc</a>
-                                                    </li>
-                                                    <li>
-                                                        <a data-toggle="tab" href="#review">Nhận xét (2)</a>
-                                                    </li>
-                                                </ul>
-
-                                                <div class="tab-content">
-                                                    <div id="description" class="tab-pane fade in active show">
-                                                        <p>
-                                                            Bàn sofa mặt đá hiện đại, sang trọng TT68185 là sự kết hợp tuyệt vời của mặt bàn đá và khung kim loại vừa toát lên vẻ đẹp sang trọng cùng sự tinh tế mang đến không gian tiếp khách hiện đại và có tính thẩm mỹ cao.
-                                                            Mặt bàn đá trắng bo cạnh, chịu được những va chạm hàng ngày,
-                                                            hạn chế tối đa vết trầy xước kết hợp cùng chân sắt sơn tĩnh điện chống rỉ sét đảm bảo độ bền cao.
+                                                        <div class="clearfix"></div>
+                                                        <p class="product-minimal-quantity">
                                                         </p>
                                                     </div>
 
-                                                    <div id="review" class="tab-pane fade">
-                                                        <div class="spr-form">
-                                                            <div class="user-comment">
-                                                                <div class="spr-review">
-                                                                    <div class="spr-review-header">
-                                                                        <span class="spr-review-header-byline">
-                                                                            <strong>Tuấn Đẹp Trai</strong> -
-                                                                            <span>14 tháng 4, 2018</span>
-                                                                        </span>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="spr-review-content">
-                                                                        <p class="spr-review-content-body">Sản phẩm rất tốt </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="spr-review preview2">
-                                                                    <div class="spr-review-header">
-                                                                        <span class="spr-review-header-byline">
-                                                                            <strong>Nhiếp Ly</strong> -
-                                                                            <span>13 tháng 8, 2018</span>
-                                                                        </span>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="spr-review-content">
-                                                                        <p class="spr-review-content-body">Hảo sản phẩm , mấy bạn nên mua thử</p>
-                                                                    </div>
+                                                    <div class="d-flex2 has-border">
+                                                        <div class="btn-group">
+                                                            <a href="#">
+                                                                <i class="zmdi zmdi-share"></i>
+                                                                <span>Chia sẻ</span>
+                                                            </a>
+                                                            <a href="#" class="email">
+                                                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                                                <span>CHIA SẺ CHO BẠN BÈ</span>
+                                                            </a>
+                                                            <a href="#" class="print">
+                                                                <i class="zmdi zmdi-print"></i>
+                                                                <span>IN</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rating-comment has-border d-flex">
+                                                        <div class="review-description d-flex">
+                                                            <span>ĐÁNH GIÁ :</span>
+                                                            <div class="rating">
+                                                                <div class="star-content">
+                                                                    <div class="star"></div>
+                                                                    <div class="star"></div>
+                                                                    <div class="star"></div>
+                                                                    <div class="star"></div>
+                                                                    <div class="star"></div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <form method="post" action="#" class="new-review-form">
-                                                            <input type="hidden" name="review[rating]" value="3">
-                                                            <input type="hidden" name="product_id">
-                                                            <h3 class="spr-form-title">Viết nhận xét</h3>
-                                                            <fieldset>
-                                                                <div class="spr-form-review-rating">
-                                                                    <label class="spr-form-label">Đánh giá</label>
-                                                                    <fieldset class="ratings">
-                                                                        <input type="radio" id="star5" name="rating" value="5" />
-                                                                        <label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                        <input type="radio" id="star4half" name="rating" value="4 and a half" />
-                                                                        <input type="radio" id="star4" name="rating" value="4" />
-                                                                        <label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                        <input type="radio" id="star3half" name="rating" value="3 and a half" />
-                                                                        <input type="radio" id="star3" name="rating" value="3" />
-                                                                        <label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                        <input type="radio" id="star2half" name="rating" value="2 and a half" />
-                                                                        <input type="radio" id="star2" name="rating" value="2" />
-                                                                        <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                        <input type="radio" id="star1half" name="rating" value="1 and a half" />
-                                                                        <input type="radio" id="star1" name="rating" value="1" />
-                                                                        <label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                        <input type="radio" id="starhalf" name="rating" value="half" />
-                                                                    </fieldset>
-                                                                </div>
-                                                            </fieldset>
-                                                            <fieldset class="spr-form-contact">
-                                                                <div class="spr-form-contact-name">
-                                                                    <input class="spr-form-input spr-form-input-text form-control" value="" placeholder="Tên bạn">
-                                                                </div>
-                                                                <div class="spr-form-contact-email">
-                                                                    <input class="spr-form-input spr-form-input-email form-control" value="" placeholder=" email">
-                                                                </div>
-                                                            </fieldset>
-                                                            <fieldset>
-                                                                <div class="spr-form-review-body">
-                                                                    <div class="spr-form-input">
-                                                                        <textarea class="spr-form-input-textarea" rows="10" placeholder="Viết bình luận của bạn ở đây"></textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </fieldset>
-                                                            <div class="submit">
-                                                                <input type="submit" name="addComment" id="submitComment" class="btn btn-default" value="Submit Review">
-                                                            </div>
-                                                        </form>
+                                                        <div class="read after-has-border">
+                                                            <a href="#review">
+                                                                <i class="fa fa-commenting-o color" aria-hidden="true"></i>
+                                                                <span>ĐỌC ĐÁNH GIÁ (3)</span>
+                                                            </a>
+                                                        </div>
+                                                        <div class="apen after-has-border">
+                                                            <a href="#review">
+                                                                <i class="fa fa-pencil color" aria-hidden="true"></i>
+                                                                <span>VIẾT ĐÁNH GIÁ</span>
+                                                            </a>
+                                                        </div>
                                                     </div>
-                                                    <div id="tag" class="tab-pane fade in">
+                                                    <div class="content">
                                                         <p>
-                                                            Sản phẩm chất lượng với thương hiệu có mặt nhiều năm trên thị trường .
+                                                            Mã hàng :
+                                                            <span class="content2">
+                                                                <a href="#">@Model.Code</a>
+                                                            </span>
                                                         </p>
                                                         <p>
-                                                            Đội ngũ phục vụ ân cần, chu đáo, quan tâm khách hàng.
+                                                            Loại sản phẩm :
+                                                            <span class="content2">
+                                                                
+                                                                <a href="#">@Model.getNameOfType(Model.Product_type)</a>
+                                                            </span>
+                                                        </p>
+                                                        <p>
+                                                          
                                                         </p>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="related">
-                                                <div class="title-tab-content  text-center">
-                                                    <div class="title-product justify-content-start">
-                                                        <h2>Sản phẩm liên quan</h2>
-                                                    </div>
+                                        </div>
+
+                                        <div class="review">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active">
+                                                    <a data-toggle="tab" href="#description" class="active show">Giới thiệu sản phẩm </a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="tab" href="#tag"> Đặc điểm sản phẩm</a>
+                                                </li>
+                                                <li>
+                                                    <a data-toggle="tab" href="#review">Nhận xét</a>
+                                                </li>
+                                            </ul>
+
+                                            <div class="tab-content">
+                                                <div id="description" class="tab-pane fade in active show">
+                                                    <p>
+                                                        @Model.Info
+                                                    </p>
                                                 </div>
-                                                <div class="tab-content">
-                                                    <div class="row">
+
+                                                <div id="review" class="tab-pane fade">
+                                                    <div class="spr-form">
+                                                        <div class="user-comment">
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <form method="post" action="#" class="new-review-form">
+                                                        <input type="hidden" name="review[rating]" value="3">
+                                                        <input type="hidden" name="product_id">
+                                                        <h3 class="spr-form-title">Viết nhận xét</h3>
+                                                        <fieldset>
+                                                            <div class="spr-form-review-rating">
+                                                                <label class="spr-form-label">Đánh giá</label>
+                                                                <fieldset class="ratings">
+                                                                    <input type="radio" id="star5" name="rating" value="5" />
+                                                                    <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                                                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
+                                                                    <input type="radio" id="star4" name="rating" value="4" />
+                                                                    <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                                                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
+                                                                    <input type="radio" id="star3" name="rating" value="3" />
+                                                                    <label class="full" for="star3" title="Meh - 3 stars"></label>
+                                                                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
+                                                                    <input type="radio" id="star2" name="rating" value="2" />
+                                                                    <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                                                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
+                                                                    <input type="radio" id="star1" name="rating" value="1" />
+                                                                    <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                                                    <input type="radio" id="starhalf" name="rating" value="half" />
+                                                                </fieldset>
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset class="spr-form-contact">
+                                                            <div class="spr-form-contact-name">
+                                                                <input class="spr-form-input spr-form-input-text form-control" value="" placeholder="Tên bạn">
+                                                            </div>
+                                                            <div class="spr-form-contact-email">
+                                                                <input class="spr-form-input spr-form-input-email form-control" value="" placeholder=" email">
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <div class="spr-form-review-body">
+                                                                <div class="spr-form-input">
+                                                                    <textarea class="spr-form-input-textarea" rows="10" placeholder="Viết bình luận của bạn ở đây"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                        <div class="submit">
+                                                            <input type="submit" name="addComment" id="submitComment" class="btn btn-default" value="Submit Review">
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div id="tag" class="tab-pane fade in">
+                                                    @Model.Attribute
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="related">
+                                            <div class="title-tab-content  text-center">
+                                                <div class="title-product justify-content-start">
+                                                    <h2>Sản phẩm liên quan</h2>
+                                                </div>
+                                            </div>
+                                            <div class="tab-content">
+                                                <div class="row">
+                                                    @foreach (Product p in ViewBag.related3Products)
+                                                    {
                                                         <div class="item text-center col-md-4">
                                                             <div class="product-miniature js-product-miniature item-one first-item">
                                                                 <div class="thumbnail-container border">
                                                                     <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_6147-_dadc3da61ccc465897216e42b06224ac_master.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/46fa51b76550ad0ef441172_c82bfc20d8ed444a98fb50f7cd92f67b_master.jpg" alt="img">
+                                                                        <img class="img-fluid image-cover" src="@p.getImageProduct(0)" alt="img">
+                                                                        <img class="img-fluid image-secondary" src="@p.getImageProduct(1)" alt="img">
                                                                     </a>
                                                                     <div class="highlighted-informations">
                                                                         <div class="variant-links">
@@ -1221,7 +602,7 @@
                                                                 <div class="product-description">
                                                                     <div class="product-groups">
                                                                         <div class="product-title">
-                                                                            <a href="product-detail.html">Sofa Velvet Burgunfy</a>
+                                                                            <a href="product-detail.html">@p.Name</a>
                                                                         </div>
                                                                         <div class="rating">
                                                                             <div class="star-content">
@@ -1234,85 +615,29 @@
                                                                         </div>
                                                                         <div class="product-group-price">
                                                                             <div class="product-price-and-shipping">
-                                                                                <span class="price">13.000.000 vnđ</span>
+                                                                                <span class="price">@p.Price_sell vnđ</span>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                     <div class="product-buttons d-flex justify-content-center">
                                                                         <form action="#" method="post" class="formAddToCart">
                                                                             <input type="hidden" name="id_product" value="1">
-                                                                            <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                            <a class="add-to-cart" href="/ProductCartPage/AddItem?productId=@p.Product_id&quantity=1" data-button-action="add-to-cart">
                                                                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                             </a>
                                                                         </form>
                                                                         <a class="addToWishlist" href="#" data-rel="1" onclick="">
                                                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                                                         </a>
-                                                                        <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                        <a href="@Url.Action("Index","ProductDetailPage",new {id = p.Product_id})" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                             <i class="fa fa-eye" aria-hidden="true"></i>
                                                                         </a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="item text-center col-md-4">
-                                                            <div class="product-miniature js-product-miniature item-one first-item">
-                                                                <div class="thumbnail-container border">
-                                                                    <a href="product-detail.html">
-                                                                        <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d600xh480_3.700.000-_bf317cb83d24472a9b885147e4e4ddd8_master.jpg" alt="img">
-                                                                        <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d1000xh340_7.950.000-_ddbba6e444ca40b4b638ac8a00b34095_master.jpg" alt="img">
-                                                                    </a>
-                                                                    <div class="highlighted-informations">
-                                                                        <div class="variant-links">
-                                                                            <a href="#" class="color beige" title="Beige"></a>
-                                                                            <a href="#" class="color orange" title="Orange"></a>
-                                                                            <a href="#" class="color green" title="Green"></a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-description">
-                                                                    <div class="product-groups">
-                                                                        <div class="product-title">
-                                                                            <a href="product-detail.html">Bàn Trà Khảm Trai Le Soleil - Chân Trụ Composite</a>
-                                                                        </div>
-                                                                        <div class="rating">
-                                                                            <div class="star-content">
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                                <div class="star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="product-group-price">
-                                                                            <div class="product-price-and-shipping">
-                                                                                <span class="price">6.700.000 vnđ</span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-buttons d-flex justify-content-center">
-                                                                        <form action="#" method="post" class="formAddToCart">
-                                                                            <input type="hidden" name="id_product" value="1">
-                                                                            <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                            </a>
-                                                                        </form>
-                                                                        <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                        </a>
-                                                                        <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--
-
-                                                        -->
-
-
-                                                    </div>
+                                                    }
+                                                 
                                                 </div>
                                             </div>
                                         </div>
@@ -1325,911 +650,11 @@
             </div>
         </div>
     </div>
-    </div>
-
-    <!-- footer -->
-
-    <div class="inner-footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="row">
-                    <div class="col-lg-3 col-md-12 col-xs-12">
-                        <div class="block">
-                            <div class="block-content">
-                                <div class="title-block">
-                                    NỘI THẤT HAPPYHOME
-                                </div>
-                                <p class="content-logo">
-                                    Nội Thất HAPPYHOME là thương hiệu đến từ Việt Nam
-                                    với hơn 35 năm kinh nghiệm trong việc sản xuất và xuất khẩu nội thất đạt chuẩn quốc tế.
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4 col-xs-12">
-                        <div class="block">
-                            <div class="block-content">
-                                <div class="title-block">
-                                    VỀ CHÚNG TÔI
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="@Url.Action("Index","AboutUsPage","Index")">Giới thiệu HappyHome</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","ContactPage","Index")">Liên hệ</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","Recruit","Index")">Tuyển dụng</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="@Url.Action("Index","AgentPartnerPolicyPage","Index")">Chính sách Đại lý/Đối tác</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="block">
-                            <div class="block-content">
-                                <div class="title-block">
-                                    DỊCH VỤ
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="@Url.Action("Index","FaqsPage","Index")">Các Câu Hỏi Thường Gặp</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","ShoppingGuide","Index")">Hướng Dẫn Đặt Hàng</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","DeliveryPolicy","Index")">Chính Sách Vận Chuyển</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","WarrantyPolicy","Index")">Chính Sách Bảo Hành</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index","PrivacyPolicyPage","Index")">Chính Sách Bảo Mật Thông Tin</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-4">
-                        <div class="block">
-                            <div class="block-content">
-                                <div class="title-block">
-                                    THÔNG TIN LIÊN HỆ
-                                </div>
-                                <div class="contact-content">
-                                    <div class="data align-self-stretch d-flex">
-                                        <i class="fa fa-home float-left m-bottom" aria-hidden="true"></i>
-                                        <div class="content-data">
-                                            <b class="mr-2">Showroom:</b>Đại Học Nông Lâm TP.HCM
-                                        </div>
-                                    </div>
-                                    <div class="data d-flex align-self-stretch">
-                                        <i class="fa fa-clock-o float-left" aria-hidden="true"></i>
-                                        <div class="content-data">
-                                            <b class="mr-2">Thời gian làm việc: </b>08.00 - 19.00
-                                        </div>
-                                    </div>
-                                    <div class="support d-dflex align-self-stretch">
-                                        <div class="data mail-support">
-                                            <i class="fa fa-envelope float-left" aria-hidden="true"></i>
-                                            <div>HappyHome@domain.com</div>
-                                        </div>
-                                    </div>
-                                    <div class="data d-flex align-self-stretch phone-support" style="margin-left: 0px">
-                                        <div class="title-icon">
-                                            <i class="fa fa-phone float-left" aria-hidden="true"></i>
-                                        </div>
-                                        <div>+0012-345-67890</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tiva-copyright">
-            <div class="container">
-                <div class="border-copyright">
-                    <div class="row align-items-center" style="  align-items: center;justify-content: center;">
-                        <div class="">
-                            <div class="social-content">
-                                <div id="social-block">
-                                    <div class="social">
-                                        <ul class="list-inline mb-0 justify-content-end">
-                                            <li class="list-inline-item mb-0">
-                                                <a href="#" target="_blank">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item mb-0">
-                                                <a href="#" target="_blank">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item mb-0">
-                                                <a href="#" target="_blank">
-                                                    <i class="fa fa-google"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item mb-0">
-                                                <a href="#" target="_blank">
-                                                    <i class="fa fa-instagram"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="tiva-copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="text-center col-lg-12 ">
-                        <span>
-                            <a href="">Copyright © 2022 Nội Thất HAPPYHOME.</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
-    <!-- back top top -->
-    <div class="back-to-top">
-        <a href="#">
-            <i class="fa fa-long-arrow-up"></i>
-        </a>
-    </div>
-
-    <!-- menu mobie left -->
-    <div class="mobile-top-menu d-md-none">
-        <button type="button" class="close" aria-label="Close">
-            <i class="zmdi zmdi-close"></i>
-        </button>
-        <div id="desktop_verticalmenu" class="tiva-verticalmenu block" data-count_showmore="17">
-            <div class="box-content block-content">
-                <div class="verticalmenu" role="navigation">
-                    <ul class="menu level1">
-                        <li class="item  parent">
-                            <a href="#" class="hasicon" title="SIDE TABLE">
-                                <img src="~/Template/img/home/table-lamp.png" alt="img">BẢNG PHỤ
-                            </a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#SIDE-TABLE">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="SIDE-TABLE" aria-expanded="true" role="status">
-                                <ul>
-                                    <li class="item">
-                                        <a href="#" title="Aliquam lobortis">Một số chính sách</a>
-                                    </li>
-                                    <li class="item  parent-submenu">
-                                        <a href="#" title="Duis Reprehenderit">Đại diện</a>
-                                        <span class="arrow collapsed" data-toggle="collapse" data-target="#sub-Category">
-                                            <i class="zmdi zmdi-minus"></i>
-                                            <i class="zmdi zmdi-plus"></i>
-                                        </span>
-                                        <div class="subCategory collapse" id="sub-Category" aria-expanded="true" role="status">
-                                            <ul>
-                                                <li class="item">
-                                                    <a href="#" title="Aliquam lobortis">Một số chính sách</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Duis Reprehenderit">Đại diện</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Voluptate">với niềm vui</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Tongue Est">Tongue Est</a>
-                                                </li>
-                                                <li class="item">
-                                                    <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Voluptate">với niềm vui</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Tongue Est">Tongue Est</a>
-                                    </li>
-                                    <li class="item">
-                                        <a href="#" title="Venison Andouille">Venison Andouille</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="item  parent group">
-                            <a href="#" class="hasicon" title="FI">
-                                <img src="~/Template/img/home/fireplace.png" alt="img">CHÁY
-                            </a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#fi">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="fi" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>PHÒNG ĂN</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>PHÒNG TẮM</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>PHÒNG KHÁCH</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">Media</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Gee</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Digimart</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Vitivaa</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sanaky</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sunshine</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Toshiba</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Samsung</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>PHÒNG NGỦ</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>PHÒNG BẾP</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="tags d-flex d-xs-flex-inherit">
-                                            <div class="title">
-                                                <b>Blender</b>
-                                            </div>
-                                            <ul class="list-inline">
-                                                <li class="list-inline-item">
-                                                    <a href="#">LG</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Sharp</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Electrolux</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Hitachi</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Panasonic</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Mitsubishi Electric</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Daikin</a>
-                                                </li>
-                                                <li class="list-inline-item">
-                                                    <a href="#">Haier</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item group-category-img parent group">
-                            <a href="#" class="hasicon" title="TABLE LAMP">
-                                <img src="~/Template/img/home/table-lamp.png" alt="img">ĐÈN BÀN
-                            </a>
-                            <span class="arrow collapsed" data-toggle="collapse" data-target="#table-lamp">
-                                <i class="zmdi zmdi-minus"></i>
-                                <i class="zmdi zmdi-plus"></i>
-                            </span>
-                            <div class="subCategory collapse" id="table-lamp" aria-expanded="true" role="status">
-                                <div class="item">
-                                    <div class="menu-content">
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Coventry dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Amara stools</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Kingston dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-xs-12">
-                                            <span class="menu-title">Ellinger dining</span>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Accessories</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Activewear</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">ASOS Basic Tops</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Bags &amp; Purses</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Beauty</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Coats &amp; Jackets</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Curve &amp; Plus Size</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="OTTOMAN">
-                                <img src="~/Template/img/home/ottoman.png" alt="img">OTTOMAN
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="ARMCHAIR">
-                                <img src="~/Template/img/home/armchair.png" alt="img">ARMCHAIR
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CUSHION">
-                                <img src="~/Template/img/home/cushion.png" alt="img">CUSHION
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="COFFEE TABLE">
-                                <img src="~/Template/img/home/coffee_table.png" alt="img">COFFEE TABLE
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SHELF">
-                                <img src="~/Template/img/home/shelf.png" alt="img">SHELF
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="SOFA">
-                                <img src="~/Template/img/home/sofa.png" alt="img">SOFA
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="DRESSING TABLE">
-                                <img src="~/Template/img/home/dressing.png" alt="img">DRESSING TABLE
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WINDOWN CURTAIN">
-                                <img src="~/Template/img/home/windown.png" alt="img">WINDOWN CURTAIN
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CHANDELIER">
-                                <img src="~/Template/img/home/chandelier.png" alt="img">CHANDELIER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="CEILING FAN">
-                                <img src="~/Template/img/home/ceiling_fan.png" alt="img">CEILING FAN
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="WARDROBE">
-                                <img src="~/Template/img/home/wardrobe.png" alt="img">WARDROBE
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="FLOOR LAMP">
-                                <img src="~/Template/img/home/floor_lamp.png" alt="img">FLOOR LAMP
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="VASE-FLOWER ">
-                                <img src="~/Template/img/home/vase-flower.png" alt="img">VASE-FLOWER
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED">
-                                <img src="~/Template/img/home/bed.png" alt="img">BED
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED GIRL">
-                                <img src="~/Template/img/home/bed.png" alt="img">BED GIRL
-                            </a>
-                        </li>
-                        <li class="item">
-                            <a href="#" class="hasicon" title="BED BOY">
-                                <img src="~/Template/img/home/bed.png" alt="img">BED BOY
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- menu mobie right -->
-    <div id="mobile-pagemenu" class="mobile-boxpage d-flex hidden-md-up active d-md-none">
-        <div class="content-boxpage col">
-            <div class="box-header d-flex justify-content-between align-items-center">
-                <div class="title-box">Menu</div>
-                <div class="close-box">Close</div>
-            </div>
-            <div class="box-content">
-                <nav>
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div id="megamenu" class="clearfix">
-                        <ul class="menu level1">
-                            <li class="item home-page has-sub">
-                                <span class="arrow collapsed" data-toggle="collapse" data-target="#home1" aria-expanded="true" role="status">
-                                    <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
-                                </span>
-                                <a href="index-2.html" title="Home">
-                                    <i class="fa fa-home" aria-hidden="true"></i>Trang chủ
-                                </a>
-                                <div class="subCategory collapse" id="home1" aria-expanded="true" role="status">
-                                    <ul>
-                                        <li class="item">
-                                            <a href="index-2.html" title="Home Page 1">Trang chủ 1</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home2.html" title="Home Page 2">Trang chủ 2</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home3.html" title="Home Page 3">Trang chủ 3</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home4.html" title="Home Page 4">Trang chủ 4</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="home5.html" title="Home Page 5">Trang chủ 5</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="item has-sub">
-                                <span class="arrow collapsed" data-toggle="collapse" data-target="#blog" aria-expanded="false" role="status">
-                                    <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
-                                </span>
-                                <a href="#" title="Blog">
-                                    <i class="fa fa-address-book" aria-hidden="true"></i>Blog
-                                </a>
-
-                                <div class="subCategory collapse" id="blog" aria-expanded="true" role="status">
-                                    <ul>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-left.html" title="Blog List (Sidebar Left)">Danh sách Blog (Thanh bên trái)</a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-left2.html" title="Blog List (Sidebar Left) 2">Danh sách Blog (Thanh bên trái) 2 </a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-sidebar-right.html" title="Category Blog (Right column)">Danh sách Blog (Thanh bên phải) </a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-list-no-sidebar.html" title="Blog List (No Sidebar)">Danh sách Blog (Không có Thanh bên) </a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-grid-no-sidebar.html" title="Blog Grid (No Sidebar)">Lưới blog (Không có thanh bên) </a>
-                                        </li>
-                                        <li class="item">
-                                            <a href="blog-detail.html" title="Blog Detail">Blog Detail</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="item group has-sub">
-                                <span class="arrow collapsed" data-toggle="collapse" data-target="#page" aria-expanded="false" role="status">
-                                    <i class="zmdi zmdi-minus"></i>
-                                    <i class="zmdi zmdi-plus"></i>
-                                </span>
-                                <a href="#" title="Page">
-                                    <i class="fa fa-file-text-o" aria-hidden="true"></i>Trang
-                                </a>
-                                <div class="subCategory collapse" id="page" aria-expanded="true" role="status">
-                                    <ul class="group-page">
-                                        <li class="item container group">
-                                            <div>
-                                                <ul>
-                                                    <li class="item col-md-4 ">
-                                                        <span class="menu-title">Phong cách danh mục </span>
-                                                        <div class="menu-content">
-                                                            <ul class="col">
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-left.html">Lưới sản phẩm (Thanh bên trái)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-grid-sidebar-right.html">Product Grid (Sidebar Right)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="product-list-sidebar-left.html">Product List (Sidebar Left) </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Product Detail Style</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="product-detail.html">Product Detail (Sidebar Left)</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="#">Product Detail (Sidebar Right)</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                    <li class="item col-md-4 html">
-                                                        <span class="menu-title">Bonus Page</span>
-                                                        <div class="menu-content">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="404.html">404 Page</a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="about-us.html">Về chúng tôi Page</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="item has-sub">
-                                <a href="contact.html" title="Contact us">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>Contact us
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-
-    <div class="model-cart-add" id="model-cart-add">
-        <div class="model-add-into-cart">
-            <div class="card-header" style="height: 50px">
-                <p>Sản phẩm đã được thêm vào giỏ hàng của bạn.</p>
-            </div>
-            <div class="card-body">
-                <div class="cart-product" style="display: flex;gap: 5px">
-                    <img src="~/Template/img/product/ban-sofa-tron-st3015-001.jpg" alt="" style="height: 40px;width: 40px">
-                    <div style="width: 70%"><a href="">Bàn sofa, bàn cafe nhựa cao cấp nhiều màu ST3015</a></div>
-                    <div style="float: right">
-                        <span>1</span>&nbsp;x&nbsp<span>790.000 vnđ</span>
-                    </div>
-                </div>
-                <div style="margin-top: 10px">
-                    <label><Strong>Options:</Strong></label>
-                    <br>
-                    <span>Màu: Xanh</span>
-                    <br>
-                    <span>Size: M</span>
-                </div>
-                <div style="padding-top: 10px">
-                    <button class="btn btn-dark" id="continue-shopping">Tiếp tục mua sắm</button>
-                    <a class="btn btn-dark" href="./product-cart.html" style="float: right">Xem giỏ hàng</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor JS -->
-    <script src="~/Template/libs/jquery/jquery.min.js"></script>
-    <script src="~/Template/libs/popper/popper.min.js"></script>
-    <script src="~/Template/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/Template/libs/nivo-slider/js/jquery.nivo.slider.js"></script>
-    <script src="~/Template/libs/owl-carousel/owl.carousel.min.js"></script>
-    <script src="~/Template/libs/slider-range/js/tmpl.js"></script>
-    <script src="~/Template/libs/slider-range/js/jquery.dependClass-0.1.js"></script>
-    <script src="~/Template/libs/slider-range/js/draggable-0.1.js"></script>
-    <script src="~/Template/libs/slider-range/js/jquery.slider.js"></script>
-
-    <!-- Template JS -->
-    <script src="~/Template/js/theme.js"></script>
-
-    <script>
-        var model = document.getElementById("model-cart-add");
-        var btnAddToCart = document.querySelectorAll(".add-item");
-        var btnContinue = document.getElementById('continue-shopping');
-
-        btnContinue.onclick = function () {
-            model.style.display = "none";
-        };
-
-        for (let i = 0; i < btnAddToCart.length; i++) {
-            btnAddToCart[i].addEventListener("click", function () {
-                model.style.display = "block";
-            });
-        }
-
-        window.onclick = function (event) {
-            if (event.target == model) {
-                model.style.display = "none";
-            }
-        };
 
 
-    </script>
-</body>
-
-
-<!-- product-detail07:06-->
-</html>
 
 
 

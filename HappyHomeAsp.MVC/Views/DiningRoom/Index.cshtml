@@ -1,6 +1,9 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<HappyHomeAsp.MVC.Models.Product>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sản phẩm theo loại";
     ViewBag.Id = "product-sidebar-left";
     ViewBag.Class = "";
 }
@@ -21,7 +24,7 @@
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <span>Phòng ăn</span>
+                                        <span>@ViewBag.productTypeName</span>
                                     </a>
                                 </li>
                             </ol>
@@ -33,87 +36,6 @@
                     <div class="content">
                         <div class="row">
                             <div class="sidebar-3 sidebar-collection col-lg-3 col-md-4 col-sm-4">
-
-                                <!-- category menu -->
-                                <div class="sidebar-block">
-                                    <div class="title-block">Sản phẩm</div>
-                                    <div class="block-content">
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#table" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">BÀN </a>
-                                            <div class="subCategory collapse" id="table" aria-expanded="false" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">BÀN SOFA</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">Bàn SONSOLE</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#shelf" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">TỦ - KỆ</a>
-                                            <div class="subCategory collapse" id="shelf" aria-expanded="false" role="status">
-
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">TỦ TRANG TRÍ</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">TỦ SÁCH</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">KỆ TIVI</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">KỆ GIÀY</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#chair" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">GHẾ </a>
-                                            <div class="subCategory collapse" id="chair" aria-expanded="true" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">GHẾ THƯ GIÃN</a>
-                                                </div>
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">GHẾ SOFA</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="cateTitle hasSubCategory open level1">
-                                            <span class="arrow collapsed collapse-icons" data-toggle="collapse" data-target="#bedroom" aria-expanded="false" role="status">
-                                                <i class="zmdi zmdi-minus"></i>
-                                                <i class="zmdi zmdi-plus"></i>
-                                            </span>
-                                            <a class="cateItem" href="#">PHỤ KIỆN</a>
-                                            <div class="subCategory collapse" id="bedroom" aria-expanded="true" role="status">
-                                                <div class="cateTitle">
-                                                    <a href="#" class="cateItem">THẢM</a>
-                                                    <div class="cateTitle">
-                                                        <a href="#" class="cateItem">RÈM VẢI/CUỐN</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-
                                 <!-- product tag -->
                                 <div class="sidebar-block product-tags">
                                     <div class="title-block">
@@ -140,36 +62,13 @@
                                             <li>
                                                 <a href="#" title="Show products matching tag SamSung">Bán chạy nhất</a>
                                             </li>
-                                            <!--
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Shirt Dresses">Shirt Dresses</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Sweaters">Sweaters</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                                    </li> -->
+                                            
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-8 col-lg-9 col-md-8 product-container">
-                                <h1>Phòng ăn</h1>
+                                <h1>@ViewBag.productTypeName</h1>
                                 <div class="js-product-list-top firt nav-top">
                                     <div class="d-flex justify-content-around row">
                                         <div class="col col-xs-12 ">
@@ -206,1036 +105,173 @@
                                 <div class="tab-content product-items">
                                     <div id="grid" class="related tab-pane fade">
                                         <div class="row">
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn Ăn Đá Cẩm Thạch</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">6.600.000  vnđ</span>
+
+
+                                            @foreach (Product product in Model)
+                                            {
+                                                <div class="item text-center col-md-4">
+                                                    <div class="product-miniature js-product-miniature item-one first-item">
+                                                        <div class="thumbnail-container border">
+                                                            <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">
+                                                                <img class="img-fluid image-cover" src="@product.getImageProduct(0)">
+                                                                <img class="img-fluid image-secondary" src="@product.getImageProduct(1)" alt="img">
+                                                            </a>
+                                                            <div class="highlighted-informations">
+                                                                <div class="variant-links">
+                                                                    <a href="#" class="color beige" title="Beige"></a>
+                                                                    <a href="#" class="color orange" title="Orange"></a>
+                                                                    <a href="#" class="color green" title="Green"></a>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                        <div class="product-description">
+                                                            <div class="product-groups">
+                                                                <div class="product-title">
+                                                                    <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">@product.Name</a>
+                                                                </div>
+                                                                <div class="rating">
+                                                                    <div class="star-content">
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                        <div class="star"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-group-price">
+                                                                    <div class="product-price-and-shipping">
+                                                                        <span class="price">@product.Price_sell  vnđ</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-buttons d-flex justify-content-center">
+                                                                <form action="#" method="post" class="formAddToCart">
+                                                                    <input type="hidden" name="id_product" value="1">
+                                                                    <a class="add-to-cart" href="/ProductCartPage/AddItem?productId=@product.Product_id&quantity=1" data-button-action="add-to-cart">
+                                                                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                                                    </a>
+                                                                </form>
+                                                                <a class="addToWishlist" href="#" data-rel="1" onclick="">
+                                                                    <i class="fa fa-heart" aria-hidden="true"></i>
                                                                 </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
+                                                                <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="~/Template/img/product/sofa-goc-nem-boc-vai-chan-go-sfl68023-01.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="~/Template/img/product/sofa-goc-nem-boc-vai-chan-go-sfl68023-02.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">fl68023</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">4.500.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="~/Template/img/product/ban-tron-1m-BA68089-01.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="~/Template/img/product/ban-tron-1m-BA68089-02.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn tròn 1m BA68089</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">2.150.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_6282-_a3ec1a923ee84de991636de2c681e93e_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_6280-_0b3649b8a2db4238a7aed8b2820129df_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Sofa Minimalist</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">16.900.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_6147-_dadc3da61ccc465897216e42b06224ac_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/46fa51b76550ad0ef441172_c82bfc20d8ed444a98fb50f7cd92f67b_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Sofa Velvet Burgunfy</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">13.000.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item text-center col-md-4">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="thumbnail-container border">
-                                                        <a href="product-detail.html">
-                                                            <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d600xh480_3.700.000-_bf317cb83d24472a9b885147e4e4ddd8_master.jpg" alt="img">
-                                                            <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d1000xh340_7.950.000-_ddbba6e444ca40b4b638ac8a00b34095_master.jpg" alt="img">
-                                                        </a>
-                                                        <div class="highlighted-informations">
-                                                            <div class="variant-links">
-                                                                <a href="#" class="color beige" title="Beige"></a>
-                                                                <a href="#" class="color orange" title="Orange"></a>
-                                                                <a href="#" class="color green" title="Green"></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="product-groups">
-                                                            <div class="product-title">
-                                                                <a href="product-detail.html">Bàn Trà Khảm Trai Le Soleil - Chân Trụ Composite</a>
-                                                            </div>
-                                                            <div class="rating">
-                                                                <div class="star-content">
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                    <div class="star"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-group-price">
-                                                                <div class="product-price-and-shipping">
-                                                                    <span class="price">6.700.000 vnđ</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-buttons d-flex justify-content-center">
-                                                            <form action="#" method="post" class="formAddToCart">
-                                                                <input type="hidden" name="id_product" value="1">
-                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                                </a>
-                                                            </form>
-                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                <i class="fa fa-heart" aria-hidden="true"></i>
-                                                            </a>
-                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            }
+
+
 
 
 
                                         </div>
+
+
                                     </div>
                                     <div id="list" class="related tab-pane fade in active show">
                                         <div class="row">
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_1302__1__1700025e0eb24c9f81a0e123431f3899_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_1292_71b3e447e3e04db9b14efb2444c68ef3_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Ăn Đá Cẩm Thạch</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">6.600.000  vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn ăn đá Cẩm Thạch chất lượng cao là nơi gia đình sum họp mỗi bữa ăn.
-                                                                        Thường xuyên là lựa chọn của các khách hàng của Fravia trong thời gian qua,
-                                                                        bộ bàn còn được phối với các loại ghế ăn khác nhau sử dụng các chất liệu hiện đại như da, khung sắt... tạo nên một không gian hiện đại.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
+
+
+                                            @if (Model != null && Model.Any())
+                                            {
+                                                var i = 1;
+                                                foreach (var product in Model)
+                                                {
+                                                    <div class="item col-md-12">
+                                                        <div class="product-miniature item-one first-item">
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="thumbnail-container border">
+                                                                        <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">
+                                                                            <img class="img-fluid image-cover" src="@product.getImageProduct(0)" alt="img">
+                                                                            <img class="img-fluid image-secondary" src="@product.getImageProduct(1)" alt="img">
                                                                         </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/ccbb6023dbc4139a4ad5185_6540b76d821d4494bc0b97d86a1cb45d_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/c6eb7487c160093e5071169_8fd6271eb30644aaa8a3988fca01a51b_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Ăn Đá Ceramic </a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">8.200.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn ăn chân sắt vát đá ceramic chất lượng cao là nơi gia đình sum họp mỗi bữa ăn.
-                                                                        Thường xuyên là lựa chọn của các khách hàng của HappyHome trong thời gian qua,
-                                                                        bộ bàn còn được phối với các loại ghế ăn khác nhau sử dụng các chất liệu hiện đại như da, khung sắt...
                                                                     </div>
                                                                 </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
+                                                                <div class="col-md-8">
+                                                                    <div class="product-description">
+                                                                        <div class="product-groups">
+                                                                            <div class="product-title">
+                                                                                <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})">@product.Name</a>
+                                                                                <span class="info-stock">
+                                                                                    <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                                                                                    @if (product.Status == 1)
+                                                                                    {
+
+
+                                                                                        <p>Còn hàng</p>
+                                                                                    }
+                                                                                    else
+                                                                                    { <p>Hết hàng</p>}
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="rating">
+                                                                                <div class="star-content">
+                                                                                    <div class="star"></div>
+                                                                                    <div class="star"></div>
+                                                                                    <div class="star"></div>
+                                                                                    <div class="star"></div>
+                                                                                    <div class="star"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="product-group-price">
+                                                                                <div class="product-price-and-shipping">
+                                                                                    <span class="price">@product.Price_sell  vnđ</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="discription">
+                                                                                @product.Product_insurance
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div class="product-buttons d-flex">
+                                                                            <form action="#" method="post" class="formAddToCart">
+                                                                                <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
+                                                                                </a>
+                                                                            </form>
+                                                                            <a class="addToWishlist" href="#" data-rel="1" onclick="">
+                                                                                <i class="fa fa-heart" aria-hidden="true"></i>
+                                                                            </a>
+                                                                            <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                                                            </a>
+                                                                        </div>
+
+                                                                        <div class="discription">
+                                                                            @product.Product_insurance
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="product-buttons d-flex">
+                                                                        <form action="#" method="post" class="formAddToCart">
+                                                                            <a class="add-to-cart" href="/ProductCartPage/AddItem?productId=@product.Product_id&quantity=1" data-button-action="add-to-cart">
+                                                                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
+                                                                            </a>
+                                                                        </form>
+                                                                        <a class="addToWishlist" href="#" data-rel="1" onclick="">
+                                                                            <i class="fa fa-heart" aria-hidden="true"></i>
                                                                         </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border" style="height: 200px;">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="~/Template/img/product/ban-tron-1m-BA68089-01.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="~/Template/img/product/ban-tron-1m-BA68089-02.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn tròn 1m BA68089</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">2.150.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn  sở hữu mặt tròn thon gọn giúp tiết kiệm không gian phòng khách,
-                                                                        tạo nên nét riêng cho phòng khách.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
+                                                                        <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                            <i class="fa fa-eye" aria-hidden="true"></i>
                                                                         </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_0287-_56f2618d3ec746cfb3e07d347fb12aff_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_0286-_5bbaf5f88c014b34926d11f24728317e_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Ghế Ăn Da A78</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">1.900.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        hế ăn được thiết kế với kích thước tiêu chuẩn, chất lượng cao, tạo cho người sử dụng cảm giác thoải mái nhất khi ngồi ăn.
-                                                                        Có màu sắc khác để quý khách hàng lựa chọn sao cho phù hợp nhất với không gian nhà mình.
 
                                                                     </div>
                                                                 </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/img_0280-_c6b3fa1f8b364cf4a0629c0c596c5003_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/img_0281-_90094fe6693740c193471fb85f510a19_master.jpg" alt="img">
+                                                }
 
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Ghế Ăn Nhập Khẩu</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">3.000.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Ghế ăn nhập khẩu được thiết kế với kích thước tiêu chuẩn, chất lượng cao, tạo cho người sử dụng cảm giác thoải mái nhất khi ngồi ăn.
-                                                                        Chất liệu sắt sơn tĩnh điện kết hợp da là sự kết hợp hài hòa và là lựa chọn tối ưu cho khách hàng.
-
-
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d600xh480_3.700.000-_bf317cb83d24472a9b885147e4e4ddd8_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/btcg_le_soleil_d1000xh340_7.950.000-_ddbba6e444ca40b4b638ac8a00b34095_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Trà Khảm Trai Le Soleil - Chân Trụ Composite</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">6.700.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn Trà Khảm Trai Le Soleil trải qua những công đoạn khắt khe về mặt thẩm mỹ cũng như kỹ thuật.
-                                                                        Từng mảnh trai bắt sáng sẽ tạo ra một hiệu ứng một màu sắc khác nhau vô cùng cuốn hút.
-
-                                                                        Hệ chân Composite cũng có vô vàn những ưu điểm nổi trội như mẫu mã đẹp, giá thành rẻ, màu sắc đa dạng phong phú,…
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/ban_an_da_xanh_an_do_d1300_h750_13.400.000___2__adc200c17cbf4f74803a49a68c12adde_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/48c97a58e0172b497206_d963911d3f8d499183e24ad2194542f8_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Ăn Mặt Đá Xanh Ấn Độ</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">7.000.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Làm hoàn toàn từ đá Ấn Độ nhập khẩu, phối với chân trụ fiberglass cực chắc chắn,
-                                                                        an toàn cho gia đình có trẻ nhỏ chắc chắn sẽ hài lòng quý khách hàng yêu thích decor, yêu thích không gian sống đẹp
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/7c41affc151bdd45840a178_2af03ccbcc8341998b61e012eeec6f86_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/5a5a68e6d2011a5f4310177_9db52cd1a9a94bfb98b8cc982dd61936_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Ăn Gỗ Tần Bì</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">17.000.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn ăn gỗ tần bì là mẫu bàn ăn được thiết kế theo phong cách gỗ mộc rustic pha lẫn vẻ hiện đại làm toát lên chất riêng tạo điểm nhấn nổi bật cho gian phòng ăn.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/ban_an_prisma_d1200_h750_12.000.000___1_-_001a963aa8bd469c8c5a85aeb9745693_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/ban_an_prisma_d1200_h750_12.000.000___2_-_b35102f7f66b496a88555322f77614e9_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Sofa Phối Da & Nỉ The Dual</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">13,200,000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn ăn khảm trai được sử dụng chất liệu khảm trai thủ công tinh tế cho mặt bàn - chất liệu best seller nhà Fravia.
-                                                                        Mặt có đường kính 800mm, 1000mm và 1200mm cho quý khách lựa chọn đảm bảo khoảng cách rộng rãi cho gia đình 4-8 thành viên.
-                                                                        Chân bàn được làm từ chất liệu fiberglass cực chắc chắn và an toàn với chiều cao tiêu chuẩn.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/_y5a8846_6b966e5b27e14d9083d1800c7b7e5dc4_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/z3744012058041_a74bf79adb25bffba01071e658ccdf92_630e42f948bc443997c3fbbb6cb474b2_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Trà Khảm Trai Kaleidoscope Moon Inox Vàng</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">7.400.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn trà khảm trai được hợp lại từ các vân xà cừ tự nhiên tạo nên một màu quang hợp đa sắc sang trọng.
-                                                                        Mẫu bàn khối tròn là sản phẩm vừa ra mắt nhưng đã được nhiều khách hàng lựa chọn nhờ dáng vẻ hiện đại.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/_y5a8832_37f7411390294ad69119a0151813ae9e_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/_y5a8817_c050bb527ead47af929a31da082aaa6c_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="product-detail.html">Bàn Trà Khảm Trai Prisma Square</a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">6.100.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Bàn trà khảm trai Prisma được hợp lại từ các vân xà cừ tự nhiên tạo nên một màu quang hợp đa sắc sang trọng.
-                                                                        Mẫu bàn khối vuông là sản phẩm vừa ra mắt nhưng đã được nhiều khách hàng lựa chọn nhờ dáng vẻ hiện đại
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="item col-md-12">
-                                                <div class="product-miniature js-product-miniature item-one first-item">
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <div class="thumbnail-container border">
-                                                                <a href="product-detail.html">
-                                                                    <img class="img-fluid image-cover" src="https://product.hstatic.net/200000416255/product/z3723154158275_fc982725c505858af9ac0d2e10d03a2c_a4d773f7e6dc49a2b03e769205eb81a4_master.jpg" alt="img">
-                                                                    <img class="img-fluid image-secondary" src="https://product.hstatic.net/200000416255/product/k04b_stripey_woody_cabinet_l1600_x_h800_x_w450_14.100.000_-_6ea247372171493e8874cd81414543cc_master.jpg" alt="img">
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-8">
-                                                            <div class="product-description">
-                                                                <div class="product-groups">
-                                                                    <div class="product-title">
-                                                                        <a href="#">
-                                                                            Kệ Tủ Gỗ Thịt Stripey Woody Cabinet - K04
-                                                                        </a>
-                                                                        <span class="info-stock">
-                                                                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                                                                            Còn hàng
-                                                                        </span>
-                                                                    </div>
-                                                                    <div class="rating">
-                                                                        <div class="star-content">
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                            <div class="star"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="product-group-price">
-                                                                        <div class="product-price-and-shipping">
-                                                                            <span class="price">17.800.000 vnđ</span>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="discription">
-                                                                        Kệ Tủ Gỗ Thịt Stripey Woody Cabinet cùng độ bền bỉ vượt trội so với gỗ thịt,
-                                                                        cánh tủ thanh gỗ ép còn có đặc điểm tuyệt vời khi các vân gỗ và màu sắc của những chiếc tủ sẽ không bao giờ trùng nhau.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="product-buttons d-flex">
-                                                                    <form action="#" method="post" class="formAddToCart">
-                                                                        <a class="add-to-cart" href="#" data-button-action="add-to-cart">
-                                                                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Thêm vào giỏ hàng
-                                                                        </a>
-                                                                    </form>
-                                                                    <a class="addToWishlist" href="#" data-rel="1" onclick="">
-                                                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                                                    </a>
-                                                                    <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
-                                                                        <i class="fa fa-eye" aria-hidden="true"></i>
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                i++;
+                                            }
                                         </div>
                                     </div>
                                 </div>
+
+
 
                                 <!-- pagination -->
                                 <div class="pagination">
@@ -1245,7 +281,14 @@
                                                 <span>HIỂN THỊ 1-3 TRONG 3 MỤC</span>
                                             </div>
                                             <div class="page-list col col-xs-12">
-                                                <ul>
+
+                                                <br />
+                                                Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                                @Html.PagedListPager(Model, page => Url.Action("Index",
+                                                    new { page, productTypeId = -1, pageSize = ViewBag.PageSize }))
+
+                                                @*<ul>
                                                     <li>
                                                         <a rel="prev" href="#" class="previous disabled js-search-link">
                                                             Trước
@@ -1272,7 +315,7 @@
                                                             Tiếp theo
                                                         </a>
                                                     </li>
-                                                </ul>
+                                                </ul>*@
                                             </div>
                                         </div>
                                     </div>
