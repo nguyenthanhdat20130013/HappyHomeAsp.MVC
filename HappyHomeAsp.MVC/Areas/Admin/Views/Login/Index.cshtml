@@ -1,9 +1,8 @@
-﻿
+@model HappyHomeAsp.MVC.Models.User
 @{
     ViewBag.Title = "Login";
     Layout = null;
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,58 +29,38 @@
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Đăng nhập</p>
-
-                <form action="~/Areas/Admin/Template/home.html" method="post">
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
                     <div class="input-group mb-3">
-                        <input type="email" class="form-control" placeholder="Email">
+                        @Html.TextBoxFor(m => m.UserName, "", new { @class = "form-control", @type = "text", @placeholder = "Nhập tên" })
+                        @Html.ValidationMessage("errorUserName", new { @class = "alert-danger" })
                         <div class="input-group-append">
                             <div class="input-group-text">
-                                <span class="fas fa-envelope"></span>
+                                <span class="fas fa-user"></span>
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        @Html.TextBoxFor(m => m.PassWord, "", new { @class = "form-control", @type = "password", @placeholder = "Nhập mật khẩu" })
+                        @Html.ValidationMessage("errorPassWord", new { @class = "alert-danger" })
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember">
-                                <label for="remember">
-                                    Remember Me
-                                </label>
-                            </div>
+                    @Html.ValidationMessage("error", new { @class = "alert-danger" })
+                    @Html.ValidationMessage("errorRole", new { @class = "alert-danger" })
+                    <div class="clearfix">
+                        <!-- /.col -->
+                        <div class="text-center no-gutters">
+                            <button type="submit" class="btn btn-primary btn-block" style="width: 101px; margin-left: auto; margin-right: auto;">Đăng Nhập</button>
                         </div>
                         <!-- /.col -->
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Đăng ký</button>
-                        </div>
-                        <!-- /.col -->
+
                     </div>
-                </form>
-
-                <div class="social-auth-links text-center mb-3">
-                    <p>- OR -</p>
-                    <a href="#" class="btn btn-block btn-primary">
-                        <i class="fab fa-facebook mr-2"></i> Đăng nhập bằng  Facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Đăng nhập bằng  Google+
-                    </a>
-                </div>
-                <!-- /.social-auth-links -->
-
-                <p class="mb-1">
-                    <a href="forgot-password.html">Quên mật khẩu</a>
-                </p>
-                <p class="mb-0">
-                    <a href="register.html" class="text-center">Đăng ký</a>
-                </p>
+                }
             </div>
             <!-- /.login-card-body -->
         </div>
@@ -95,6 +74,7 @@
     <script src="~/Areas/Admin/Template/dist/js/adminlte.min.js"></script>
 </body>
 </html>
+
 
 
 
