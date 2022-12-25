@@ -2189,6 +2189,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Controller\cartController.js" />
     <Content Include="Template\css\reponsive.css" />
     <Content Include="Template\css\style.css" />
     <Content Include="Template\img\blog\10.jpg" />
@@ -2654,6 +2655,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Img_Article.cs" />
     <Compile Include="Models\Article_Category.cs" />
     <Compile Include="Models\Article.cs" />
@@ -2661,6 +2663,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\KetNoi.cs" />
     <Compile Include="Models\ManageData.cs" />
+    <Compile Include="Models\ManageProduct.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2986,7 +2989,6 @@
     <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error404\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error500\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EditProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DataProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddInvoice\Index.cshtml" />
@@ -3000,6 +3002,9 @@
     <Content Include="Areas\Admin\Views\InfoWeb\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ViewProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Details\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryProduct\add_type.cshtml" />
+    <Content Include="Areas\Admin\Views\DataProduct\Edit.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -3023,7 +3028,6 @@
     <Content Include="Views\FaqsPage\Index.cshtml" />
     <Content Include="Views\OrderSuccessPage\Index.cshtml" />
     <Content Include="Views\PrivacyPolicyPage\Index.cshtml" />
-    <Content Include="Views\ProductCartPage\Index.cshtml" />
     <Content Include="Views\ProductCheckOutPage\Index.cshtml" />
     <Content Include="Views\ProductDetailPage\Index.cshtml" />
     <Content Include="Views\ProductGridSidebarLeftPage\Index.cshtml" />
@@ -3035,6 +3039,7 @@
     <Content Include="Views\UserResetPasswordPage\Index.cshtml" />
     <Content Include="Views\UserWishlistPage\Index.cshtml" />
     <Content Include="Views\WarrantyPolicy\Index.cshtml" />
+    <Content Include="Views\ProductCartPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

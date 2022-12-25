@@ -13,15 +13,16 @@ namespace HappyHomeAsp.MVC.Controllers
         // GET: ProductDetailPage
         public ActionResult Index(int id)
         {
+
             ManageData manage = new ManageData();
             Product product = manage.getProductFromId(id);
             List<Product> productsBestSell = manage.GetProductBestSell(3);
             ViewBag.get3ProductsBestSell = productsBestSell;
-
             int type = int.Parse(product.Product_type);
             List<Product> relatedProducts = manage.selectNProductFromType(type, 3);
             ViewBag.related3Products = relatedProducts;
-
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
 
             return View(product);
         }

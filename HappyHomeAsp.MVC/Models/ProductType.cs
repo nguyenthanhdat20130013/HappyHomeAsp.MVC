@@ -1,4 +1,6 @@
-﻿namespace HappyHomeAsp.MVC.Models
+﻿using System;
+
+namespace HappyHomeAsp.MVC.Models
 {
     public class ProductType
     {
@@ -9,5 +11,10 @@
             this.type_id = type_id;
             this.type = type;
         }
+
+        public ProductType()
+        {
+        }
     }
+
 }
