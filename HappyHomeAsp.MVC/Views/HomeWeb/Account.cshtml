@@ -14,7 +14,7 @@
             <div class="breadcrumb">
                 <ol>
                     <li>
-                        <a href="@Url.Action("Index","Home","Index")">
+                        <a href="@Url.Action("Index","HomeWeb","Index")">
                             <span>Trang chủ</span>
                         </a>
                     </li>
@@ -32,7 +32,7 @@
         <div class="container">
             <div id="main">
                 <h1 class="title-page">Thông tin tài khoản</h1>
-                @using (Html.BeginForm("Account", "Home", FormMethod.Post))
+                @using (Html.BeginForm("Account", "HomeWeb", FormMethod.Post))
                 {
                     <div class="content" id="block-history">
                         <table class="std table">
