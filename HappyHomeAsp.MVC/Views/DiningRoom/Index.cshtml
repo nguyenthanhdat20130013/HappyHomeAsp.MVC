@@ -286,7 +286,7 @@
                                                 Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
                                                 @Html.PagedListPager(Model, page => Url.Action("Index",
-                                                    new { page, productTypeId = -1, pageSize = ViewBag.PageSize }))
+                                                    new { page, productTypeId = ViewBag.ProductTypeId, pageSize = ViewBag.PageSize }))
 
                                                 @*<ul>
                                                     <li>

@@ -1,4 +1,7 @@
 ﻿@using HappyHomeAsp.MVC.Models
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<HappyHomeAsp.MVC.Models.Article>
 @{
     ViewBag.Title = "Danh mục bài viết";
     ViewBag.Id = "blog-list-sidebar-left";
@@ -231,59 +234,71 @@
                             </div>
                             <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
                                 <h2>Bài đăng gần đây</h2>
-
-                                @foreach (Article article in Model)
+                                @if (Model != null && Model.Any())
                                 {
-                                    <div class="list-content row">
-                                        <div class="hover-after col-md-5 col-xs-12">
-                                            <a href="@Url.Action("Index","BlogDetail",new {id = article.Article_id})">
-                                                <img src="@article.selectFirstImageArticle()" alt="img">
-                                            </a>
-                                        </div>
-                                        <div class="late-item col-md-7 col-xs-12">
-                                            <p class="content-title">
-                                                <a href="@Url.Action("Index","BlogDetail",new {id = article.Article_id})">
-                                                    @article.Title
-                                                </a>
-                                            </p>
-                                            <p class="post-info">
-                                                <span>NGÀY ĐĂNG 07/11/2022</span>
-                                                <span>3 Bình luận</span>
-                                                <span>#trangtri</span>
-                                            </p>
-                                            <p class="description">
-                                                @article.Content
-                                            </p>
-                                            <span class="view-more">
-                                                <a href="@Url.Action("Index","BlogDetail",new {id = article.Article_id})">Xem thêm</a>
-                                            </span>
-                                        </div>
-                                    </div>
-                                }
+                                    var i = 1;
 
+                                    foreach (Article article in Model)
+                                    {
+                                        <div class="list-content row">
+                                            <div class="hover-after col-md-5 col-xs-12">
+                                                <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">
+                                                    <img src="@article.selectFirstImageArticle()" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="late-item col-md-7 col-xs-12">
+                                                <p class="content-title">
+                                                    <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">
+                                                        @article.Title
+                                                    </a>
+                                                </p>
+                                                <p class="post-info">
+                                                    <span>NGÀY ĐĂNG 07/11/2022</span>
+                                                    <span>3 Bình luận</span>
+                                                    <span>#trangtri</span>
+                                                </p>
+                                                <p class="description">
+                                                    @article.Content
+                                                </p>
+                                                <span class="view-more">
+                                                    <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">Xem thêm</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    }
+                                    i++;
+                                }
                                 <div class="page-list col">
-                                    <ul class="justify-content-center d-flex">
-                                        <li>
-                                            <a rel="prev" href="#" class="previous disabled js-search-link">
-                                                Về trước
-                                            </a>
-                                        </li>
-                                        <li class="current active">
-                                            <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                1
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a rel="next" href="#" class="next disabled js-search-link">
-                                                Tiếp theo
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                    <br />
+                                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                                        new { page, productTypeId = ViewBag.ProductTypeId, pageSize = ViewBag.PageSize }))
+
+
+                                    @*<ul class="justify-content-center d-flex">
+                                            <li>
+                                                <a rel="prev" href="#" class="previous disabled js-search-link">
+                                                    Về trước
+                                                </a>
+                                            </li>
+                                            <li class="current active">
+                                                <a rel="nofollow" href="#" class="disabled js-search-link">
+                                                    1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="nofollow" href="#" class="disabled js-search-link">
+                                                    2
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="next" href="#" class="next disabled js-search-link">
+                                                    Tiếp theo
+                                                </a>
+                                            </li>
+                                        </ul>*@
                                 </div>
                             </div>
                         </div>
