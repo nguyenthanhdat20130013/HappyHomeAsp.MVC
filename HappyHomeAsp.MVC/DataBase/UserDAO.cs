@@ -6,7 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 
-namespace HappyHomeMVC.DataBase
+namespace HappyHomeAsp.MVC.DataBase
 {
     public class UserDAO
     {
