@@ -1,7 +1,7 @@
 ﻿@using HappyHomeAsp.MVC.Models
 @using HappyHomeAsp.MVC.Controllers
 @{
-    ViewBag.Title = "Data Product";
+    ViewBag.Title = "Danh sách sản phẩm";
 }
 
 <!-- Content Header (Page header) -->
@@ -9,12 +9,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>DataTables</h1>
+                <h1>Danh sách sản phẩm</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">DataTables</li>
+                    <li class="breadcrumb-item active">Danh sách sản phẩm</li>
                 </ol>
             </div>
         </div>
@@ -35,7 +35,7 @@
                                 <option>Sản Phẩm hot</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary" style="float: right;"><a href="@Url.Action("Index","AddProduct","Index")" style="color: white">Thêm mới</a></button>
+                        <button class="btn btn-primary" style="float: right;" id="btnAdd"><a href="@Url.Action("Index","AddProduct","Index")" style="color: white">Thêm mới</a></button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -63,26 +63,26 @@
                                             @product.Name
                                         </td>
                                         <td>
-                                           @product.Product_type
+                                           @product.getNameOfType(product.Product_type)
                                         </td>
                                         <td>@product.Color</td>
                                         <td>@product.Brand</td>
                                         <td>@product.Price</td>
                                         <td>@product.Price_sell</td>
                                         <td>
-                                           
-                                            <button class="btn btn-info"><a href="@Url.Action("Index","Details",new {id = product.Product_id})"> Details</button>
-                                            <button class="btn btn-success">Sửa </button>
+
+                                            <button class="btn btn-info"><a href="@Url.Action("Index","Details",new {id = product.Product_id})" style="color: white"> Xem sản phẩm</button>
+                                            <button class="btn btn-success"><a href="@Url.Action("Edit","DataProduct",new {id = product.Product_id})" style="color: white">Chỉnh sửa</button>
                                             <button class="btn btn-danger">Xoá </button>
-                                            
+
                                         </td>
                                     </tr>
-                                   
+
 
 
                                 }
 
-                    
+
                             </tbody>
 
                         </table>
