@@ -1,0 +1,139 @@
+﻿@model HappyHomeMVC.Models.User
+@{
+    ViewBag.Title = "Thông tin";
+    ViewBag.Id = "";
+    ViewBag.Class = "user-acount";
+}
+@{
+    var user = ViewBag.User;
+}
+<div class="wrap-banner">
+    <!-- breadcrumb -->
+    <nav class="breadcrumb-bg">
+        <div class="container no-index">
+            <div class="breadcrumb">
+                <ol>
+                    <li>
+                        <a href="@Url.Action("Index","HomeWeb","Index")">
+                            <span>Trang chủ</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>Sửa thông tin</span>
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </nav>
+
+    <div class="acount head-acount">
+        <div class="container">
+            <div id="main">
+                <h1 class="title-page">Thông tin tài khoản</h1>
+                @using (Html.BeginForm("Account", "HomeWeb", FormMethod.Post))
+                {
+                    <div class="content" id="block-history">
+                        <table class="std table">
+                            <tbody>
+                                <h5>Thông tin người dùng</h5>
+
+                                <tr>
+                                    <th class="first_item">Email :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", @type = "text" })
+                                        @Html.ValidationMessage("errorEmail", new { @class = "alert-danger" })
+                                        @* <div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="email" type="text" value="@user.email;">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="first_item">Mật khẩu :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.PassWord, "", new { @class = "form-control", @type = "password" })
+                                        @Html.ValidationMessage("errorPass", new { @class = "alert-danger" })
+                                        @* <div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="password" type="password" value="@user.PassWord">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="first_item">Nhập lại mật khẩu :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.PassWord, "", new { @class = "form-control", @type = "password" })
+                                        @Html.ValidationMessage("errorPass", new { @class = "alert-danger" })
+                                        @*<div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="password" type="password" value="@user.PassWord">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th class="first_item">Họ và Tên :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.FullName, "", new { @class = "form-control", @type = "text" })
+                                        @Html.ValidationMessage("errorFullName", new { @class = "alert-danger" })
+                                        @*<div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="fullname" type="text" value="@user.FullName">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="first_item">Điện thoại :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.PhoneNum, "", new { @class = "form-control", @type = "text" })
+                                        @Html.ValidationMessage("errorPhoneNum", new { @class = "alert-danger" })
+                                        @*<div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="phone_num" type="text" value="@user.PhoneNum">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="first_item">Địa chỉ đầy đủ :</th>
+                                    <td>
+                                        @Html.TextBoxFor(m => m.Address, "", new { @class = "form-control", @type = "text" })
+                                        @Html.ValidationMessage("errorAddress", new { @class = "alert-danger" })
+                                        @*<div class="form-group">
+                                                <div>
+                                                    <input class="form-control" name="address" type="text" value="@user.Address">
+                                                </div>
+                                            </div>*@
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        @Html.ValidationMessage("successUpdate", new { @class = "alert-success" })
+
+                    </div>
+                    <button class="btn btn-primary" data-link-action="sign-in" type="submit">
+                        Lưu Thông Tin
+                    </button>
+                }
+                @* <div class="order">
+                        <h4>
+                            Lịch sử
+                            <span class="detail">Mua hàng</span>
+                        </h4>
+                        <p>Bạn chưa mua sản phẩm nào.</p>
+                    </div>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+

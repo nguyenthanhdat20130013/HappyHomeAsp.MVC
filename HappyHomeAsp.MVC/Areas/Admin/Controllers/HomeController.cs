@@ -11,7 +11,12 @@ namespace HappyHomeAsp.MVC.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
-            return View();
+            if(Session["user"] != null)
+            {
+                return View();
+               
+            }
+            return RedirectToAction("Index", "Login");
         }
     }
 }
