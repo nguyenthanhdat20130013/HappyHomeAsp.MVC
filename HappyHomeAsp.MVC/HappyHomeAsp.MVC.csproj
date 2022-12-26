@@ -43,7 +43,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +100,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.31\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -2137,8 +2180,104 @@
     <Content Include="Areas\Admin\Template\plugins\uplot\uPlot.iife.js" />
     <Content Include="Areas\Admin\Template\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Areas\Admin\Template\plugins\uplot\uPlot.min.css" />
+    <Content Include="bin\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\BouncyCastle.Crypto.xml" />
+    <Content Include="bin\Google.Protobuf.dll" />
+    <Content Include="bin\Google.Protobuf.pdb" />
+    <Content Include="bin\Google.Protobuf.xml" />
+    <Content Include="bin\HappyHomeAsp.MVC.dll" />
+    <Content Include="bin\HappyHomeAsp.MVC.pdb" />
+    <Content Include="bin\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\K4os.Compression.LZ4.Streams.xml" />
+    <Content Include="bin\K4os.Compression.LZ4.xml" />
+    <Content Include="bin\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\K4os.Hash.xxHash.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\MySql.Data.dll" />
+    <Content Include="bin\MySql.Data.xml" />
+    <Content Include="bin\PagedList.dll" />
+    <Content Include="bin\PagedList.Mvc.dll" />
+    <Content Include="bin\PagedList.Mvc.xml" />
+    <Content Include="bin\PagedList.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.Globalization.Calendars.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.ZipFile.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Net.Http.dll" />
+    <Content Include="bin\roslyn\System.Net.Sockets.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.Threading.Tasks.Extensions.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Buffers.dll" />
+    <Content Include="bin\System.Buffers.xml" />
+    <Content Include="bin\System.Memory.dll" />
+    <Content Include="bin\System.Memory.xml" />
+    <Content Include="bin\System.Numerics.Vectors.dll" />
+    <Content Include="bin\System.Numerics.Vectors.xml" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\System.Runtime.CompilerServices.Unsafe.xml" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Helpers.xml" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Mvc.xml" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.xml" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.xml" />
+    <Content Include="bin\System.Web.Webpages.xml" />
+    <Content Include="bin\ZstdNet.dll" />
+    <Content Include="Content\Images\ban1.jpg" />
+    <Content Include="Content\Images\bango1.jpg" />
+    <Content Include="Content\Images\bango2.jpg" />
+    <Content Include="Content\Images\bango3.jpg" />
+    <Content Include="Content\Images\bango4.jpg" />
+    <Content Include="Content\Images\bansat1.jpg" />
+    <Content Include="Content\Images\bansat2.jpg" />
+    <Content Include="Content\Images\bansat3.jpg" />
+    <Content Include="Content\Images\ghe1.jpg" />
+    <Content Include="Content\Images\ghe2.jpg" />
+    <Content Include="Content\Images\ghe3.jpg" />
+    <Content Include="Content\Images\img_not_exists.png" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Controller\cartController.js" />
     <Content Include="Template\css\reponsive.css" />
     <Content Include="Template\css\style.css" />
     <Content Include="Template\img\blog\10.jpg" />
@@ -2565,6 +2704,7 @@
     <Compile Include="Areas\Admin\Controllers\DataInvoiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\DataProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\DataUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DetailsController.cs" />
     <Compile Include="Areas\Admin\Controllers\EditArticleController.cs" />
     <Compile Include="Areas\Admin\Controllers\EditProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\Error404Controller.cs" />
@@ -2600,9 +2740,22 @@
     <Compile Include="Controllers\UserResetPasswordPageController.cs" />
     <Compile Include="Controllers\UserWishlistPageController.cs" />
     <Compile Include="Controllers\WarrantyPolicyController.cs" />
+    <Compile Include="DataBase\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartItem.cs" />
+    <Compile Include="Models\Img_Article.cs" />
+    <Compile Include="Models\Article_Category.cs" />
+    <Compile Include="Models\Article.cs" />
+    <Compile Include="Models\CauHinh.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\KetNoi.cs" />
+    <Compile Include="Models\ManageData.cs" />
+    <Compile Include="Models\ManageProduct.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductType.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2926,7 +3079,6 @@
     <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error404\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Error500\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EditProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\DataProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AddInvoice\Index.cshtml" />
@@ -2938,6 +3090,22 @@
     <Content Include="Areas\Admin\Views\DataUser\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CategoryProduct\Index.cshtml" />
     <Content Include="Areas\Admin\Views\InfoWeb\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ViewProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Details\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AddProduct\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CategoryProduct\add_type.cshtml" />
+    <Content Include="Areas\Admin\Views\DataProduct\Edit.cshtml" />
+    <Content Include="bin\HappyHomeAsp.MVC.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -2961,7 +3129,6 @@
     <Content Include="Views\FaqsPage\Index.cshtml" />
     <Content Include="Views\OrderSuccessPage\Index.cshtml" />
     <Content Include="Views\PrivacyPolicyPage\Index.cshtml" />
-    <Content Include="Views\ProductCartPage\Index.cshtml" />
     <Content Include="Views\ProductCheckOutPage\Index.cshtml" />
     <Content Include="Views\ProductDetailPage\Index.cshtml" />
     <Content Include="Views\ProductGridSidebarLeftPage\Index.cshtml" />
@@ -2973,6 +3140,7 @@
     <Content Include="Views\UserResetPasswordPage\Index.cshtml" />
     <Content Include="Views\UserWishlistPage\Index.cshtml" />
     <Content Include="Views\WarrantyPolicy\Index.cshtml" />
+    <Content Include="Views\ProductCartPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2983,7 +3151,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Context\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

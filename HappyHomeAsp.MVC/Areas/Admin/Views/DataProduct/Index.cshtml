@@ -1,6 +1,7 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
+@using HappyHomeAsp.MVC.Controllers
 @{
-    ViewBag.Title = "Data Product";
+    ViewBag.Title = "Danh sách sản phẩm";
 }
 
 <!-- Content Header (Page header) -->
@@ -8,12 +9,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>DataTables</h1>
+                <h1>Danh sách sản phẩm</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">DataTables</li>
+                    <li class="breadcrumb-item active">Danh sách sản phẩm</li>
                 </ol>
             </div>
         </div>
@@ -32,12 +33,9 @@
                                 <option selected="selected" disabled="disabled">Tìm kiếm theo</option>
                                 <option>Sản Phẩm mới</option>
                                 <option>Sản Phẩm hot</option>
-                                <option>Hết hàng</option>
-                                <option>Texas</option>
-                                <option>Washington</option>
                             </select>
                         </div>
-                        <button class="btn btn-primary" style="float: right;"><a href="add-product.html" style="color: white">Thêm mới</a></button>
+                        <button class="btn btn-primary" style="float: right;" id="btnAdd"><a href="@Url.Action("Index","AddProduct","Index")" style="color: white">Thêm mới</a></button>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -47,102 +45,44 @@
 
                                     <th>Id </th>
                                     <th>Tên sản phẩm </th>
-                                    <th>Thuộc tính</th>
                                     <th>Danh mục </th>
-                                    <th>Giá</th>
+                                    <th>Màu sắc</th>
+                                    <th>Thương hiệu</th>
+                                    <th>Giá gốc</th>
+                                    <th>Giá bán</th>
                                     <th>Tác vụ</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 5.0
-                                    </td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 5.5
-                                    </td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>
-                                        Internet
-                                        Explorer 6
-                                    </td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 7</td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Gecko</td>
-                                    <td>Epiphany 2.20</td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tasman</td>
-                                    <td>Internet Explorer 5.2</td>
-                                    <td>Size,Màu sắc</td>
-                                    <td> Phong ngủ , Bàn</td>
-                                    <td>500.000đ</td>
-                                    <td>
-                                        <button class="btn btn-danger">Xoá </button>
-                                        <button class="btn btn-success">Sửa </button>
-                                    </td>
-                                </tr>
+
+                                @foreach (Product product in Model)
+                                {
+                                    <tr>
+                                        <td>@product.Product_id</td>
+                                        <td>
+                                            @product.Name
+                                        </td>
+                                        <td>
+                                           @product.getNameOfType(product.Product_type)
+                                        </td>
+                                        <td>@product.Color</td>
+                                        <td>@product.Brand</td>
+                                        <td>@product.Price</td>
+                                        <td>@product.Price_sell</td>
+                                        <td>
+
+                                            <button class="btn btn-info"><a href="@Url.Action("Index","Details",new {id = product.Product_id})" style="color: white"> Xem sản phẩm</button>
+                                            <button class="btn btn-success"><a href="@Url.Action("Edit","DataProduct",new {id = product.Product_id})" style="color: white">Chỉnh sửa</button>
+                                            <button class="btn btn-danger">Xoá </button>
+
+                                        </td>
+                                    </tr>
+
+
+
+                                }
+
+
                             </tbody>
 
                         </table>
