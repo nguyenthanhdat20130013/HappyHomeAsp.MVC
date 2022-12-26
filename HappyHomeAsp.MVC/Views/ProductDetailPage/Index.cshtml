@@ -1169,10 +1169,12 @@
                                                     <div class="row">
                                                         @foreach (Product p in ViewBag.related3Products)
                                                         {
+                                                            
+
                                                             <div class="item text-center col-md-4">
                                                                 <div class="product-miniature js-product-miniature item-one first-item">
                                                                     <div class="thumbnail-container border">
-                                                                        <a href="product-detail.html">
+                                                                        <a href="@Url.Action("Index", "ProductDetailPage", new { id = p.Product_id })">
                                                                             <img class="img-fluid image-cover" src="@p.getImageProduct(0)" alt="img">
                                                                             <img class="img-fluid image-secondary" src="@p.getImageProduct(1)" alt="img">
                                                                         </a>
@@ -1187,7 +1189,7 @@
                                                                     <div class="product-description">
                                                                         <div class="product-groups">
                                                                             <div class="product-title">
-                                                                                <a href="product-detail.html">@p.Name</a>
+                                                                                <a href="@Url.Action("Index", "ProductDetailPage", new { id = p.Product_id })">@p.Name</a>
                                                                             </div>
                                                                             <div class="rating">
                                                                                 <div class="star-content">
@@ -1224,7 +1226,7 @@
                                                         }
                                                         <!--
 
-                                                        -->
+    -->
 
 
                                                     </div>
