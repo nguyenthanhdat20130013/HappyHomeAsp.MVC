@@ -1,6 +1,6 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
 @{
-    ViewBag.Title = "Category Product";
+    ViewBag.Title = "Dánh sách loại sản phẩm";
 }
 
 
@@ -28,7 +28,7 @@
             <div class="col-md-9">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Chủng Loại Hàng Hoá</h3>
+                        <h3 class="card-title">Các loại hàng hoá</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                 <i class="fas fa-minus"></i>
@@ -42,77 +42,27 @@
                                     <tr>
                                         <th>Mã loại </th>
                                         <th>Tên loại hàng</th>
-                                        <th>Số sản phẩm </th>
                                         <th>Tác vụ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>
-                                            Internet
-                                            Explorer 4.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>
-                                            Internet
-                                            Explorer 5.0
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>
-                                            Internet
-                                            Explorer 5.5
-                                        </td>
-                                        <td>Win 95+</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>
-                                            Internet
-                                            Explorer 6
-                                        </td>
-                                        <td>Win 98+</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gecko</td>
-                                        <td>Epiphany 2.20</td>
-                                        <td>Gnome</td>
-                                        <td>
-                                            <button class="btn btn-danger">Xoá</button>
-                                            <a class="btn btn-success" href="edit-product.html">Sửa</a>
-                                        </td>
-                                    </tr>
+                                    @foreach (ProductType productType in ViewBag.listType)
+                                    {
+                                        <tr>
+                                            <td>@productType.type_id</td>
+                                            <td>
+                                                @productType.type
+                                            </td>
+
+                                            <td>
+                                                <button class="btn btn-danger">Xoá</button>
+                                                <a class="btn btn-success" href="edit-product.html">Sửa</a>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+
                                     </tfoot>
                             </table>
 
@@ -132,15 +82,9 @@
                         </div>
                     </div>
                     <div class="card-body" style="display: block">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Tên nhóm sản phẩm</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Name of category">
-                        </div>
-                        <div class="form-group" style="margin-top: 20px">
-                            <label for="f">Diễn giải cho loại hàng</label>
-                            <textarea rows="13" class="form-control" placeholder="Enter description for the category"></textarea>
-                        </div>
-                        <buttton class="btn btn-success">Lưu thông tin</buttton>
+
+                        <a class="btn btn-success" href="@Url.Action("add_type","CategoryProduct")">Thêm loại sản phẩm</a>
+
                     </div>
                     <!-- /.card-body -->
                 </div>

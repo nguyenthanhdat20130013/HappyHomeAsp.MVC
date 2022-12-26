@@ -157,7 +157,7 @@
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
-                                    Quản lý bài Viết
+                                    Quản lý bài viết
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -183,7 +183,7 @@
                                 <p>
                                     Quản lý sản phẩm
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">6</span>
+                                    <span class="badge badge-info right"></span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -253,7 +253,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item" >
+                        <li class="nav-item">
                             <a href="" class="nav-link">
                                 <i class="nav-icon fas fa-tree"></i>
                                 <p>
@@ -370,7 +370,7 @@
                 $(this).addClass('menu-open')
             }
         });
-  
+
         $(function () {
             //Initialize Select2 Elements
             $('.select2').select2()
@@ -579,6 +579,7 @@
 
     </script>
 
-
+    @RenderSection("scripts", required: false)
 </body>
+       
 </html>

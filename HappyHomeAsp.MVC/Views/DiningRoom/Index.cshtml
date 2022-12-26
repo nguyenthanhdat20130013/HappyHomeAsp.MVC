@@ -3,7 +3,7 @@
 @using PagedList
 @model IPagedList<HappyHomeAsp.MVC.Models.Product>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Sản phẩm theo loại";
     ViewBag.Id = "product-sidebar-left";
     ViewBag.Class = "";
 }
@@ -62,30 +62,7 @@
                                             <li>
                                                 <a href="#" title="Show products matching tag SamSung">Bán chạy nhất</a>
                                             </li>
-                                            <!--
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Shirt Dresses">Shirt Dresses</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Shoes">Shoes</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Summer">Summer</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Sweaters">Sweaters</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Winter">Winter</a>
-                                                                    </li>
-
-                                                                    <li>
-                                                                      <a href="#" title="Show products matching tag Woman">Woman</a>
-                                                                    </li> -->
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -170,14 +147,14 @@
                                                             <div class="product-buttons d-flex justify-content-center">
                                                                 <form action="#" method="post" class="formAddToCart">
                                                                     <input type="hidden" name="id_product" value="1">
-                                                                    <a class="add-to-cart" href="#" data-button-action="add-to-cart">
+                                                                    <a class="add-to-cart" href="/ProductCartPage/AddItem?productId=@product.Product_id&quantity=1" data-button-action="add-to-cart">
                                                                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                                                     </a>
                                                                 </form>
                                                                 <a class="addToWishlist" href="#" data-rel="1" onclick="">
                                                                     <i class="fa fa-heart" aria-hidden="true"></i>
                                                                 </a>
-                                                                <a href="#" class="quick-view hidden-sm-down" data-link-action="quickview">
+                                                                <a href="@Url.Action("Index","ProductDetailPage",new {id = product.Product_id})" class="quick-view hidden-sm-down" data-link-action="quickview">
                                                                     <i class="fa fa-eye" aria-hidden="true"></i>
                                                                 </a>
                                                             </div>
@@ -249,6 +226,7 @@
                                                                                 @product.Product_insurance
                                                                             </div>
                                                                         </div>
+
                                                                         <div class="product-buttons d-flex">
                                                                             <form action="#" method="post" class="formAddToCart">
                                                                                 <a class="add-to-cart" href="#" data-button-action="add-to-cart">
@@ -262,7 +240,10 @@
                                                                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                                                             </a>
                                                                         </div>
+
+                                                                       
                                                                     </div>
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>
