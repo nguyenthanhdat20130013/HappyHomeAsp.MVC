@@ -2182,6 +2182,12 @@
     <Content Include="Areas\Admin\Template\plugins\uplot\uPlot.min.css" />
     <Content Include="Content\Images\ban1.jpg" />
     <Content Include="Content\Images\bango1.jpg" />
+    <Content Include="Content\Images\bango2.jpg" />
+    <Content Include="Content\Images\bango3.jpg" />
+    <Content Include="Content\Images\bango4.jpg" />
+    <Content Include="Content\Images\bansat1.jpg" />
+    <Content Include="Content\Images\bansat2.jpg" />
+    <Content Include="Content\Images\bansat3.jpg" />
     <Content Include="Content\Images\ghe1.jpg" />
     <Content Include="Content\Images\ghe2.jpg" />
     <Content Include="Content\Images\ghe3.jpg" />

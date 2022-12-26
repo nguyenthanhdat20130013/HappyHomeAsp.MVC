@@ -57,6 +57,7 @@ namespace HappyHomeAsp.MVC.Controllers
             {
                 products2.Add(p);
             }
+            ViewBag.ProductTypeId = productTypeId;
             return View(products2.ToPagedList((int)page, (int)pageSize));
         }
 

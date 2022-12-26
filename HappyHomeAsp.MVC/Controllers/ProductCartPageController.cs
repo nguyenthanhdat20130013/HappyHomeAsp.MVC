@@ -29,6 +29,7 @@ namespace HappyHomeAsp.MVC.Controllers
             arrayList = manage.selectAllProduct2();
             List<ProductType> listNameType = manage.getNameProductTypes();
             ViewBag.listType = listNameType;
+
             return View(list);
         }
         public JsonResult DeleteAll()
