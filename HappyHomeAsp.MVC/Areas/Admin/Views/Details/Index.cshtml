@@ -1,0 +1,141 @@
+﻿@model HappyHomeAsp.MVC.Models.Product
+
+
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Chi tiết sản phẩm @Model.Name @Model.Code</h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active">Chi tiết sản phẩm @Model.Name</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thông tin chính</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block; padding:0px ;">
+                        <form>
+                            <div class="card-body">
+
+                                <div style="display: flex" class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Id </label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Product_id" disabled="disabled">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Mã sản phẩm</label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Code" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="@Model.Name" disabled="disabled">
+                                </div>
+                                <div style="display: flex" class="row">
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Giá gốc </label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Price₫" disabled="disabled">
+                                    </div>
+                                    <div class="form-group col-md-6 ">
+                                        <label for="exampleInputEmail1">Giá khuyến mãi</label>
+                                        <input type="text" class="form-control" id="" placeholder="@Model.Price_sell₫" disabled="disabled">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Giới thiệu sản phẩm</label>
+                                    <textarea rows="5" class="form-control" id="" placeholder="@Model.Info" disabled="disabled"></textarea>
+                                    <label for="exampleInputEmail1">Thông tin sản phẩm</label>
+                                    <input type="email" class="form-control" id="" placeholder="Loại của sản phẩm: @Model.getNameOfType(Model.Product_type)" disabled="disabled">
+                                    <label for="exampleInputEmail1"></label>
+                                    <input type="email" class="form-control" id="" placeholder="Hãng sản xuất: @Model.Brand" disabled="disabled">
+                                    <label for="exampleInputEmail1"></label>
+                                    <input type="email" class="form-control" id="" placeholder="Màu sắc sản phẩm: @Model.Color" disabled="disabled">
+                                    <label for="exampleInputEmail1"></label>
+                                    <input type="email" class="form-control" id="" placeholder="Kích thước sản phẩm: @Model.Size" disabled="disabled">
+                                    <label for="exampleInputEmail1"></label>
+                                    <input type="email" class="form-control" id="" placeholder="Thời gian bảo hành: @Model.Product_insurance" disabled="disabled">
+                                    <label for="exampleInputEmail1"></label>
+                                    <input type="email" class="form-control" id="" placeholder="Trạng thái sản phẩm: @Model.Status" disabled="disabled">
+
+                                </div>
+                                
+
+
+                            </div>
+                            <!-- /.card-body -->
+                        </form>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <div class="card card-primary ">
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-success">
+                    <div class="card-header">
+                        <h3 class="card-title">Hình ảnh sản phẩm</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body" style="display: block">
+                        <div style="position: relative">
+
+
+                            <img src="@Model.getImageProduct(0)" alt="" style="width: 60%;height:60%;border: 1px solid rgba(0,0,0,.125);position: relative">
+
+                           
+                           
+                        </div>
+                        <br>
+                        <div class="form-group" style="">
+                            <label for="exampleInputFile">Tải ảnh lên</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="">
+                                    <label class="custom-file-label" for="exampleInputFile">Chọn file</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Tải lên</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+
+         
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+
+
+<!-- /.content -->

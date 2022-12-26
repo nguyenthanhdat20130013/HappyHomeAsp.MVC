@@ -1,4 +1,7 @@
-﻿
+﻿@using HappyHomeAsp.MVC.Models
+@using PagedList.Mvc
+@using PagedList
+@model IPagedList<HappyHomeAsp.MVC.Models.Article>
 @{
     ViewBag.Title = "Danh mục bài viết";
     ViewBag.Id = "blog-list-sidebar-left";
@@ -153,7 +156,7 @@
                                     <div class="post-item-content">
                                         <div>
                                             <div class="late-item first-child">
-                                                <a href="blog-detail.html">
+                                                <a href="@Url.Action("Index","BlogDetail","Index")">
                                                     <p class="content-title">Mẹo phối giữa màu sơn tường và đồ nội thất cho không gian sống thêm hoàn hảo</p>
                                                 </a>
                                                 <span>
@@ -231,182 +234,71 @@
                             </div>
                             <div class="col-sm-8 col-lg-9 col-md-9 flex-xs-first main-blogs">
                                 <h2>Bài đăng gần đây</h2>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/10.jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">
-                                                Những lưu ý khi chọn màu cho nội thất
-                                            </a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 07/11/2022</span>
-                                            <span>3 Bình luận</span>
-                                            <span>#trangtri</span>
-                                        </p>
-                                        <p class="description">
-                                            Nếu bạn đang có nhu cầu mua sắm nội thất, chắc hẳn bạn đã có những tìm hiểu nhất định về những gì bạn muốn mua.
-                                            Dù sao thì, thứ bạn đang tìm kiếm cũng là một món nội thất hài hòa với phong cách thiết kế hiện tại của bạn, nhưng vẫn đảm bảo sự thời thượng,
-                                            phong cách mà sẽ không bị lỗi thời chỉ sau một thời gian ngắn.
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">Xem thêm</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/5.jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">MẸO PHỐI GIỮA MÀU SƠN TƯỜNG VÀ ĐỒ NỘI THẤT CHO KHÔNG GIAN SỐNG THÊM HOÀN HẢO</a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 05/11/2022</span>
-                                            <span>10 Bình luận</span>
-                                            <span>#trangtri</span>
-                                        </p>
-                                        <p class="description">
-                                            Phối màu nội thất sao cho đẹp, sang trọng,
-                                            hiện đại là cả nghệ thuật của nhà thiết kế nội thất. Nội thất có đẹp cũng phải phối màu ăn ý với nhau mới có thể tạo ra một không gian đẹp...
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">XEM THÊM</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/13(2).jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item  col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">300+ MẪU TỦ BẾP GỖ TỰ NHIÊN BỀN, ĐẸP, HIỆN ĐẠI GIÁ TỐT NHẤT 2022</a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 04/11/2022</span>
-                                            <span>10 Bình luận</span>
-                                            <span>#nhabep</span>
-                                        </p>
-                                        <p class="description">
-                                            Tủ bếp là thiết bị nội thất không thể thiếu trong mọi căn bếp của gia đình Việt.
-                                            Đặc biệt, tủ bếp gỗ tự nhiên với giá trị thẩm mỹ cao và độ bền chắc lâu năm đang rất được lòng người sử dụng.
-                                            Hãy cùng nội thất HAPPYHOME tham khảo...
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">XEM THÊM</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/6.jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">Những tone màu sofa đẹp bạn không thể bỏ qua</a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 03/11/2022</span>
-                                            <span>5 Bình luận</span>
-                                            <span>#sofa</span>
-                                        </p>
-                                        <p class="description">
-                                            Khi mua sofa, điều mà các gia chủ cũng nên cân nhắc kĩ lưỡng bên cạnh chất liệu và kiểu dáng đó chính là màu sắc của chiếc sofa.
-                                            Màu sắc sofa cũng có một sự ảnh hưởng lớn đến thẩm mỹ không gian chung của phòng khách.
-                                            Vì vậy, việc lựa chọn một bộ ghế sofa phù hợp thì màu sắc là yếu tố vô cùng quan trọng và cần thiết tiếp thêm năng lượng tích cực cho cả gia đình.
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">XEM THÊM</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/14.jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">Ý nghĩa đồng hồ treo tường trang trí decor nghệ thuật cho nội thất nhà bạn</a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 03/11/2022</span>
-                                            <span>1 Bình luận</span>
-                                            <span>#dongho</span>
-                                        </p>
-                                        <p class="description">
-                                            Các mẫu đồng hồ treo tường sang trọng trang trí là vật dụng vô cùng quen thuộc với tất cả mọi người.
-                                            Chắc hẳn là trong bất kỳ gia đình nào cũng có sự hiện diện của một chiếc đồng hồ.
-                                            Nhưng bạn đã thực sự hiểu hết ý nghĩa của chúng chưa ?
-                                            Mỗi đồng hồ trang trí là một ý nghĩa ,...
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">XEM THÊM</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="list-content row">
-                                    <div class="hover-after col-md-5 col-xs-12">
-                                        <a href="blog-detail.html">
-                                            <img src="~/Template/img/blog/15.jpg" alt="img">
-                                        </a>
-                                    </div>
-                                    <div class="late-item  col-md-7 col-xs-12">
-                                        <p class="content-title">
-                                            <a href="blog-detail.html">Đèn trang trí – điểm nhấn không thể thiếu</a>
-                                        </p>
-                                        <p class="post-info">
-                                            <span>NGÀY ĐĂNG 03/11/2022</span>
-                                            <span>5 Bình luận</span>
-                                            <span>#dentrangtri</span>
-                                        </p>
-                                        <p class="description">
-                                            Hiện nay, khi đời sống con người đang ngày càng được nâng lên,
-                                            ngoài những yêu cầu thông thường như ăn ngon, mặc đẹp, thì yêu cầu về không gian sống cũng ngày càng được chú trọng.
-                                            Vì vậy, bên cạnh những vật dụng trang trí khác, đèn trang trí trở thành một sản phẩm không thể thiếu, nó giúp không gian nội thất của gia đình bạn trở nên lung linh và nổi bật hơn,
-                                            đồng thời cũng giúp thể hiện được gu thẩm mỹ và phong thái của gia chủ. Dưới đây là một số thông tin cơ bản xoay quanh dòng sản phẩm này, chúng sẽ giúp bạn dễ dàng hiểu và lựa chọn loại đèn phù hợp nhất với gia đình mình đấy.
-                                        </p>
-                                        <span class="view-more">
-                                            <a href="blog-detail.html">XEM THÊM</a>
-                                        </span>
-                                    </div>
-                                </div>
+                                @if (Model != null && Model.Any())
+                                {
+                                    var i = 1;
+
+                                    foreach (Article article in Model)
+                                    {
+                                        <div class="list-content row">
+                                            <div class="hover-after col-md-5 col-xs-12">
+                                                <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">
+                                                    <img src="@article.selectFirstImageArticle()" alt="img">
+                                                </a>
+                                            </div>
+                                            <div class="late-item col-md-7 col-xs-12">
+                                                <p class="content-title">
+                                                    <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">
+                                                        @article.Title
+                                                    </a>
+                                                </p>
+                                                <p class="post-info">
+                                                    <span>NGÀY ĐĂNG 07/11/2022</span>
+                                                    <span>3 Bình luận</span>
+                                                    <span>#trangtri</span>
+                                                </p>
+                                                <p class="description">
+                                                    @article.Content
+                                                </p>
+                                                <span class="view-more">
+                                                    <a href="@Url.Action("Index", "BlogDetail", new { id = article.Article_id })">Xem thêm</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    }
+                                    i++;
+                                }
                                 <div class="page-list col">
-                                    <ul class="justify-content-center d-flex">
-                                        <li>
-                                            <a rel="prev" href="#" class="previous disabled js-search-link">
-                                                Về trước
-                                            </a>
-                                        </li>
-                                        <li class="current active">
-                                            <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                1
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a rel="nofollow" href="#" class="disabled js-search-link">
-                                                2
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a rel="next" href="#" class="next disabled js-search-link">
-                                                Tiếp theo
-                                            </a>
-                                        </li>
-                                    </ul>
+
+                                    <br />
+                                    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+                                    @Html.PagedListPager(Model, page => Url.Action("Index",
+                                        new { page, productTypeId = ViewBag.ProductTypeId, pageSize = ViewBag.PageSize }))
+
+
+                                    @*<ul class="justify-content-center d-flex">
+                                            <li>
+                                                <a rel="prev" href="#" class="previous disabled js-search-link">
+                                                    Về trước
+                                                </a>
+                                            </li>
+                                            <li class="current active">
+                                                <a rel="nofollow" href="#" class="disabled js-search-link">
+                                                    1
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="nofollow" href="#" class="disabled js-search-link">
+                                                    2
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a rel="next" href="#" class="next disabled js-search-link">
+                                                    Tiếp theo
+                                                </a>
+                                            </li>
+                                        </ul>*@
                                 </div>
                             </div>
                         </div>
