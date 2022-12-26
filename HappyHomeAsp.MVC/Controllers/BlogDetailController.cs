@@ -14,6 +14,8 @@ namespace HappyHomeAsp.MVC.Controllers
         {
             ManageData manage = new ManageData();
             Article ar = manage.getArticleFromId(id);
+            List<ProductType> listNameType = manage.getNameProductTypes();
+            ViewBag.listType = listNameType;
             return View(ar);
         }
     }
